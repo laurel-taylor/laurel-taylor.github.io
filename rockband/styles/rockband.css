@@ -1,8 +1,8 @@
-.expired, [data-own='expired'] {
-  background-color: #f77 !important;
+.expired, table.dataTable tbody tr.expired {
+  background-color: #f77;
 }
-.own, [data-own='own'] {
-  background-color: #ff6 !important;
+.own, table.dataTable tbody tr.own {
+  background-color: #ff6;
 }
 #key {
   min-width: 300px;

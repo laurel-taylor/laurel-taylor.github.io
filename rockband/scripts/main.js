@@ -70,6 +70,7 @@ function dataTableSorting(a) {
   $('#list').DataTable( {
     data: a,
     paging: false,
+    select: true,
     columns: [
         { title: "Artist" },
         { title: "Title" },
@@ -78,10 +79,10 @@ function dataTableSorting(a) {
     "createdRow": function(row, data, index){
       if(!data[2]) return
       if(data[2].toLowerCase() === 'y') {
-        $(row).attr('data-own', 'own')
+        $(row).addClass('own')
       }
       else if(data[2].toLowerCase() === 'expired') {
-        $(row).attr('data-own', 'expired')
+        $(row).addClass('expired')
       }
     }
   });
