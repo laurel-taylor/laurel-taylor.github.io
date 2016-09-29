@@ -1,5 +1,5 @@
+function parseDataFromSource() {
 
-$(document).ready(function(){
   // var json = DATA;
   // for (var i=0; i<json.Items.length; i++) {
   //   var $tr = $('<tr><td>' + json.Items[i].Name + '</td></tr>')
@@ -14,6 +14,7 @@ $(document).ready(function(){
     description.indexOf('purchasing Going Country Pack') >= 0 ||
     description.indexOf('this song game Pro Guitar') >= 0 ||
     description.indexOf('Rock Band Network Megamix 01') >= 0 ||
+    description.indexOf('(2x Bass Pedal)') >= 0 ||
     description.indexOf('this enhanced game track') >= 0
   }
   function isTrialSong(text) {
@@ -51,7 +52,7 @@ $(document).ready(function(){
     if(index >= 0) return index
     console.log('end not found: ' + description)
   }
-  $('#list thead').hide()
+  var list = []
   $( "#resultsContainer" ).load( "data/pageResults.html", function() {
     console.log( "Load was performed." );
     $('ol.ProductResults > li').each(function(index) {
@@ -63,13 +64,33 @@ $(document).ready(function(){
         var songAndTitle = description.substr(startIndex, endIndex - startIndex)
         var songName = getSongName(songAndTitle)
         var artistName = songAndTitle.substr(songAndTitle.indexOf('--') + 2)
-        var $tr = $('<tr><td>' + artistName + '</td><td>' + songName + '</td></tr>')
-        $('#tbody').append($tr)
+        list.push([artistName, songName])
       }
     });
     $('#list').DataTable({
-      paging:false
+      data: list,
+      paging: false,
+      columns: [
+          { title: "Artist" },
+          { title: "Title" }
+      ]
     })
-    $('#list thead').show()
   });
+}
+
+function showJSData() {
+
+  $('#list').DataTable({
+    data: getSongList(),
+    paging: false,
+    columns: [
+        { title: "Artist" },
+        { title: "Title" }
+    ]
+  })
+
+}
+$(document).ready(function(){
+  // parseDataFromSource();
+  showJSData();
 });

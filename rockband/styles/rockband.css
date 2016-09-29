@@ -1,8 +1,8 @@
 .expired, [data-own='expired'] {
-  background-color: #f77;
+  background-color: #f77 !important;
 }
 .own, [data-own='own'] {
-  background-color: #ff6;
+  background-color: #ff6 !important;
 }
 #key {
   min-width: 300px;

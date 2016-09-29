@@ -39,10 +39,10 @@ function sortTable(a, col, direction) {
   }
 }
 
-
-$(document).ready(function(){
- var a = buildSongList();
+function myOwnSorting(a) {
  a = sortTable(a, 0, 'desc');
+ $('#searchContainer').append('<input type="text" id="search" placeholder="Search..."/>')
+ $('#list').append("<thead><th id='artist' data-index='0'>Artist</th><th id='title' data-index='1'>Title</th><th id='own' data-index='2'>Own?</th></thead><tbody id='listBody'></tbody>")
  $('#list #artist').addClass('desc')
  buildTable(a);
 
@@ -64,13 +64,31 @@ $(document).ready(function(){
 
   $(this).addClass(direction)
  })
-  // $('#list').DataTable( {
-  //   data: a,
-  //   paging: false,
-  //   columns: [
-  //       { title: "Artist" },
-  //       { title: "Title" },
-  //       { title: "Own?" }
-  //   ]
-  // });
+}
+
+function dataTableSorting(a) {
+  $('#list').DataTable( {
+    data: a,
+    paging: false,
+    columns: [
+        { title: "Artist" },
+        { title: "Title" },
+        { title: "Own?" }
+    ],
+    "createdRow": function(row, data, index){
+      if(!data[2]) return
+      if(data[2].toLowerCase() === 'y') {
+        $(row).attr('data-own', 'own')
+      }
+      else if(data[2].toLowerCase() === 'expired') {
+        $(row).attr('data-own', 'expired')
+      }
+    }
+  });
+}
+
+$(document).ready(function(){
+ var a = buildSongList()
+ // myOwnSorting(a)
+ dataTableSorting(a)
 });
