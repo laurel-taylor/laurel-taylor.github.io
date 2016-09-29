@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Rock Band @ The Grid</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/rockband.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+</head>
+<body>
+  <table id='key'>
+    <tr>
+      <td>Own: </td>
+      <td class="own">Y=Yes</td>
+      <td class="expired"> Expired=Never</td>
+    </tr>
+  </table>
+
+  <input type="text" id="search" placeholder="Search..."/>
+
+  <table id="list">
+  <thead>
+    <th id="artist" data-index='0'>Artist</th>
+    <th id='title' data-index='1'>Title</th>
+    <th id='own' data-index='2'>Own?</th>
+  </thead>
+  <tbody id="listBody">
+
+  </tbody>
+  </table>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="scripts/list.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.expired, [data-own='expired'] {
+  background-color: #f77;
+}
+.own, [data-own='own'] {
+  background-color: #ff6;
+}
+#key {
+  min-width: 300px;
+  width: 25%;
+}
+#list {
+  width: 100%;
+}
+#list td {
+  width: 33.33%;
+  padding: 2px;
+}
+#list th {
+  padding: 5px;
+  cursor: pointer;
+}
+#search {
+  margin: 20px;
+  width: 50%;
+}
+.desc {
+  background-color: #7e7;
+}
+.desc::after {
+  content: 'v';
+  float: right;
+  padding-right: 5px;
+}
+.asc {
+  background-color: #7e7;
+}
+.asc::after {
+  content: '^';
+  float: right;
+  padding-right: 5px;
+}
+
+body {
+  padding: 5px;
+}
