@@ -43,3 +43,21 @@
 body {
   padding: 5px;
 }
+
+.clickme {
+  cursor: pointer;
+  display: inline-block;
+}
+.rb-tooltip {
+  display: none;
+}
+
+.tooltip-icon {
+  color: lightseagreen;
+}
+
+@media (max-width: 800px) {
+  body, table {
+    font-size: 3vw;
+  }
+}

@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>What We Got</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/whatwegot.css" />
+</head>
+<body>
+  <div id="song">
+    <div id="title"></div>
+    <div id="artist"></div>
+  </div>
+
+  <div id="controls">
+    <div id="expired" class="col-xs-3"><i class="glyphicon glyphicon-arrow-down"></i>Expired</div>
+    <div id="own" class="col-xs-3"><i class="glyphicon glyphicon-arrow-up"></i>Own</div>
+    <div id="next" class="col-xs-3"><i class="glyphicon glyphicon-arrow-right"></i>Next</div>
+    <div id="add" class="col-xs-3"><i class="glyphicon glyphicon-plus"></i>Add</div>
+  </div>
+  <div id="addingArea">
+    <input type="text" class="input-text" id="addText" placeholder="Artist,Title,Expired//Y"/>
+    <button id="addme" class="btn btn-primary">Add</button>
+  </div>
+  <div id="remaining"></div>
+  <textarea id="results"></textarea>
+  <div>
+    <button class='btn btn-success' id='save'>Save</button>
+    <button class='btn btn-primary pull-right' id='restore'>Restore</button>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../rockband/scripts/list.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

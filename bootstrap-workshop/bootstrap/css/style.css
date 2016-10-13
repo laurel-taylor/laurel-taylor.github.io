@@ -1,0 +1,74 @@
+header {
+  position: absolute;
+  width:100%;
+  z-index: 2;
+  padding: 5vh;
+}
+header .navbar-brand,
+header .nav > li > a,
+header .nav > li > a:hover{
+  text-transform: uppercase;
+  color: white;
+  font-family: 'Montserrat', serif;
+}
+.navbar-toggle .icon-bar {
+  background: white;
+}
+header .nav > li.active > a,
+header .nav > li.active > a:hover,
+header .nav > li > a:focus,
+header .nav > li > a:hover{
+  background-color: transparent;
+  text-decoration: underline;
+}
+.jumbotron {
+  height: 90vh; /* vh = viewport height */
+  background: url('../images/hero_img.jpg');
+  background-size: cover;
+  margin: 0;
+  position: relative;
+}
+.jumbotron .container {
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  color: white;
+}
+.jumbotron .container h1 {
+  font-size: 7vw;
+}
+.jumbotron .container p {
+  font-size: 1.5vw;
+  margin: 0 auto 10%;
+  font-family: 'Montserrat', serif;
+  width: 50%;
+  line-height: 2;
+}
+.container-fluid, .jumbotron {
+  padding: 0;
+}
+.container-fluid .row {
+  margin: 0;
+}
+.container-fluid .row > div{
+  padding: 0; margin: 0;
+  position: relative;
+}
+.container-fluid .text {
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+.container-fluid .img-responsive {
+  width: 100%;
+}
+footer {
+  text-align:center;
+  color:#424242;
+  background:#000;
+  padding:40px 0;
+  background: black;
+}

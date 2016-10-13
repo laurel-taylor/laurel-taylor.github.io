@@ -88,7 +88,14 @@ function dataTableSorting(a) {
   });
 }
 
+function setUpTooltips() {
+ $('.clickme, #tooltip').on('click', function(e) {
+  $('#tooltip').toggle();
+ })
+}
+
 $(document).ready(function(){
+ setUpTooltips();
  var a = buildSongList()
  // myOwnSorting(a)
  dataTableSorting(a)
