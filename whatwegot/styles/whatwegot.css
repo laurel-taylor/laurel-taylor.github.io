@@ -37,8 +37,8 @@
   text-align: center;
 }
 
+@media (min-width: 800px) {
   body, input, button, button.btn {
     font-size: 3vw;
   }
-@media (max-width: 800px) {
 }

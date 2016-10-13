@@ -56,7 +56,7 @@ body {
   color: lightseagreen;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 800px) {
   body, table {
     font-size: 3vw;
   }

@@ -3,7 +3,7 @@ function appendToResults(obj) {
   $('#results').val(newRes)
 }
 function goNext(a, index) {
-  index = index + 1;
+  index++;
   $('#title').html(a[index][1])
   $('#artist').html(a[index][0])
   return index
