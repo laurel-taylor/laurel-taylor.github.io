@@ -4,19 +4,36 @@ function appendToResults(obj) {
 }
 function goNext(a, index) {
   index++;
-  $('#title').html(a[index][1])
-  $('#artist').html(a[index][0])
+  setDisplay(a, index)
   return index
 }
 function addAndGo(a, index, result) {
   appendToResults([a[index][0], a[index][1], result]);
   return goNext(a, index)
 }
+function setDisplay(a, index) {
+  $('#title').html(a[index][1])
+  $('#artist').html(a[index][0])
+  $('#remaining').html(a.length - index)
+  $('#songList').val(index)
+  var $s = $('#songList')
+  var optionTop = $s.find("option[value="+index+"]").offset().top
+  $s.scrollTop($s.scrollTop() + (optionTop + $s.offset().top));
+  var $res = $('#results');
+  if($res.length) $res.scrollTop($res[0].scrollHeight - $res.height());
+}
+function setSongList(a, index) {
+  var $l = $('#songList')
+  for(var i=0; i<a.length; i++) {
+    $l.append($('<option>', {value: i, text: a[i][0] + ', ' + a[i][1] + ', ' + a[i][2]}))
+  }
+}
 $(document).ready(function(){
   var index = 0;
   var a = buildSongList();
-  $('#title').html(a[0][1])
-  $('#artist').html(a[0][0])
+  setSongList(a, index);
+  setDisplay(a, index);
+  $('#results').val('');
 
  $('#own').on('click', function(e) {
   index = addAndGo(a, index, 'Y')
@@ -29,6 +46,7 @@ $(document).ready(function(){
  })
  $('#add').on('click', function(e) {
   $('#addingArea').toggle();
+  $('addText').focus();
  })
   $('#addme').on('click', function(e) {
     var split = $('#addText').val().split(',')
@@ -47,19 +65,27 @@ $(document).ready(function(){
   $('#restore').click(function(){
      $('#results').val(localStorage.getItem('whatWeGot-list'));
      index = localStorage.getItem("whatWeGot-index");
-    $('#title').html(a[index][1])
-    $('#artist').html(a[index][0])
+     setDisplay(a, index)
   });
   //key press
   $(document).keydown(function(e) {
     switch(e.which) {
-      case 38: index = addAndGo(a, index, 'Y')
+      //left
+      case 37: index = addAndGo(a, index, 'Expired')
       break;
 
-      case 39: index = addAndGo(a, index, '')
+      //up
+      case 38:
+        $('#addingArea').toggle();
+        $('addText').focus();
       break;
 
-      case 40: index = addAndGo(a, index, 'Expired')
+      //right
+      case 39: index = addAndGo(a, index, 'Y')
+      break;
+
+      //down
+      case 40: index = addAndGo(a, index, '')
       break;
 
       default: return; // exit this handler for other keys

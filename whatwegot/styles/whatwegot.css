@@ -1,6 +1,4 @@
 #controls {
-  margin-top: 10vh;
-  height: 10vh;
 }
 #controls div {
   height: 10vh;
@@ -8,6 +6,7 @@
   font-size: 3vw;
   line-height: 9vh;
   text-align: center;
+  cursor: pointer;
 }
 #controls #expired {
   background-color: red;
@@ -20,21 +19,17 @@
 }
 #results {
   width: 100%;
-  height: 5vh;
+  height: 200px;
   margin-top: 10vh;
   margin-bottom: 2vh;
   font-size: 1vw;
 }
-#addingArea {
-  display:none;
-  margin-top: 5vh;
-}
-#addText {
-  width: 75%;
-}
 #song {
   font-size: 4vh;
   text-align: center;
+}
+#songList{
+  height: 400px;
 }
 
 @media (min-width: 800px) {

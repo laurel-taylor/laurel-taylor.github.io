@@ -5,22 +5,27 @@
   <link rel="stylesheet" type="text/css" href="styles/whatwegot.css" />
 </head>
 <body>
-  <div id="song">
-    <div id="title"></div>
-    <div id="artist"></div>
+  <div>
+    <div id="song" class='col-xs-4'>
+      <div id="title"></div>
+      <div id="artist"></div>
+    </div>
+    <div id="songList-container" class='col-xs-8'>
+      <select multiple class='form-control' id='songList'></select>
+    </div>
   </div>
+  <div style="clear:both"></div>
 
   <div id="controls">
-    <div id="expired" class="col-xs-3"><i class="glyphicon glyphicon-arrow-down"></i>Expired</div>
-    <div id="own" class="col-xs-3"><i class="glyphicon glyphicon-arrow-up"></i>Own</div>
-    <div id="next" class="col-xs-3"><i class="glyphicon glyphicon-arrow-right"></i>Next</div>
-    <div id="add" class="col-xs-3"><i class="glyphicon glyphicon-plus"></i>Add</div>
+    <div id="expired" class="col-xs-4"><i class="glyphicon glyphicon-arrow-left"></i>Expired</div>
+    <div id="own" class="col-xs-4"><i class="glyphicon glyphicon-arrow-right"></i>Own</div>
+    <div id="next" class="col-xs-4"><i class="glyphicon glyphicon-arrow-down"></i>Next</div>
   </div>
   <div id="addingArea">
-    <input type="text" class="input-text" id="addText" placeholder="Artist,Title,Expired//Y"/>
-    <button id="addme" class="btn btn-primary">Add</button>
+    <input type="text" class="input-text col-xs-10" id="addText" placeholder="Artist,Title,Expired//Y"/>
+    <button id="addme" class="btn btn-primary col-xs-1">Add</button>
+    <div id="remaining" class='col-xs-1'></div>
   </div>
-  <div id="remaining"></div>
   <textarea id="results"></textarea>
   <div>
     <button class='btn btn-success' id='save'>Save</button>
