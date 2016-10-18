@@ -1,6 +1,5 @@
 function buildSongList() {
   var a = new Array;
-ArtistTitleOwn?
 a.push(["311", "Amber", ""]);
 a.push(["311", "Beautiful Disaster", ""]);
 a.push(["311", "Down", ""]);
