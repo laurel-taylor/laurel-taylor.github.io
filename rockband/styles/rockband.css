@@ -1,43 +1,8 @@
 .expired, table.dataTable tbody tr.expired {
-  background-color: #f77;
+  background-color: #FF9B96;
 }
 .own, table.dataTable tbody tr.own {
-  background-color: #ff6;
-}
-#key {
-  min-width: 300px;
-  width: 25%;
-}
-#list {
-  width: 100%;
-}
-#list td {
-  width: 33.33%;
-  padding: 2px;
-}
-#list th {
-  padding: 5px;
-  cursor: pointer;
-}
-#search {
-  margin: 20px;
-  width: 50%;
-}
-.desc {
-  background-color: #7e7;
-}
-.desc::after {
-  content: 'v';
-  float: right;
-  padding-right: 5px;
-}
-.asc {
-  background-color: #7e7;
-}
-.asc::after {
-  content: '^';
-  float: right;
-  padding-right: 5px;
+  background-color: #FFF9C4;
 }
 
 body {
@@ -50,14 +15,101 @@ body {
 }
 .rb-tooltip {
   display: none;
+  margin-top:5px;
 }
 
 .tooltip-icon {
   color: lightseagreen;
 }
+.superscript {
+  color: #FF9B96;
+}
 
-@media (min-width: 800px) {
+#list_wrapper #list_filter {
+  position: fixed;
+  top:0; right: 0;
+  background: white;
+  padding-left: 5px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0 0 0 5px;
+}
+#list_wrapper #list_filter input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+.top-container {
+  border: 1px solid lightseagreen;
+  background-color: #E3F5F4;
+  border-radius: 100%;
+  position: fixed; bottom: 5px; right: 5px;
+
+}
+.top-container i {
+  color: lightseagreen;
+  font-size: 2.5vh;
+  padding: 1vh;
+  cursor: pointer;
+  top: -1px;
+}
+.checkbox {
+  margin: 0;
+  text-align: right;
+}
+
+/*iphone portrait*/
+@media only screen
+  and (min-device-width: 300px)
+  and (max-device-width: 800px)
+  and (orientation: portrait)
+{
   body, table {
-    font-size: 3vw;
+    font-size: 40px;
+  }
+  .checkbox {
+    margin-top: 5px;
+  }
+  .checkbox input[type=checkbox]{
+    margin-left: -33px;
+    transform: scale(2,2);
+    height : 1.2em;
+  }
+}
+/*landscape*/
+@media only screen
+  and (min-device-width: 300px)
+  and (max-device-width: 768px)
+  and (orientation: landscape)
+{
+  body, table {
+    font-size: 22px;
+  }
+  .checkbox {
+    margin-top: 5px;
+  }
+  .checkbox input[type=checkbox]{
+    margin-left: -33px;
+    transform: scale(2,2);
+    height : 1.2em;
+  }
+}
+
+/*ipad*/
+@media only screen
+  and (min-device-width: 768px)
+{
+  body, table {
+    font-size: 22px;
+  }
+}
+
+/*desktop*/
+@media only screen
+  and (min-device-width: 1024px)
+{
+  body, table {
+    font-size: 16px;
   }
 }

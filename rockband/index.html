@@ -1,24 +1,36 @@
 <html>
 <head>
   <title>Rock Band @ The Grid</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="styles/rockband.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
 </head>
 <body>
-  <div class="clickme"><i id="tooltipIcon" class="tooltip-icon glyphicon glyphicon-info-sign"></i> About the list</div>
+  <div>
+    <div class="clickme col-sm-12 col-md-3">
+      <i id="tooltipIcon" class="tooltip-icon glyphicon glyphicon-info-sign"></i>
+      About the list
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 checkbox" id="filter-own">
+      <label><input type="checkbox" id="onlyOwned" />Only owned</label>
+    </div>
+  </div>
+  <div style="clear:both"></div>
   <div id='tooltip' class="rb-tooltip">
     <ul>
-      <li>Songs <span class="own">that are highlighted</span> are ones we have downloaded. You can sort the list by the last column if you just want to look at songs we have.</li>
+      <li>Songs <span class="own">that are highlighted</span> are ones we have downloaded. You can click the "only owned" checkbox to just show the songs we have.</li>
       <li>Songs that aren't highlighted are for purchase<span class='superscript'>*</span>. They're $2, just tell the bartender you're buying a song and they'll put it on your tab. Once it's downloaded it'll be there forever!</li>
       <li>Songs <span class="expired">in red</span> are ones that we don't have and can't get... we'll remove them from this list shortly.</li>
     </ul>
-    <div>*probably. This list may or may not be accurate >_></div>
+    <div><span class='superscript'>*</span>probably. We're still working on the accuracy of this list!</div>
   </div>
-  <div id="searchContainer"></div>
   <table id="list">
   </table>
+  <span class="top-container">
+    <i class="glyphicon glyphicon-chevron-up"></i>
+  </span>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
   <script src="scripts/list.js"></script>
