@@ -1,10 +1,52 @@
+function buildDataTable(list) {
+  var table = $('#list').DataTable({
+    data: list,
+    paging: false,
+    columns: [
+        { title: "type" },
+        { title: "command" },
+        { title: "melds" },
+        { title: "meld1" },
+        { title: "meld2" },
+        { title: "success" },
+        { title: "available" },
+        { title: "shimmering" },
+        { title: "fleeting" },
+        { title: "pulsing" },
+        { title: "wellspring" },
+        { title: "soothing" },
+        { title: "hungry" },
+        { title: "abounding" }
+    ],
+    "columnDefs": [ {
+        "targets": 5,
+        "createdCell": function (td, cellData, rowData, row, col) {
+          var amount = cellData.substr(0, cellData.length-1)
+          if ( amount < 100 ) {
+            $(td).css('color', 'red')
+          }
+        }
+      } ,
+      {
+        "targets": [8,9,10,11,12,13],
+        "createdCell": function (td, cellData, rowData, row, col) {
+          if ( cellData && cellData.toLowerCase().indexOf('hp') >= 0 ) {
+            $(td).css('color', 'lightgreen')
+          }
+        }
+      }
+    ]
+  })
+  return table;
+}
+
 function parseDataFromSource() {
   var list = []
   function stripText(string) {
     if(!string || string.indexOf('</strong>') < 0) return ""
     var start = string.indexOf('</strong>') + 9;
     var l = string.length - start
-    return string.substr(start,l)
+    return string.substr(start,l).trim();
   }
   function loadPage(type) {
     $('h2').each(function(index) {
@@ -40,48 +82,34 @@ function parseDataFromSource() {
         console.log( "Load was performed." );
         loadPage('Other')
 
-        $('#list').DataTable({
-          data: list,
-          paging: false,
-          columns: [
-              { title: "type" },
-              { title: "command" },
-              { title: "melds" },
-              { title: "meld1" },
-              { title: "meld2" },
-              { title: "success" },
-              { title: "available" },
-              { title: "shimmering" },
-              { title: "fleeting" },
-              { title: "pulsing" },
-              { title: "wellspring" },
-              { title: "soothing" },
-              { title: "hungry" },
-              { title: "abounding" }
-          ],
-          "columnDefs": [ {
-              "targets": 5,
-              "createdCell": function (td, cellData, rowData, row, col) {
-                var amount = cellData.substr(0, cellData.length-1)
-                if ( amount < 100 ) {
-                  $(td).css('color', 'red')
-                }
-              }
-            } ,
-            {
-              "targets": [8,9,10,11,12,13],
-              "createdCell": function (td, cellData, rowData, row, col) {
-                if ( cellData && cellData.toLowerCase().indexOf('hp') >= 0 ) {
-                  $(td).css('color', 'lightgreen')
-                }
-              }
-            }
-          ]
+        var s = ''
+        $.each(list, (index) => {
+          s += 'a.push(['
+          for(var i=0; i<list[index].length; i++) {
+            s += '"' + list[index][i] + '"';
+            if(i != list[index].length-1) s+=', '
+          }
+          s += ']);\n'
         })
+        $('#pushlist').val(s)
+        buildDataTable(list)
       });
     });
   });
 }
+
+function filterTable(table, char) {
+  if(char=='All') char = "Aqua|Terra|Ventus"
+  table.columns(6).search('All|' + char, true, false).draw()
+}
+
 $(document).ready(function(){
-  parseDataFromSource();
+  // parseDataFromSource();
+  var list = buildMeldList();
+  var table = buildDataTable(list)
+  filterTable(table, $('input[name=available]:checked').val())
+  $('input[name=available]').change(()=>{
+    filterTable(table, $('input[name=available]:checked').val())
+  })
+
 });

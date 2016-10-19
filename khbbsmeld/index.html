@@ -6,11 +6,19 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
 </head>
 <body>
+  <form style="position:absolute; z-index:2">
+    <label class="radio-inline"><input type="radio" name="available" value="All" checked="checked" />All</label>
+    <label class="radio-inline"><input type="radio" name="available" value="Terra" checked="" />Terra</label>
+    <label class="radio-inline"><input type="radio" name="available" value="Ventus" checked="" />Ventus</label>
+    <label class="radio-inline"><input type="radio" name="available" value="Aqua" checked="" />Aqua</label>
+  </form>
   <table id="list"></table>
   <div id="resultsContainer" style="display:none;"></div>
+  <textarea id="pushlist" style="display:none;"></textarea>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="scripts/list.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 </html>
