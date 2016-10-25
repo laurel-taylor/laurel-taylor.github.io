@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>Wheel of Doom</title>
+  <style>
+  .key {
+    font-size: 11px;
+    position: absolute;
+    bottom:0;
+    right:10px}
+  body{
+    font-family: "arial", sans-serif
+  }
+  #result {
+    font-size:11em;
+    text-align: center;
+  }
+  button {
+    margin: 0 auto;
+    display: block;
+  }
+  </style>
+</head>
+<body>
+  <div id="result">
+    WHEEL OF DOOM
+  </div>
+  <button id="spin">
+    Spin
+  </button>
+  <ol class="key">
+    <li>water</li>
+    <li>hourly steps</li>
+    <li>no snacks</li>
+    <li>healthy lunch</li>
+    <li>1 hr of walking throughout day</li>
+    <li>water</li>
+    <li>FREE SPACE</li>
+    <li>no snacks</li>
+    <li>water</li>
+    <li>hourly steps</li>
+    <li>no snacks</li>
+    <li>walking lunch</li>
+  </ol>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    (function($) {
+      $.fn.animateNumber = function(to) {
+        var $ele = $(this),
+        num = 100,//parseInt($ele.html()) || 100,
+        up = to > num,
+        num_interval = Math.abs(num - to) / 900;
+
+        var loop = function() {
+          num = Math.floor(up ? num+num_interval: num-num_interval);
+          if ( (up && num > to) || (!up && num < to) ) {
+          num = to;
+            clearInterval(animation)
+          }
+          $ele.html(num).attr('data-number', num);
+        }
+
+        var animation = setInterval(loop, 3);
+      }
+    })($)
+
+    function getRandom(){
+      var rand = Math.floor((Math.random() * 12) + 1);
+      return rand
+    }
+
+    $('#spin').click(function(){
+      var rand = getRandom()
+      var $counter = $("#result");
+      $counter.animateNumber(rand);
+    })
+  })
+  </script>
+</body>
+</html>
