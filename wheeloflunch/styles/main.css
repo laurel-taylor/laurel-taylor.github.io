@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,600,700);
+body {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+a {
+  color:  #00697e;
+}
+a.light-link {
+  color: #ccc;
+  font-weight: bold;
+}
+
+.today-text{
+  font-size: 50px;
+  font-weight: 700;
+}
+.goal-container {
+  position: absolute;
+  text-align: center;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 0px 3px #333, 0 0 10px 0 #000;
+  background: rgba(0,0,0,0.8);
+  font-size: 24px;
+  z-index: 2;
+  color: #ccc;
+  padding: 9px;
+
+  transition: all 600ms ease-out;
+
+  top: 10px;
+}

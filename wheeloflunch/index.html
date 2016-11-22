@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Wheel of Lunch</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  <link rel="stylesheet" type="text/css" href="styles/spin.css" />
+  <link rel="stylesheet" type="text/css" href="styles/goals.css" />
+  <script src="scripts/resources/TweenMax.min.js"></script>
+  <script src="scripts/resources/Winwheel.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="styles/resources/fontawesome/css/font-awesome.min.css" />
+</head>
+<body>
+  <div class="goal-container" id="goal-container">
+    <div>Why don't we go to:</div>
+    <div id="goal-text" class="today-text"></div>
+  </div>
+  <div id="canvas-container">
+    <div id="arrow"></div>
+
+    <div id="inner-circle">
+      <div id="wheel-text">Wheel <span id="of">OF</span> Lunch</div>
+    </div>
+    <canvas id="canvas" width="434" height="434">
+        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+    </canvas>
+  </div>
+
+  <div id="goals-and-buttons">
+    <div id="goals-container"></div>
+
+    <div id="button-container">
+      <input type="button" class="btn btn-primary" value="Add Place" id="add-button" />
+      <div id="save-container">
+        <i class="fa fa-check-circle" id="save-success"></i>
+        <input type="button" class="btn btn-success" value="Save" id="save-button" />
+      </div>
+      <input type="button" class="btn" id="default-button" value="Restore Defaults" />
+    </div>
+  </div>
+
+  <input type="button" id="reset-button" value="reset" />
+  <div id="power-level">High Power!</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="scripts/cookies.js"></script>
+  <script src="scripts/goals.js"></script>
+  <script src="scripts/spin.js"></script>
+</body>
+</html>
