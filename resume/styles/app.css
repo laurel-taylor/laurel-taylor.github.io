@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,600,700);
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  line-height: 1.5; }
+
+a {
+  text-decoration: none;
+  transition: all 0.5s;
+  color: mediumblue;
+  border-bottom: 1px solid transparent; }
+  a:hover {
+    border-bottom: 1px solid mediumblue; }
+
+h1, h2, h3 {
+  font-weight: normal;
+  margin-top: 0.2em;
+  margin-bottom: 0; }
+
+.skillset {
+  display: none; }
+
+header .basic-info {
+  list-style: none;
+  padding: 0;
+  display: flex; }
+  header .basic-info li {
+    flex: 1;
+    text-align: center; }
+header h1 {
+  text-align: center;
+  font-variant: small-caps; }
+
+footer {
+  display: flex;
+  background-color: #f3f3f3; }
+  footer section {
+    flex: 1;
+    padding: 1em; }
+  footer ul {
+    margin: 0;
+    list-style: none; }
+
+.resume {
+  padding: 1em; }
+  .resume h2 {
+    font-variant: small-caps;
+    border-bottom: 1px solid #a3a3a3; }
+  .resume section > ul {
+    list-style: none; }
+  .resume ul.experience-items {
+    list-style: square; }
+  .resume .title {
+    font-weight: bold;
+    margin-right: 6px; }
+    .resume .title::after {
+      content: ","; }
+  .resume .experience > li {
+    margin-bottom: 1.4em; }
+  .resume .title, .resume .business {
+    display: inline-block;
+    font-size: 1.2em; }
+  .resume .location, .resume .dates {
+    color: #a3a3a3;
+    font-style: italic; }

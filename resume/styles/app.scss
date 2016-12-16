@@ -1,0 +1,103 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,600,700);
+
+$secondary-color: #a3a3a3;
+$larger-font: 1.2em;
+$link-color: mediumblue;
+
+@mixin secondary {
+  color: $secondary-color;
+  font-style: italic;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s;
+  color: $link-color;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom: 1px solid $link-color;
+  }
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  margin-top: 0.2em;
+  margin-bottom: 0;
+}
+
+// TODO
+.skillset {
+  display: none;
+}
+
+header {
+  .basic-info {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    li {
+      flex: 1;
+      text-align: center;
+    }
+  }
+  h1 {
+    text-align: center;
+    font-variant: small-caps;
+  }
+}
+
+
+footer {
+  display: flex;
+  background-color: #f3f3f3;
+  section {
+    flex: 1;
+    padding: 1em;
+  }
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+
+}
+
+.resume {
+  padding: 1em;
+  h2 {
+    font-variant: small-caps;
+    border-bottom: 1px solid $secondary-color;
+  }
+  section > ul {
+    list-style: none;
+  }
+  ul.experience-items {
+    list-style: square;
+  }
+  .title {
+    font-weight: bold;
+    margin-right: 6px;
+    &::after {
+      content: ','
+    }
+  }
+  .experience > li {
+    margin-bottom: 1.4em;
+  }
+  .title, .dates, .business, .location {
+  }
+  .title, .business {
+    display: inline-block;
+    font-size: $larger-font;
+  }
+
+  .location, .dates {
+    @include secondary;
+  }
+}

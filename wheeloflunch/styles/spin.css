@@ -45,7 +45,6 @@ body {
   height: 434px; width: 434px;
   left: 20vw;
   margin-top: 10vh;
-  background-image: url('../img/wheelbg.png'); background-size: 434px;
   transition: opacity 400ms;
 }
 #canvas {
