@@ -26,10 +26,14 @@ a {
   }
 }
 
+ul {
+  margin-top: 1em;
+  padding-left: 1em;
+}
+
 h1, h2, h3 {
   font-weight: normal;
-  margin-top: 0.2em;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 // TODO
@@ -37,13 +41,23 @@ h1, h2, h3 {
   display: none;
 }
 
+.silly {
+  display: none;
+}
+
+// note that I find this a bit douche-y
+.em {
+  color: sandybrown;
+  font-weight: bold;
+}
+
 header {
-  .basic-info {
+  margin-top: 1em;
+  ul.basic-info {
     list-style: none;
     padding: 0;
-    display: flex;
+    margin: 0.5em 0;
     li {
-      flex: 1;
       text-align: center;
     }
   }
@@ -55,10 +69,8 @@ header {
 
 
 footer {
-  display: flex;
   background-color: #f3f3f3;
   section {
-    flex: 1;
     padding: 1em;
   }
   ul {
@@ -69,7 +81,7 @@ footer {
 }
 
 .resume {
-  padding: 1em;
+  margin: 0.5em 1em 1em;
   h2 {
     font-variant: small-caps;
     border-bottom: 1px solid $secondary-color;
@@ -83,9 +95,6 @@ footer {
   .title {
     font-weight: bold;
     margin-right: 6px;
-    &::after {
-      content: ','
-    }
   }
   .experience > li {
     margin-bottom: 1.4em;
@@ -93,11 +102,33 @@ footer {
   .title, .dates, .business, .location {
   }
   .title, .business {
-    display: inline-block;
     font-size: $larger-font;
   }
 
   .location, .dates {
     @include secondary;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .title, .business {
+    display: inline-block;
+  }
+  .title {
+    &::after {
+      content: ',';
+    }
+  }
+  header .basic-info {
+    display: flex;
+    li {
+      flex: 1;
+    }
+  }
+  footer {
+    display: flex;
+    section {
+      flex: 1;
+    }
   }
 }

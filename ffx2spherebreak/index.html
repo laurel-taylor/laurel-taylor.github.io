@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FFX-2 Sphere Break solver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <style>
+  body {
+    padding:20px;
+  }
+  .entry {
+    color: goldenrod
+  }
+  .about-link {
+    position: absolute;
+    right: 10px;
+  }
+  </style>
+</head>
+<body>
+  <h2>Sphere Break Solver</h2>
+  <form class="form-inline">
+    <p class="form-group">
+      <label>Echo target:</label>
+      <select id="echo" class="form-control">
+        <option>pick an echo</option>
+        <option selected="selected">2</option>
+        <option>3</option>
+      </select>
+    </p>
+    <p class="form-group">
+      <label>Core value:</label>
+      <input type="tel" class="form-control" id="core" value="3"/>
+      <button type="button" class="form-control btn btn-primary" id="go">Go</button>
+    </p>
+    <p>
+      combos:
+      <span id="combos"></span>
+    </p>
+  </form>
+
+  <a href="./about.html" class="about-link">wtf is this</a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
