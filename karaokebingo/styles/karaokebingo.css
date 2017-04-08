@@ -17,6 +17,7 @@ table td, table th{
     height: 100px; width: 20%;
     vertical-align: middle;
     transition: background-color 0.2s;
+    cursor: pointer;
 }
 table .title{
     font-size: 1.1em;
