@@ -12,16 +12,16 @@ function updateIndex(index) {
 }
 
 function goTo(list, index) {
-  $('#titleUp2').html(list[index-2] ? list[index-2][1] : '')
-  $('#artistUp2').html(list[index-2] ? list[index-2][0] : '')
-  $('#titleUp1').html(list[index-1] ? list[index-1][1] : '')
-  $('#artistUp1').html(list[index-1] ? list[index-1][0] : '')
-  $('#title').html(list[index][1])
-  $('#artist').html(list[index][0])
-  $('#titleDown1').html(list[index+1] ? list[index+1][1] : '')
-  $('#artistDown1').html(list[index+1] ? list[index+1][0] : '')
-  $('#titleDown2').html(list[index+2] ? list[index+2][1] : '')
-  $('#artistDown2').html(list[index+2] ? list[index+2][0] : '')
+  $('#titleUp2').html(list[index-2] ? list[index-2][1] : '').attr('data-has', list[index-2] ? list[index-2][2] : '')
+  $('#artistUp2').html(list[index-2] ? list[index-2][0] : '').attr('data-has', list[index-2] ? list[index-2][2] : '')
+  $('#titleUp1').html(list[index-1] ? list[index-1][1] : '').attr('data-has', list[index-1] ? list[index-1][2] : '')
+  $('#artistUp1').html(list[index-1] ? list[index-1][0] : '').attr('data-has', list[index-1] ? list[index-1][2] : '')
+  $('#title').html(list[index][1]).attr('data-has', list[index][2])
+  $('#artist').html(list[index][0]).attr('data-has', list[index][2])
+  $('#titleDown1').html(list[index+1] ? list[index+1][1] : '').attr('data-has', list[index+1] ? list[index+1][2] : '')
+  $('#artistDown1').html(list[index+1] ? list[index+1][0] : '').attr('data-has', list[index+1] ? list[index+1][2] : '')
+  $('#titleDown2').html(list[index+2] ? list[index+2][1] : '').attr('data-has', list[index+2] ? list[index+2][2] : '')
+  $('#artistDown2').html(list[index+2] ? list[index+2][0] : '').attr('data-has', list[index+2] ? list[index+2][2] : '')
   var $s = $('#songList')
 
   $('.highlighted').removeClass('highlighted')

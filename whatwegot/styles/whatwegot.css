@@ -1,6 +1,7 @@
+
 .main-area {
   display: grid;
-  grid-template-columns: 50px 50fr 50fr 50px;
+  grid-template-columns: 50px 1fr 1fr 50px;
   grid-gap: 5px;
   grid-template-areas:
     'up titleUp2 titleUp2 star'
@@ -14,7 +15,6 @@
     'down artistDown1 artistDown1 star'
     'down artistDown2 artistDown2 star'
     'yes yes no no';
-  align-items: center;
   margin-bottom: 10vh;
 }
 #blank { grid-area: blank; }
@@ -31,28 +31,39 @@
 }
 #up {
   grid-area: up;
-  height: 40vh;
+  height: 35vh;
 }
 #down {
   grid-area: down;
-  height: 40vh;
+  height: 35vh;
 }
 .title {
   font-size: 4vh;
-  justify-self: center;
   text-align: center;
+  height: 5.5vh;
+  overflow: hidden;
 }
 .artist {
   text-align: center;
   font-size: 3vh;
   font-weight: bold;
-  justify-self: center;
+  height: 5.5vh;
+  overflow: hidden;
 }
 .removed-1 {
   color: #ccc;
 }
 .removed-2 {
   color: #e1e1e1;
+}
+[data-has='y'] {
+  background-color: #FFF9C4;
+}
+[data-has='y'].removed-2 {
+  background-color: #fffce8;
+}
+[data-has='y'].removed-1 {
+  background-color: #fffbdb;
 }
 #title {
   grid-area: title;
@@ -96,4 +107,20 @@
 }
 #results {
   height: 500px;
+}
+
+@media (min-width: 667px) {
+  .main-area {
+    grid-template-areas:
+      'up artistUp2 titleUp2 star'
+      'up artistUp1 titleUp1 star'
+      'up artist title star'
+      'down artist title star'
+      'down artistDown1 titleDown1 star'
+      'down artistDown2 titleDown2 star'
+      'yes yes no no';
+  }
+  .artist, .title {
+    height: 10vh;
+  }
 }
