@@ -3,20 +3,20 @@ function buildDataTable(list) {
     data: list,
     paging: false,
     columns: [
-        { title: "type" },
-        { title: "command" },
-        { title: "melds" },
-        { title: "meld1" },
-        { title: "meld2" },
-        { title: "success" },
-        { title: "available" },
-        { title: "shimmering" },
-        { title: "fleeting" },
-        { title: "pulsing" },
-        { title: "wellspring" },
-        { title: "soothing" },
-        { title: "hungry" },
-        { title: "abounding" }
+        { title: "Type" },
+        { title: "Command" },
+        { title: "Melds" },
+        { title: "Cmd1" },
+        { title: "Cmd2" },
+        { title: "Success Rate" },
+        { title: "Available for" },
+        { title: "Shimmering" },
+        { title: "Fleeting" },
+        { title: "Pulsing" },
+        { title: "Wellspring" },
+        { title: "Soothing" },
+        { title: "Hungry" },
+        { title: "Abounding" }
     ],
     "columnDefs": [ {
         "targets": 5,
@@ -40,6 +40,8 @@ function buildDataTable(list) {
   return table;
 }
 
+// this is kept in so you can see how cool it is to scrape data
+// but it's not being used any more
 function parseDataFromSource() {
   var list = []
   function stripText(string) {
@@ -103,7 +105,13 @@ function filterTable(table, char) {
   table.columns(6).search('All|' + char, true, false).draw()
 }
 
+function loading(isLoading) {
+  if(isLoading) $('#info').hide();
+  else $('#info').show();
+}
+
 $(document).ready(function(){
+  loading(true);
   // parseDataFromSource();
   var list = buildMeldList();
   var table = buildDataTable(list)
@@ -111,5 +119,6 @@ $(document).ready(function(){
   $('input[name=available]').change(()=>{
     filterTable(table, $('input[name=available]:checked').val())
   })
+  loading(false);
 
 });

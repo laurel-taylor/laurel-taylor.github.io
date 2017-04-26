@@ -6,6 +6,7 @@ $(document).ready(function() {
   $(document).on('keyup change', '#core, #echo', function(){
       var $this = $(this);
       myFunction($this.attr('value'));
+      $('#core').select();
   })
   .on('focus', '#core', function(){
       var $this = $(this);
