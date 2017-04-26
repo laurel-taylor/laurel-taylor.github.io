@@ -7,26 +7,33 @@
 </head>
 <body>
   <div class="main-area">
-    <div class="sidebar">
-      <button id="up" class='btn btn-primary'>&uarr;</button>
-      <button id="down" class='btn btn-primary'>&uarr;</button>
-    </div>
-    <div id="main">
-      <div id="title">Title</div>
-      <div id="artist">Artist</div>
-    </div>
-    <div class="sidebar">
-      <button id="star">&#9733;</button>
-    </div>
-    <div class="have-or-not">
-      <button id="yes" class='btn btn-success'>YES</button>
-      <button id="no" class='btn btn-fail'>NO</button>
-    </div>
+    <button id="up" class='btn btn-primary'>&uarr;</button>
+    <button id="down" class='btn btn-primary'>&darr;</button>
+    <div id="title" class='title'>Title</div>
+    <div id="artist" class='artist'>Artist</div>
+
+
+    <div id="titleUp2" class='title removed-2'>Title</div>
+    <div id="artistUp2" class='artist removed-2'>Artist</div>
+    <div id="titleUp1" class='title removed-1'>Title</div>
+    <div id="artistUp1" class='artist removed-1'>Artist</div>
+    <div id="titleDown1" class='title removed-1'>Title</div>
+    <div id="artistDown1" class='artist removed-1'>Artist</div>
+    <div id="titleDown2" class='title removed-2'>Title</div>
+    <div id="artistDown2" class='artist removed-2'>Artist</div>
+
+    <button id="star" class='btn'>&#9733;</button>
+    <div id="blank"></div>
+    <button id="yes" class='btn btn-success'>YES</button>
+    <button id="no" class='btn btn-danger'>NO</button>
   </div>
 
   <div>
-    <button class='btn btn-success' id='convert'>Convert</button>
     <textarea id="results"></textarea>
+    <button class='btn btn-success' id='convert'>Convert</button>
+    <button class='btn btn-primary' id='save'>Save</button>
+    <br/><br/><br/>
+    <button id='explode'>Explode</button>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="../rockband/scripts/list.js"></script>

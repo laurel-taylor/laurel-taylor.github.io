@@ -1,3 +1,99 @@
 .main-area {
-  height: 100v;
+  display: grid;
+  grid-template-columns: 50px 50fr 50fr 50px;
+  grid-gap: 5px;
+  grid-template-areas:
+    'up titleUp2 titleUp2 star'
+    'up titleUp1 titleUp1 star'
+    'up title title star'
+    'up titleDown1 titleDown1 star'
+    'up titleDown2 titleDown2 star'
+    'down artistUp2 artistUp2 star'
+    'down artistUp1 artistUp1 star'
+    'down artist artist star'
+    'down artistDown1 artistDown1 star'
+    'down artistDown2 artistDown2 star'
+    'yes yes no no';
+  align-items: center;
+  margin-bottom: 10vh;
+}
+#blank { grid-area: blank; }
+#titleUp1 { grid-area: titleUp1; }
+#artistUp1 { grid-area: artistUp1; }
+#artistDown1 { grid-area: artistDown1; }
+#titleDown1 { grid-area: titleDown1; }
+#titleUp2 { grid-area: titleUp2; }
+#artistUp2 { grid-area: artistUp2; }
+#artistDown2 { grid-area: artistDown2; }
+#titleDown2 { grid-area: titleDown2; }
+#star {
+  grid-area: star;
+}
+#up {
+  grid-area: up;
+  height: 40vh;
+}
+#down {
+  grid-area: down;
+  height: 40vh;
+}
+.title {
+  font-size: 4vh;
+  justify-self: center;
+  text-align: center;
+}
+.artist {
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+  justify-self: center;
+}
+.removed-1 {
+  color: #ccc;
+}
+.removed-2 {
+  color: #e1e1e1;
+}
+#title {
+  grid-area: title;
+}
+#artist {
+  grid-area: artist;
+}
+#yes {
+  grid-area: yes;
+  height: 20vh;
+}
+#no {
+  grid-area: no;
+  height: 20vh;
+}
+
+.btn {
+  font-size: 6vh;
+  cursor: pointer;
+}
+
+#yes.highlighted {
+  border-width: 2vh;
+  border-color: black;
+  font-weight: bold;
+}
+
+#no.highlighted {
+  border-width: 2vh;
+  border-color: black;
+  font-weight: bold;
+}
+
+#star.highlighted {
+  background-color: gold;
+  color: white;
+}
+#results, #convert {
+  display: block;
+  width: 100%;
+}
+#results {
+  height: 500px;
 }
