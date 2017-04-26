@@ -6,44 +6,38 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <meta name="description" content="A tool to help solve Sphere Break (from Final Fantasy X-2) quickly">
   <meta name="keywords" content="Final Fantasy,ffx2,sphere break">
-  <style>
-  body {
-    padding: 20px;
-  }
-  .entry {
-    color: goldenrod
-  }
-  .about-link {
-    position: absolute;
-    right: 10px;
-  }
-  #combos {
-    font-size: 18px;
-  }
-  </style>
+  <link rel="stylesheet" type="text/css" href="styles/spherebreak.css" />
 </head>
 <body>
   <h2>Sphere Break Solver</h2>
-  <form class="form-inline">
-    <p class="form-group">
-      <label>Echo target:</label>
-      <select id="echo" class="form-control">
-        <option>pick an echo</option>
-        <option selected="selected">2</option>
-        <option>3</option>
-      </select>
-    </p>
-    <p class="form-group">
-      <label>Core value:</label>
+  <div class="container">
+    <form class="form-inline" id='form'>
+      <label class='core-label'>Core value:</label>
       <input type="tel" class="form-control" id="core" value="3"/>
+
+      <label class='echo-label'>Count target:</label>
+      <input type="tel" class="form-control" id="echo" value="4"/>
+
+      <label class='mulgiplier-label'>Multiplier target:</label>
+      <input type="tel" class="form-control" id="multiplier" value="4"/>
+
+      <label class='silver-label'>Silver</label>
+      <input type="tel" class="form-control" id="silver" value="123456789123"/>
+
+      <label class='gold-label'>Gold</label>
+      <input type="tel" class="form-control" id="gold" value="2356"/>
       <button type="button" class="form-control btn btn-primary" id="go">Go</button>
-    </p>
-    <p>
+      <p class='preview'>
+        board preview:<br/>
+        <span id='preview'></span>
+      </p>
+    </form>
+
+    <p class='combos'>
       combos:
       <span id="combos"></span>
     </p>
-  </form>
-
+  </div>
   <a href="./about.html" class="about-link">wtf is this</a>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="./main.js"></script>

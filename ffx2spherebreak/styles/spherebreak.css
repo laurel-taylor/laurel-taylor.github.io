@@ -1,0 +1,97 @@
+body {
+    padding: 10px;
+  }
+  .entry {
+    color: goldenrod
+  }
+  .about-link {
+    position: absolute;
+    right: 10px;
+  }
+  .result {
+    cursor: pointer;
+  }
+  #combos{
+    font-size: 18px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: start;
+    grid-template-areas:
+      'form combos'
+  }
+  .combos {
+    grid-area: combos;
+    text-align: center;
+  }
+  #form {
+    grid-area: form;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5px;
+    grid-template-areas:
+      'core-label core'
+      'echo-label echo'
+      'multiplier-label multiplier'
+      'silver-label silver'
+      'gold-label gold'
+      'go go'
+      'preview preview'
+      'preview preview'
+      'preview preview'
+      'preview preview'
+  }
+  .multiplier-label { grid-area: multiplier-label;}
+  #multiplier { grid-area: multiplier;}
+  .echo-label { grid-area: echo-label; }
+  .core-label { grid-area: core-label; }
+  .silver-label { grid-area: silver-label; }
+  .gold-label { grid-area: gold-label; }
+  #go { grid-area: go; }
+  #echo { grid-area: echo; }
+  #gold { grid-area: gold; }
+  #core { grid-area: core; }
+  #silver { grid-area: silver; }
+  .preview {
+    align-items: center;
+    grid-area: preview;
+  }
+  #preview .border, #preview .entry, #preview .blank {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    line-height: 40px; text-align: center;
+    margin: 5px;
+    cursor: pointer;
+  }
+  #preview .blank {
+    background-color: transparent !important;
+    color: transparent !important;
+    border-color: transparent;
+  }
+  #preview .entry {
+    background-color: goldenrod;
+    color: black;
+  }
+  #preview .border {
+    background-color: #e1e1e1;
+  }
+  #preview .selected {
+    box-shadow: 0 0 5px 3px cornflowerblue;
+    border-color: cornflowerblue;
+  }
+  .result {
+    display: block;
+  }
+  .result .coin {
+    padding: 0 5px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+  }
+  .result .selected {
+    box-shadow: 0 0 5px 3px cornflowerblue;
+    border: 1px solid cornflowerblue;
+  }
