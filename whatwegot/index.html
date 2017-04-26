@@ -1,35 +1,32 @@
 <html>
 <head>
   <title>What We Got</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="styles/whatwegot.css" />
 </head>
 <body>
-  <div>
-    <div id="song" class='col-xs-4'>
-      <div id="title"></div>
-      <div id="artist"></div>
+  <div class="main-area">
+    <div class="sidebar">
+      <button id="up" class='btn btn-primary'>&uarr;</button>
+      <button id="down" class='btn btn-primary'>&uarr;</button>
     </div>
-    <div id="songList-container" class='col-xs-8'>
-      <select multiple class='form-control' id='songList'></select>
+    <div id="main">
+      <div id="title">Title</div>
+      <div id="artist">Artist</div>
+    </div>
+    <div class="sidebar">
+      <button id="star">&#9733;</button>
+    </div>
+    <div class="have-or-not">
+      <button id="yes" class='btn btn-success'>YES</button>
+      <button id="no" class='btn btn-fail'>NO</button>
     </div>
   </div>
-  <div style="clear:both"></div>
 
-  <div id="controls">
-    <div id="expired" class="col-xs-4"><i class="glyphicon glyphicon-arrow-left"></i>Expired</div>
-    <div id="own" class="col-xs-4"><i class="glyphicon glyphicon-arrow-right"></i>Own</div>
-    <div id="next" class="col-xs-4"><i class="glyphicon glyphicon-arrow-down"></i>Next</div>
-  </div>
-  <div id="addingArea">
-    <input type="text" class="input-text col-xs-10" id="addText" placeholder="Artist,Title,Expired//Y"/>
-    <button id="addme" class="btn btn-primary col-xs-1">Add</button>
-    <div id="remaining" class='col-xs-1'></div>
-  </div>
-  <textarea id="results"></textarea>
   <div>
-    <button class='btn btn-success' id='save'>Save</button>
-    <button class='btn btn-primary pull-right' id='restore'>Restore</button>
+    <button class='btn btn-success' id='convert'>Convert</button>
+    <textarea id="results"></textarea>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="../rockband/scripts/list.js"></script>

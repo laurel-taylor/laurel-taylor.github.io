@@ -66,7 +66,7 @@ body {
   and (orientation: portrait)
 {
   body, table {
-    font-size: 22px;
+    font-size: 20px;
   }
   .checkbox {
     margin-top: 5px;
@@ -84,7 +84,7 @@ body {
   and (orientation: landscape)
 {
   body, table {
-    font-size: 22px;
+    font-size: 20px;
   }
   .checkbox {
     margin-top: 5px;

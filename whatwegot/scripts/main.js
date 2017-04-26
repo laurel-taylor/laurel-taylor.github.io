@@ -1,72 +1,56 @@
-function appendToResults(obj) {
-  var newRes = $('#results').val() + 'a.push(["' + (obj[0] ? obj[0].trim() : '') + '", "' + (obj[1] ? obj[1].trim() : '') + '", "' + (obj[2] ? obj[2].trim() : '') + '"]);\n'
-  $('#results').val(newRes)
-}
-function goNext(a, index) {
-  index++;
+var index;
+
+function goTo(a, index) {
   setDisplay(a, index)
   return index
 }
-function addAndGo(a, index, result) {
-  appendToResults([a[index][0], a[index][1], result]);
-  return goNext(a, index)
+
+function updateList(a, index, result, comeBack) {
+  a[index] = [a[index][0], a[index][1], result, comeBack];
+  return a;
 }
+
 function setDisplay(a, index) {
   $('#title').html(a[index][1])
   $('#artist').html(a[index][0])
-  $('#remaining').html(a.length - index)
-  $('#songList').val(index)
   var $s = $('#songList')
-  var optionTop = $s.find("option[value="+index+"]").offset().top
-  $s.scrollTop($s.scrollTop() + (optionTop + $s.offset().top));
-  var $res = $('#results');
-  if($res.length) $res.scrollTop($res[0].scrollHeight - $res.height());
-}
-function setSongList(a, index) {
-  var $l = $('#songList')
-  for(var i=0; i<a.length; i++) {
-    $l.append($('<option>', {value: i, text: a[i][0] + ', ' + a[i][1] + ', ' + a[i][2]}))
+
+  $('.highlighted').removeClass('highlighted')
+  if (a[index][2].toLowerCase().indexOf('y') === 0) {
+    $('#yes').addClass('highlighted')
+  } else {
+    $('#no').addClass('highlighted')
   }
 }
-$(document).ready(function(){
-  var index = 0;
+
+function init () {
+  index = 0;
   var a = buildSongList();
-  setSongList(a, index);
   setDisplay(a, index);
   $('#results').val('');
+  return a;
+}
+$(document).ready(function(){
+  var a = init();
 
- $('#own').on('click', function(e) {
-  index = addAndGo(a, index, 'Y')
- })
- $('#expired').on('click', function(e) {
-  index = addAndGo(a, index, 'Expired')
- })
- $('#next').on('click', function(e) {
-  index = addAndGo(a, index, '')
- })
- $('#add').on('click', function(e) {
-  $('#addingArea').toggle();
-  $('addText').focus();
- })
-  $('#addme').on('click', function(e) {
-    var split = $('#addText').val().split(',')
-    appendToResults(split)
-    $('#addText').val('');
-    $('#addingArea').hide();
+  $('#yes').on('click', function(e) {
+    a = updateList(a, index, 'y', a[index][3] || '')
+    index = goTo(a, index + 1)
   })
+
+  $('#no').on('click', function(e) {
+    a = updateList(a, index, '', a[index][3] || '')
+    index = goTo(a, index + 1)
+  })
+
+  $('#star').on('click', function(e) {
+    a = updateList(a, index, a[index][2], 'come back')
+  })
+
   $('#results').click(function(){
-      $(this).select();
+    $(this).select();
   });
 
-  $('#save').click(function(){
-    localStorage.setItem("whatWeGot-list", $('#results').val());
-    localStorage.setItem("whatWeGot-index", index);
-  });
-  $('#restore').click(function(){
-     $('#results').val(localStorage.getItem('whatWeGot-list'));
-     index = localStorage.getItem("whatWeGot-index");
-     setDisplay(a, index)
-  });
   //key press
   $(document).keydown(function(e) {
     switch(e.which) {
