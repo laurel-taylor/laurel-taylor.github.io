@@ -184,7 +184,7 @@ function solve(echo, core, multiplier, gold, silver)
 
             //gold, gold, silver
             for (let k = 0; k < gold.length; k++) {
-              if(gold[k].v === 0 || removedGolds.includes(k)) continue;
+              if(silver[k].v === 0 || removedSilvers.includes(k)) continue;
               const x = gold[i].v + gold[j].v + silver[k].v;
 
               if (x % core !== 0) {
