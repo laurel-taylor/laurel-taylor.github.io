@@ -335,6 +335,7 @@ $(document).ready( function() {
   .on('click', '#preview .entry, #preview .border', function() {
     $('.selected').removeClass('selected')
     $('.hidden').removeClass('hidden')
+    $(this).addClass('selected')
     var coin = $(this)
     var gold = coin.attr('data-gold')
     var index = coin.attr('data-index')
