@@ -257,7 +257,15 @@ function solve(echo, core, multiplier, gold, silver)
       removedGolds.pop();
     }
   }
-  let string = ''
+
+  displayResults(results);
+}
+
+function displayResults(results) {
+  let string = '';
+  if (results.length <= 0){
+    string = 'no results, try removing multiplier echo'
+  }
   for (let i=0; i<results.length; i++) {
     string += results[i].display
   }
@@ -299,18 +307,18 @@ $(document).ready( function() {
   $(document).on('keyup change', '#core, #echo, #gold, #silver, #multiplier', function(){
     var $this = $(this);
     getCombos();
-    if ($this.attr('id') === 'core') $('#core').select();
+    // if ($this.attr('id') === 'core') $('#core').select();
   })
   .on('focus', '#core', function(){
     var $this = $(this);
-    $this.select();
+    // $this.select();
 
-    // Work around Chrome's little problem
-    $this.mouseup(function() {
-      // Prevent further mouseup intervention
-      $this.unbind("mouseup");
-      return false;
-    });
+    // // Work around Chrome's little problem
+    // $this.mouseup(function() {
+    //   // Prevent further mouseup intervention
+    //   $this.unbind("mouseup");
+    //   return false;
+    // });
   })
   .on('click', '.result', function() {
     $('.selected').removeClass('selected')
