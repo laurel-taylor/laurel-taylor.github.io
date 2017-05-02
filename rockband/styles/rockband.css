@@ -13,6 +13,9 @@ body {
   cursor: pointer;
   display: inline-block;
 }
+#tooltip, #filter-own label {
+  cursor: pointer;
+}
 .rb-tooltip {
   margin-top:5px;
 }
@@ -26,12 +29,14 @@ body {
 
 #list_wrapper #list_filter {
   position: fixed;
-  top:0; right: 0;
+  top:0; left: 0;
   background: white;
   padding-left: 5px;
-  border-left: 1px solid #ccc;
+  padding-right: 3px;
+  margin: 0;
+  border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  border-radius: 0 0 0 5px;
+  border-radius: 0px 0px 5px 0px;
 }
 #list_wrapper #list_filter input {
   border: 1px solid #ccc;
@@ -58,6 +63,24 @@ body {
   text-align: right;
 }
 
+table th:nth-child(3), table td:nth-child(3) {
+  display: none;
+}
+
+.click-container {
+  display: flex;
+  margin-top: 2.2em;
+}
+.click-container .clickme {
+  flex: 1;
+}
+.click-container #filter-own {
+  flex: 1;
+}
+.click-container #onlyOwned {
+  margin-right: 10px;
+}
+
 /*iphone portrait*/
 @media only screen
   and (min-device-width: 300px)
@@ -65,7 +88,7 @@ body {
   and (orientation: portrait)
 {
   body, table {
-    font-size: 20px;
+    font-size: 16px;
   }
   .checkbox {
     margin-top: 5px;
@@ -75,23 +98,8 @@ body {
     transform: scale(2,2);
     height : 1.2em;
   }
-}
-/*landscape*/
-@media only screen
-  and (min-device-width: 300px)
-  and (max-device-width: 768px)
-  and (orientation: landscape)
-{
-  body, table {
-    font-size: 20px;
-  }
-  .checkbox {
-    margin-top: 5px;
-  }
-  .checkbox input[type=checkbox]{
-    margin-left: -33px;
-    transform: scale(2,2);
-    height : 1.2em;
+  #tooltip {
+    font-size: 14px;
   }
 }
 

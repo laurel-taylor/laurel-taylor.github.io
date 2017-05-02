@@ -35,7 +35,14 @@ function getDataTable(a) {
 
 function setUpHandlers(a) {
  $('.clickme, #tooltip').on('click', function(e) {
-  $('#tooltip').toggle();
+  var $tooltip = $('#tooltip');
+  if($tooltip.is(':visible')) {
+    $('#tooltipIcon').addClass('glyphicon-info-sign').removeClass('glyphicon-remove-circle')
+    $tooltip.hide();
+  } else {
+    $('#tooltipIcon').removeClass('glyphicon-info-sign').addClass('glyphicon-remove-circle')
+    $tooltip.show();
+  }
  })
  $('.top-container').on('click', function(e) {
   $('body, html').animate({scrollTop:0}, 'fast');
