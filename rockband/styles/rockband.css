@@ -5,16 +5,15 @@
   background-color: #FFF9C4;
 }
 
-body {
-  padding: 5px;
-}
-
 .clickme {
   cursor: pointer;
   display: inline-block;
 }
 #tooltip, #filter-own label {
   cursor: pointer;
+}
+#tooltip {
+  margin: 0.5em;
 }
 .rb-tooltip {
   margin-top:5px;
@@ -28,21 +27,27 @@ body {
 }
 
 #list_wrapper #list_filter {
+  width: 100%;
   position: fixed;
   top:0; left: 0;
   background: white;
-  padding-left: 5px;
-  padding-right: 3px;
+  padding: 2px 3px 0px;
   margin: 0;
-  border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  border-radius: 0px 0px 5px 0px;
+  box-shadow: 0 0 12px #ccc;
 }
+#list_wrapper #list_filter label {
+  width: 100%;
+  text-align: left;
+  margin-left: 3px;
+}
+
 #list_wrapper #list_filter input {
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-top: 3px;
   margin-right: 3px;
+  width: 90%;
 }
 .top-container {
   border: 1px solid lightseagreen;
@@ -69,7 +74,7 @@ table th:nth-child(3), table td:nth-child(3) {
 
 .click-container {
   display: flex;
-  margin-top: 2.2em;
+  margin: 2.5em 0.5em 0px;
 }
 .click-container .clickme {
   flex: 1;
@@ -100,6 +105,9 @@ table th:nth-child(3), table td:nth-child(3) {
   }
   #tooltip {
     font-size: 14px;
+  }
+  #list_wrapper #list_filter input {
+    width: 80%;
   }
 }
 
