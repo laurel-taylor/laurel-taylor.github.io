@@ -101,9 +101,12 @@
   background-color: gold;
   color: white;
 }
-#results, #convert {
+#results, #convert, #save, #go, #jump {
   display: block;
   width: 100%;
+}
+#jump {
+  font-size: 30px;
 }
 #results {
   height: 500px;

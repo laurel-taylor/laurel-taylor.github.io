@@ -79,16 +79,22 @@ function sortList (list) {
 }
 
 function init () {
-  let songList;
-  if (localStorage.getItem('rockband_list')) {
-    songList = JSON.parse(localStorage.getItem('rockband_list'))
-    index = parseInt(localStorage.getItem('rockband_index'))
-    console.log('has list, index:', index)
+  let songList, index;
+  if (localStorage.getItem('rockband_index')) {
+    index = parseInt(localStorage.getItem('rockband_index'));
+    console.log('has index: ' + index);
   } else {
-    songList = buildSongList();
-    songList = sortList(songList);
     index = 0;
   }
+  if (localStorage.getItem('rockband_list')) {
+    songList = JSON.parse(localStorage.getItem('rockband_list'));
+    console.log('has list');
+  } else {
+    console.log('building list');
+    songList = buildSongList();
+    songList = sortList(songList);
+  }
+
   goTo(songList, index)
   $('#results').val('');
   return songList;
@@ -153,6 +159,14 @@ $(document).ready(function(){
   $('#save').on('click', function(e) {
     save(a, index);
     $('#results').val(convertToJS(a));
+  })
+
+  $('#go').on('click', function(e) {
+    const val = +$('#jump').val() || 0;
+    if( val > 0 ) {
+      index = updateIndex(val);
+      goTo(a, index);
+    }
   })
 
   $('#explode').on('click', function(e) {
