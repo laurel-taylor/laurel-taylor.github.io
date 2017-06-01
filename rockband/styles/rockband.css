@@ -49,6 +49,25 @@
   margin-right: 3px;
   width: 90%;
 }
+#list tr {
+  cursor: pointer;
+}
+
+#list tr.override {
+  background-color: #fff;
+}
+
+#list.hideFavorites tr.favorite {
+  background-color: #fff;
+}
+#list.hideFavorites tr.favorite.own {
+  background-color: #FFF9C4;
+}
+
+#list tr.favorite, .favorite {
+  background-color: #c7f6f9;
+}
+
 .top-container {
   border: 1px solid lightseagreen;
   background-color: #E3F5F4;
@@ -82,7 +101,7 @@ table th:nth-child(3), table td:nth-child(3) {
 .click-container #filter-own {
   flex: 1;
 }
-.click-container #onlyOwned {
+.click-container input {
   margin-right: 10px;
 }
 
