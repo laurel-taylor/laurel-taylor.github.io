@@ -9,7 +9,7 @@
   cursor: pointer;
   display: inline-block;
 }
-#tooltip, #filter-own label {
+.click-container label {
   cursor: pointer;
 }
 #tooltip {
@@ -67,6 +67,9 @@
 #list tr.favorite, .favorite {
   background-color: #c7f6f9;
 }
+#list tr.favorite.own {
+  background-color: #a8f9ff;
+}
 
 .top-container {
   border: 1px solid lightseagreen;
@@ -87,7 +90,9 @@
   text-align: right;
 }
 
-table th:nth-child(3), table td:nth-child(3) {
+table th:nth-child(3), table td:nth-child(3),
+table th:nth-child(4), table td:nth-child(4),
+table th:nth-child(5), table td:nth-child(5)  {
   display: none;
 }
 
@@ -98,7 +103,7 @@ table th:nth-child(3), table td:nth-child(3) {
 .click-container .clickme {
   flex: 1;
 }
-.click-container #filter-own {
+.click-container #filters {
   flex: 1;
 }
 .click-container input {

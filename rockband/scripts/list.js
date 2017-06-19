@@ -1153,7 +1153,7 @@ a.push(["Megadeth", "Lucretia", "y", ""]);
 a.push(["Megadeth", "My Last Words", "y", ""]);
 a.push(["Megadeth", "Poison Was the Cure", "y", ""]);
 a.push(["Megadeth", "Public Enemy No. 1", "", ""]);
-a.push(["Megadeth", "Rust in Peace", "Polaris", "y"]);
+a.push(["Megadeth", "Rust in Peace", "y", "come back"]);
 a.push(["Megadeth", "Sleepwalker", "", ""]);
 a.push(["Megadeth", "Symphony of Destruction", "", ""]);
 a.push(["Megadeth", "Take No Prisoners", "y", ""]);
