@@ -1,4 +1,5 @@
 .expired, table.dataTable tbody tr.expired {
+  display: none;
   background-color: #FF9B96;
 }
 .own, table.dataTable tbody tr.own {
