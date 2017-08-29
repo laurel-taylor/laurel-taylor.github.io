@@ -1180,7 +1180,7 @@ a.push(["Linkin Park", "Shadow of the Day", "y", ""]);
 a.push(["Linkin Park", "Somewhere I Belong", "y", ""]);
 a.push(["Linkin Park", "Waiting for the End", "", ""]);
 a.push(["Linkin Park", "What I've Done", "", ""]);
-a.push(["Lit", "My Own Worst Enemy", "", ""]);
+a.push(["Lit", "My Own Worst Enemy", "y", ""]);
 a.push(["Litfiba", "Proibito", "", ""]);
 a.push(["Little Big Town", "Little White Church", "y", ""]);
 a.push(["Little Fish", "Bang Bang", "", ""]);
