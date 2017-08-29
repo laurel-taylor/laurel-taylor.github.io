@@ -2065,8 +2065,7 @@ a.push(["Tom Petty and the Heartbreakers", "Mary Jane's Last Dance (Live)", "", 
 a.push(["Tom Petty and the Heartbreakers", "Refugee (Live)", "", ""]);
 a.push(["Tom Petty and the Heartbreakers", "A Thing About You (Live)", "", ""]);
 a.push(["Tommy Tutone", "867-5309/Jenny", "", ""]);
-a.push(["Tonic", "If You Could Only See", "", ""]);
-a.push(["Tonic", "If You Could Only See", "", ""]);
+a.push(["Tonic", "If You Could Only See", "y", ""]);
 a.push(["Toto", "Africa", "", ""]);
 a.push(["Toto", "Hold the Line", "", ""]);
 a.push(["Toto", "Rosanna", "", ""]);
