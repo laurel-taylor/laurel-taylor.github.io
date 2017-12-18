@@ -2262,6 +2262,10 @@ a.push(["Amon Amarth", "Twilight of the Thunder God", "", ""]);
 a.push(["Foo Fighters", "Run", "", ""]);
 a.push(["Stone Sour", "Song #3", "", ""]);
 a.push(["Queens of the Stone Age", "The Way You Used to Do", "", ""]);
+a.push(["Charlie Puth", "Attention", "", ""]);
+a.push(["Demi Lovato", "Sorry Not Sorry", "", ""]);
+a.push(["Imagine Dragons", "Thunder", "", ""]);
+a.push(["Portugal. The Man", "Feel It Still", "", ""]);
 
 return a;
 }
