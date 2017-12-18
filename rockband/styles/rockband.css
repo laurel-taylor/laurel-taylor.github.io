@@ -27,6 +27,16 @@
   color: #FF9B96;
 }
 
+.clear {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 11px 15px 10px 10px;
+  z-index: 1;
+  color: #ccc;
+  cursor: pointer;
+}
+
 #list_wrapper #list_filter {
   width: 100%;
   position: fixed;
@@ -41,6 +51,8 @@
   width: 100%;
   text-align: left;
   margin-left: 3px;
+  display: flex;
+  align-items: center;
 }
 
 #list_wrapper #list_filter input {
@@ -48,7 +60,7 @@
   border-radius: 3px;
   margin-top: 3px;
   margin-right: 3px;
-  width: 90%;
+  flex: 1;
 }
 #list tr {
   cursor: pointer;
@@ -114,7 +126,7 @@ table th:nth-child(5), table td:nth-child(5)  {
 /*iphone portrait*/
 @media only screen
   and (min-device-width: 300px)
-  and (max-device-width: 800px)
+  and (max-device-width: 767px)
   and (orientation: portrait)
 {
   body, table {
@@ -131,14 +143,22 @@ table th:nth-child(5), table td:nth-child(5)  {
   #tooltip {
     font-size: 14px;
   }
-  #list_wrapper #list_filter input {
-    width: 80%;
+}
+
+/*ipad portrait*/
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1023px)
+{
+  body, table {
+    font-size: 22px;
   }
 }
 
 /*ipad*/
 @media only screen
-  and (min-device-width: 768px)
+  and (min-device-width: 1024px)
+  and (max-device-width: 1100px)
 {
   body, table {
     font-size: 22px;

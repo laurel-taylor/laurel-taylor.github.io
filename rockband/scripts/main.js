@@ -16,7 +16,7 @@ function filterTable(table) {
   table.columns(COLUMNS.OWN).search(filters.onlyOwned ? 'y' : '')
        .columns(COLUMNS.COME_BACK).search(filters.comeBack ? 'come back' : '')
        .columns(COLUMNS.FAVORITE).search(filters.onlyFavorites ? 'y' : '')
-       .draw()
+       .draw();
 }
 
 function hasFavorite(favoriteList, item) {
@@ -137,6 +137,10 @@ $(document).ready(function(){
 
   $('.filter').on('click', function(e) {
     filterTable(table);
+  });
+
+  $('.clear').on('click', function(e) {
+      table.search('').columns().search('').draw();
   });
 
   $('#disableFavorites').on('click', function(e) {
