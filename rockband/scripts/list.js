@@ -2268,6 +2268,9 @@ a.push(["Imagine Dragons", "Thunder", "", ""]);
 a.push(["Portugal. The Man", "Feel It Still", "", ""]);
 a.push(["Foo Fighters", "Everlong", "", ""]);
 a.push(["Skid Row", "18 and Life", "", ""]);
+a.push(["Dexys Midnight Runners", "Come On Eileen", "", ""]);
+a.push(["Blue Swede", "Hooked on a Feeling", "", ""]);
+a.push(["Europe", "The Final Countdown", "", ""]);
 
 return a;
 }
