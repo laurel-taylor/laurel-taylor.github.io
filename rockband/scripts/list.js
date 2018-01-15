@@ -2271,6 +2271,16 @@ a.push(["Skid Row", "18 and Life", "", ""]);
 a.push(["Dexys Midnight Runners", "Come On Eileen", "", ""]);
 a.push(["Blue Swede", "Hooked on a Feeling", "", ""]);
 a.push(["Europe", "The Final Countdown", "", ""]);
+a.push(["Skid Row", "I Remember You", "", ""]);
+a.push(["Whitesnake", "Here I Go Again", "", ""]);
+a.push(["Assuming We Survive", "Open Water", "", ""]);
+a.push(["HUNNY", "Shy", "", ""]);
+a.push(["In the Valley Below", "Bloodhands (Oh My Fever)", "", ""]);
+a.push(["Nightmare Air", "Who's Your Lover", "", ""]);
+a.push(["No Small Children", "Radio", "", ""]);
+a.push(["Depeche Mode", "Enjoy the Silence", "y", ""]);
+a.push(["The Go-Go's", "We Got the Beat", "", ""]);
+a.push(["Natalie Imbruglia", "Torn", "", ""]);
 
 return a;
 }
