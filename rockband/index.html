@@ -17,8 +17,8 @@
     <div id="filters">
       <label for="onlyOwned"><input type="checkbox" id="onlyOwned" class="filter" />Only owned</label>
       <!-- <label for="comeBack"><input type="checkbox" id="comeBack" class="filter" />Come Back</label> -->
-      <label for="onlyFavorites"><input type="checkbox" id="onlyFavorites" class="filter" />Only favorites</label>
-      <label for="disableFavorites"><input type="checkbox" id="disableFavorites" checked />Disable favorites</label>
+      <!-- <label for="onlyFavorites"><input type="checkbox" id="onlyFavorites" class="filter" />Only favorites</label>
+      <label for="disableFavorites"><input type="checkbox" id="disableFavorites" checked />Disable favorites</label> -->
     </div>
     <i class="clear glyphicon glyphicon-remove"></i>
   </div>
@@ -27,11 +27,11 @@
     <ul>
       <li><span class="own">Songs that are highlighted are ones we have downloaded.</span>  You can click the "only owned" checkbox to just show the songs we have.</li>
       <li>Songs that aren't highlighted are for purchase (probably. The Rock band store updates a lot!<span class='superscript'>*</span>). Each song is $2, just tell the bartender you're buying a song and they'll put it on your tab. Once it's downloaded it'll be there forever!</li>
-      <li>You can add songs to your <span class="favorite">favorites list</span> by clicking them! Make sure you turn off the disable favorites checkbox to see them. That thing is there for noobs who are easily confused by too many colors.</li>
+      <!-- <li>You can add songs to your <span class="favorite">favorites list</span> by clicking them! Make sure you turn off the disable favorites checkbox to see them. That thing is there for noobs who are easily confused by too many colors.</li> -->
     </ul>
-    <div><span class='superscript'>*</span>List Last Updated: January 15, 2018</div>
+    <div><span class='superscript'>*</span>List Last Updated: January 22, 2018</div>
   </div>
-  <table id="list">
+  <table id="list" class="hideFavorites">
   </table>
   <span class="top-container">
     <i class="glyphicon glyphicon-chevron-up"></i>

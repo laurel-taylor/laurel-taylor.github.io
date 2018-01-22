@@ -2281,6 +2281,9 @@ a.push(["No Small Children", "Radio", "", ""]);
 a.push(["Depeche Mode", "Enjoy the Silence", "y", ""]);
 a.push(["The Go-Go's", "We Got the Beat", "", ""]);
 a.push(["Natalie Imbruglia", "Torn", "", ""]);
+a.push(["Jason Aldean", "Burnin' It Down", "", ""]);
+a.push(["Sam Hunt", "Body Like a Back Road", "", ""]);
+a.push(["Shania Twain", "That Don't Impress Me Much", "", ""]);
 
 return a;
 }

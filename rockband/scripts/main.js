@@ -109,7 +109,7 @@ function removeFromFavorites(list, item) {
 }
 
 function disableFavorites() {
-  const isDisabled = $('#disableFavorites').is(':checked')
+  const isDisabled = true; // $('#disableFavorites').is(':checked')
   if(isDisabled) {
     $('table').addClass('hideFavorites');
   } else {

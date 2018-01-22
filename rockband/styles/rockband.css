@@ -62,9 +62,6 @@
   margin-right: 3px;
   flex: 1;
 }
-#list tr {
-  cursor: pointer;
-}
 
 #list tr.override {
   background-color: #fff;
@@ -78,10 +75,10 @@
 }
 
 #list tr.favorite, .favorite {
-  background-color: #c7f6f9;
+  /* background-color: #c7f6f9; */
 }
 #list tr.favorite.own {
-  background-color: #a8f9ff;
+  /* background-color: #a8f9ff; */
 }
 
 .top-container {
