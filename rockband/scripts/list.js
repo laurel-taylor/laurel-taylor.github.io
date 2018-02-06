@@ -1496,7 +1496,7 @@ a.push(["P.O.D.", "Boom", "", ""]);
 a.push(["P.O.D.", "Youth of the Nation", "", ""]);
 a.push(["Panic at the Disco", "I Write Sins Not Tragedies", "y", ""]);
 a.push(["Panic at the Disco", "She's a Handsome Woman", "", ""]);
-a.push(["Panic! at the Disco", "Nine in the Afternoon", "", ""]);
+a.push(["Panic! at the Disco", "Nine in the Afternoon", "y", ""]);
 a.push(["Pantera", "(Reprise) Sandblasterd Skin", "", ""]);
 a.push(["Pantera", "10's", "", ""]);
 a.push(["Pantera", "13 Steps to Nowhere", "", ""]);
@@ -2265,7 +2265,7 @@ a.push(["Queens of the Stone Age", "The Way You Used to Do", "", ""]);
 a.push(["Charlie Puth", "Attention", "", ""]);
 a.push(["Demi Lovato", "Sorry Not Sorry", "", ""]);
 a.push(["Imagine Dragons", "Thunder", "", ""]);
-a.push(["Portugal. The Man", "Feel It Still", "", ""]);
+a.push(["Portugal. The Man", "Feel It Still", "y", ""]);
 a.push(["Foo Fighters", "Everlong", "y", ""]);
 a.push(["Skid Row", "18 and Life", "", ""]);
 a.push(["Dexys Midnight Runners", "Come On Eileen", "", ""]);
@@ -2284,6 +2284,10 @@ a.push(["Natalie Imbruglia", "Torn", "", ""]);
 a.push(["Jason Aldean", "Burnin' It Down", "", ""]);
 a.push(["Sam Hunt", "Body Like a Back Road", "", ""]);
 a.push(["Shania Twain", "That Don't Impress Me Much", "", ""]);
+a.push(["Coldplay", "A Sky Full of Stars", "", ""]);
+a.push(["Portugal. The Man", "Live in the Moment", "", ""]);
+a.push(["Billy Squier", "Lonely Is the Night", "", ""]);
+a.push(["Bachman–Turner Overdrive", "Takin' Care of Business", "", ""]);
 
 return a;
 }
