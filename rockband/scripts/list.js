@@ -2287,7 +2287,7 @@ a.push(["Shania Twain", "That Don't Impress Me Much", "", ""]);
 a.push(["Coldplay", "A Sky Full of Stars", "", ""]);
 a.push(["Portugal. The Man", "Live in the Moment", "", ""]);
 a.push(["Billy Squier", "Lonely Is the Night", "", ""]);
-a.push(["Bachman–Turner Overdrive", "Takin' Care of Business", "", ""]);
+a.push(["Bachman-Turner Overdrive", "Takin' Care of Business", "", ""]);
 
 return a;
 }
