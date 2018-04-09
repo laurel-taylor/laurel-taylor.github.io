@@ -2304,7 +2304,7 @@ a.push(["Bad Company", "Bad Company", "", ""]);
 a.push(["Del Amitri", "Roll to Me", "", ""]);
 a.push(["Blues Traveler", "Run-Around", "", ""]);
 a.push(["Len", "Steal My Sunshine", "", ""]);
-a.push(["Milky Chance", "Stolen Dance", "", ""]);
+a.push(["Milky Chance", "Stolen Dance", "y", ""]);
 a.push(["Savage Garden", "I Want You", "", ""]);
 
 return a;
