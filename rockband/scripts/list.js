@@ -384,7 +384,7 @@ a.push(["The Cars", "Moving in Stereo", "", ""]);
 a.push(["The Cars", "My Best Friend's Girl", "", ""]);
 a.push(["The Cars", "You're All I've Got Tonight", "", ""]);
 a.push(["Catfish And The Bottlemen", "Cocoon", "", ""]);
-a.push(["The Chainsmokers ft. Halsey", "Closer", "", ""]);
+a.push(["The Chainsmokers ft. Halsey", "Closer", "y", ""]);
 a.push(["Cheap Trick", "Dream Police", "", ""]);
 a.push(["Cheap Trick", "I Want You to Love Me (Live)", "", ""]);
 a.push(["Cheap Trick", "Surrender (Live)", "", ""]);
@@ -2293,7 +2293,7 @@ a.push(["Natasha Bedingfield", "Unwritten", "", ""]);
 a.push(["Imagine Dragons", "Believer", "y", ""]);
 a.push(["Spin Doctors", "Two Princes", "", ""]);
 a.push(["Gavin DeGraw", "I Don't Want to Be", "", ""]);
-a.push(["Seether feat. Amy Lee", "Broken", "", ""]);
+a.push(["Seether feat. Amy Lee", "Broken", "y", ""]);
 a.push(["Goo Goo Dolls", "Slide", "", ""]);
 a.push(["Matchbox Twenty", "Unwell", "y", ""]);
 a.push(["Nine Days", "Absolutely (Story of a Girl)", "", ""]);
@@ -2302,6 +2302,10 @@ a.push(["Joe Jackson", "Is She Really Going Out with Him?", "", ""]);
 a.push(["Seven Mary Three", "Cumbersome", "", ""]);
 a.push(["Bad Company", "Bad Company", "", ""]);
 a.push(["Del Amitri", "Roll to Me", "", ""]);
+a.push(["Blues Traveler", "Run-Around", "", ""]);
+a.push(["Len", "Steal My Sunshine", "", ""]);
+a.push(["Milky Chance", "Stolen Dance", "", ""]);
+a.push(["Savage Garden", "I Want You", "", ""]);
 
 return a;
 }
