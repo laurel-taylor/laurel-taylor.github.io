@@ -1,0 +1,108 @@
+.click-container label {
+  cursor: pointer;
+}
+
+.clear {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 11px 15px 10px 10px;
+  z-index: 1;
+  color: #ccc;
+  cursor: pointer;
+}
+
+#list_wrapper #list_filter {
+  width: 100%;
+  position: fixed;
+  top:0; left: 0;
+  background: white;
+  padding: 2px 3px 0px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 0 12px #ccc;
+}
+#list_wrapper #list_filter label {
+  width: 100%;
+  text-align: left;
+  margin-left: 3px;
+  display: flex;
+  align-items: center;
+}
+
+#list_wrapper #list_filter input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-right: 3px;
+  flex: 1;
+}
+
+.top-container {
+  border: 1px solid lightseagreen;
+  background-color: #E3F5F4;
+  border-radius: 100%;
+  position: fixed; bottom: 5px; right: 5px;
+
+}
+.top-container i {
+  color: lightseagreen;
+  font-size: 2.5vh;
+  padding: 1vh;
+  cursor: pointer;
+  top: -1px;
+}
+
+.click-container {
+  display: flex;
+  margin: 2.5em 0.5em 0px;
+}
+.click-container .clickme {
+  flex: 1;
+}
+.click-container #filters {
+  flex: 1;
+}
+.click-container input {
+  margin-right: 10px;
+}
+
+/*iphone portrait*/
+@media only screen
+  and (min-device-width: 300px)
+  and (max-device-width: 767px)
+  and (orientation: portrait)
+{
+  body, table {
+    font-size: 16px;
+  }
+}
+
+/*ipad portrait*/
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1023px)
+{
+  body, table {
+    font-size: 22px;
+  }
+}
+
+/*ipad*/
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1100px)
+{
+  body, table {
+    font-size: 22px;
+  }
+}
+
+/*desktop*/
+@media only screen
+  and (min-device-width: 1024px)
+{
+  body, table {
+    font-size: 16px;
+  }
+}
