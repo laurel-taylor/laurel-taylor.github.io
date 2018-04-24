@@ -6,7 +6,12 @@
 # to create fileNameList.txt:
 #
 # on windows, run:
-# dir "C:\directory to copy" /a-d /b /s > fileNameList.txt
+# cd "directory\to\copy"
+# for /r %i in (*) do echo %~nxi >> fileNameList.txt
+#
+# OR, without extensions:
+#
+# for /r %i in (*) do echo %~ni >> fileNameList.txt
 #
 # on mac, run:
 # find path/to/directory -type f -exec basename {} \; | sort > fileNameList.txt
