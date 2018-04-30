@@ -2,6 +2,7 @@
   display: none;
   background-color: #FF9B96;
 }
+
 .own, table.dataTable tbody tr.own {
   background-color: #FFF9C4;
 }
@@ -19,21 +20,29 @@
   cursor: pointer;
   display: inline-block;
 }
+
 .click-container label {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
+
 #tooltip {
   margin: 0.5em;
 }
+
 .rb-tooltip {
-  margin-top:5px;
+  margin-top: 5px;
+}
+
+.rb-tooltip li {
+  margin-bottom: 6px;
 }
 
 .tooltip-icon {
   color: lightseagreen;
 }
+
 .superscript {
   color: #FF9B96;
 }
@@ -58,6 +67,7 @@
   border-bottom: 1px solid #ccc;
   box-shadow: 0 0 12px #ccc;
 }
+
 #list_wrapper #list_filter label {
   width: 100%;
   text-align: left;
@@ -81,6 +91,7 @@
 #list.hideFavorites tr.favorite {
   background-color: #fff;
 }
+
 #list.hideFavorites tr.favorite.own {
   background-color: #FFF9C4;
 }
@@ -88,6 +99,7 @@
 #list tr.favorite, .favorite {
   /* background-color: #c7f6f9; */
 }
+
 #list tr.favorite.own {
   /* background-color: #a8f9ff; */
 }
@@ -96,9 +108,10 @@
   border: 1px solid lightseagreen;
   background-color: #E3F5F4;
   border-radius: 100%;
-  position: fixed; bottom: 5px; right: 5px;
-
+  position: fixed;
+  bottom: 5px; right: 5px;
 }
+
 .top-container i {
   color: lightseagreen;
   font-size: 2.5vh;
@@ -121,12 +134,15 @@ table th:nth-child(5), table td:nth-child(5)  {
   display: flex;
   margin: 2.5em 0.5em 0px;
 }
+
 .click-container .clickme {
   flex: 1;
 }
+
 .click-container #filters {
   flex: 1;
 }
+
 .click-container input {
   margin-top: 0;
   margin-right: 10px;
@@ -149,14 +165,17 @@ table th:nth-child(5), table td:nth-child(5)  {
   body, table {
     font-size: 16px;
   }
+
   .checkbox {
     margin-top: 5px;
   }
+
   .checkbox input[type=checkbox]{
     margin-left: -33px;
     transform: scale(2,2);
     height : 1.2em;
   }
+
   #tooltip {
     font-size: 14px;
   }
@@ -179,6 +198,10 @@ table th:nth-child(5), table td:nth-child(5)  {
 {
   body, table {
     font-size: 22px;
+  }
+
+  ul {
+    padding-left: 20px;
   }
 }
 
