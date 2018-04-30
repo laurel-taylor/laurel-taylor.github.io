@@ -2310,6 +2310,8 @@ a.push(["Savage Garden", "I Want You", "", ""]);
 a.push(["Breaking Benjamin", "Torn in Two", "", ""]);
 a.push(["Trivium", "The Heart from Your Hate", "", ""]);
 a.push(["Status Quo", "Pictures of Matchstick Men", "", ""]);
+a.push(["Sister Sledge", "We Are Family", "", ""]);
+a.push(["Jesus Jones", "Right Here, Right Now", "", ""]);
 
 return a;
 }

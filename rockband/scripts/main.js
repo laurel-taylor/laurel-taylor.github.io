@@ -100,7 +100,7 @@ function removeFromFavorites(list, item) {
   for(var i=0; i<list.length; i++) {
     const d = list[i];
     if(d.artist === item.artist && d.song === item.song) {
-      console.log('removing ' + item.song );
+      // console.log('removing ' + item.song );
       list.splice(i, 1);
       saveFavoritesList(list);
       break;
