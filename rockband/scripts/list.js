@@ -1972,6 +1972,7 @@ a.push(["The Stooges", "I Wanna Be Your Dog", "", ""]);
 a.push(["The Strokes", "Reptilia", "y", ""]);
 a.push(["The Strokes", "Under Cover of Darkness", "", ""]);
 a.push(["Styx/REO Speedwagon", "Can't Stop Rockin'", "", ""]);
+a.push(["Styx", "Renegade", "",""]);
 a.push(["Sublime", "Santeria", "y", ""]);
 a.push(["Sublime", "What I Got", "y", ""]);
 a.push(["Sublime", "Wrong Way", "y", ""]);
