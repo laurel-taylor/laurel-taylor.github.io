@@ -2,6 +2,19 @@
   cursor: pointer;
 }
 
+.loaded, .error-message, .hide, .sigh {
+  display: none;
+  padding: 10px;
+}
+
+.loading {
+  padding: 10px;
+}
+
+#searchForm {
+  padding: 10px;
+}
+
 .clear {
   position: fixed;
   top: 0;

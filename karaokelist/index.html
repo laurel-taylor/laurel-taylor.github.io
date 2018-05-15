@@ -8,15 +8,25 @@
   <meta property="og:image:width" content="500"/>
   <meta property="og:image:height" content="385"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Come to The Grid: Games and Growlers in Mesa for Karaoke on Sundays, starting at 8!">
+  <meta name="description" content="Come to The Grid: Games and Growlers in Mesa for Karaoke on Thursdays, starting at 8!">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
   <link rel="icon" href="favicon.png" />
 </head>
 <body>
   <div class="click-container">
-    <i class="clear glyphicon glyphicon-remove"></i>
+    <i class="clear glyphicon glyphicon-remove hide"></i>
+  </div>
+  <form id="searchForm" class="loaded">
+    Search Song Database: <input id="searching" type="text" /> <button id="goSearch" type="submit">GO</button>
+  </form>
+  <div class="sigh">
+    You asked for this
+  </div>
+  <div class="error-message">
+    Enter a search term of more than 3 characters to display a list of matching songs in the database.
   </div>
   <div style="clear:both"></div>
+  <div class="loading">Loading list...</div>
   <table id="list"></table>
   <span class="top-container">
     <i class="glyphicon glyphicon-chevron-up"></i>
@@ -26,6 +36,6 @@
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
   <script src="scripts/list.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/mainVanilla.js"></script>
 </body>
 </html>
