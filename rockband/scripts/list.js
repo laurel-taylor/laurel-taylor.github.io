@@ -1972,7 +1972,7 @@ a.push(["The Stooges", "I Wanna Be Your Dog", "", ""]);
 a.push(["The Strokes", "Reptilia", "y", ""]);
 a.push(["The Strokes", "Under Cover of Darkness", "", ""]);
 a.push(["Styx/REO Speedwagon", "Can't Stop Rockin'", "", ""]);
-a.push(["Styx", "Renegade", "",""]);
+a.push(["Styx", "Renegade", "y",""]);
 a.push(["Sublime", "Santeria", "y", ""]);
 a.push(["Sublime", "What I Got", "y", ""]);
 a.push(["Sublime", "Wrong Way", "y", ""]);
@@ -2313,6 +2313,12 @@ a.push(["Trivium", "The Heart from Your Hate", "", ""]);
 a.push(["Status Quo", "Pictures of Matchstick Men", "", ""]);
 a.push(["Sister Sledge", "We Are Family", "", ""]);
 a.push(["Jesus Jones", "Right Here, Right Now", "", ""]);
+a.push(["Duran Duran", "Hungry Like the Wolf", "", ""]);
+a.push(["The Bergamot", "Forget About Tomorrow", "", ""]);
+a.push(["Dolly Spartans", "I Hear the Dead", "", ""]);
+a.push(["The Eiffels", "Body Like That", "", ""]);
+a.push(["Fly By Midnight", "Vinyl", "", ""]);
+a.push(["Jocelyn and Chris Arndt", "Shame", "", ""]);
 
 return a;
 }
