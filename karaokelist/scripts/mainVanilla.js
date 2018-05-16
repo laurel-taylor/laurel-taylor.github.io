@@ -71,6 +71,9 @@ function search() {
         table = getDataTable(filtered);
     } else {
         $('.error-message').show();
+        if (term === '') {
+            table = getDataTable([]);
+        }
     }
 }
 
