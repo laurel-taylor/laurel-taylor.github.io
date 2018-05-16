@@ -65,7 +65,7 @@ function search() {
     if (term === 'i did this to myself') {
         $('.sigh').show();
         table = getDataTable(fromListJS, true);
-    } else if (term.length > 3) {
+    } else if (term.length >= 3) {
         const columnToSearch = $('#filePath').is(':checked') ? COLUMNS.FILE_PATH : COLUMNS.FILE_NAME;
         const filtered = fromListJS.filter((name) => name[columnToSearch].toLowerCase().indexOf(term.toLowerCase()) >= 0);
         table = getDataTable(filtered);
