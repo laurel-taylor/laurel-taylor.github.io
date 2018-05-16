@@ -4,7 +4,6 @@
 
 .loaded, .error-message, .hide, .sigh {
   display: none;
-  padding: 10px;
 }
 
 .loading {

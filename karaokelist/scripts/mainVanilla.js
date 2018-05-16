@@ -1,11 +1,28 @@
 const COLUMNS = {
     FILE_NAME: 0,
+    FILE_PATH: 1,
   };
 let fromListJS;
 let table
 
-function getDataTable(a, adminOverride = false) {
+function getDataTable(a, showFilter = false) {
+    const filters = {
+      filePath: $('#filePath').is(':checked'),
+      showFilter: $('#tableFilter').is(':checked'),
+    };
+
     if(table) table.destroy();
+
+    let columns = [
+        { title: "File Name", width: "100%" },
+    ];
+
+    if (filters.filePath) {
+        columns = [
+            { title: "Full Path", width: "100%" },
+        ];
+        a = a.map((item) => [item[COLUMNS.FILE_PATH]]);
+    }
 
     table = $('#list').DataTable( {
         data: a,
@@ -13,10 +30,8 @@ function getDataTable(a, adminOverride = false) {
         select: false,
         fixedHeader: true,
         bAutoWidth: false,
-        searching: adminOverride,
-        columns: [
-            { title: "File Name", "width": "100%" },
-        ],
+        searching: showFilter || filters.showFilter,
+        columns,
     });
 
     return table;
@@ -29,7 +44,11 @@ function setUpHandlers(table) {
 
     $('#searchForm').on('submit', function(e) {
         e.preventDefault();
-        search($('#searching').val());
+        search();
+    });
+
+    $('#filePath, #tableFilter').on('click', function(e) {
+        search();
     });
 }
 
@@ -39,14 +58,16 @@ function setUpTableHandlers(table) {
     });
 }
 
-function search(term) {
+function search() {
+    const term = $('#searching').val();
     $('.error-message, .sigh').hide();
 
     if (term === 'i did this to myself') {
         $('.sigh').show();
-        // table = getDataTable(fromListJS, true);
+        table = getDataTable(fromListJS, true);
     } else if (term.length > 3) {
-        const filtered = fromListJS.filter((name) => name[COLUMNS.FILE_NAME].toLowerCase().indexOf(term.toLowerCase()) >= 0);
+        const columnToSearch = $('#filePath').is(':checked') ? COLUMNS.FILE_PATH : COLUMNS.FILE_NAME;
+        const filtered = fromListJS.filter((name) => name[columnToSearch].toLowerCase().indexOf(term.toLowerCase()) >= 0);
         table = getDataTable(filtered);
     } else {
         $('.error-message').show();

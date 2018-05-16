@@ -54,6 +54,7 @@ const processLine = (data) => {
     const directory = data.split(/\\/);
     let songName = directory[directory.length - 1];
     songName = songName.replace(/"/g, '\\"');
+    const fullPath = data.replace(/\\/g, '/').replace(/"/g, '\\"');
 
     const whitelist = [
         /\..{3}$/,
@@ -80,6 +81,7 @@ const processLine = (data) => {
     return {
         pass: isOnWhitelist && !isOnBlacklist,
         songName: `"${songName}"`,
+        pathName: `"${fullPath}"`,
     }
 }
 
@@ -97,7 +99,7 @@ const processLargeFile = () => {
             // process line here and call s.resume() when rdy
             // function below was for logging memory usage
             const temp = processLine(line);
-            if (temp.pass) songList += `    a.push([${temp.songName}]);\n`
+            if (temp.pass) songList += `    a.push([${temp.songName}, ${temp.pathName}]);\n`
             else blackList.push(temp.songName)
 
             // resume the readstream, possibly from a callback
