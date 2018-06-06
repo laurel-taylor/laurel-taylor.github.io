@@ -637,7 +637,7 @@ a.push(["Escape the Fate", "The Flood", "", ""]);
 a.push(["Evanescence", "Bring Me to Life", "y", ""]);
 a.push(["Evanescence", "Call Me When You're Sober", "", ""]);
 a.push(["Evanescence", "Everybody's Fool", "", ""]);
-a.push(["Evanescence", "Lithium", "", ""]);
+a.push(["Evanescence", "Lithium", "y", ""]);
 a.push(["Evanescence", "Weight of the World", "", ""]);
 a.push(["Evanescence", "What You Want", "", ""]);
 a.push(["Eve 6", "Inside Out", "y", ""]);
