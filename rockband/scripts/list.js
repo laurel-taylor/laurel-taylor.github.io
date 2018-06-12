@@ -1593,7 +1593,7 @@ a.push(["Pixies", "Gouge Away", "", ""]);
 a.push(["Pixies", "Here Comes Your Man", "", ""]);
 a.push(["Pixies", "Hey", "", ""]);
 a.push(["Pixies", "I Bleed", "", ""]);
-a.push(["Pixies", "La La Love You", "", ""]);
+a.push(["Pixies", "La La Love You", "y", ""]);
 a.push(["Pixies", "Monkey Gone to Heaven", "y", ""]);
 a.push(["Pixies", "Mr. Grieves", "", ""]);
 a.push(["Pixies", "No. 13 Baby", "", ""]);
