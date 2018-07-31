@@ -2341,6 +2341,8 @@ a.push(["A Day to Remember", "If It Means a Lot to You", "", ""]);
 a.push(["Drowning Pool", "Bodies", "", ""]);
 a.push(["Creed", "Higher", "", ""]);
 a.push(["The Warning", "Survive", "", ""]);
+a.push(["30 Seconds to Mars", "Rescue Me", "", ""]);
+a.push(["Walk the Moon", "Kamikaze", "", ""]);
 
 return a;
 }
