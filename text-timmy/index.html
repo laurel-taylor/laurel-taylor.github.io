@@ -3,25 +3,59 @@
   <title>Hey Timmy</title>
   <meta name="description" content="Text Timmy">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="">
   <style>
+  body {
+    font-family: sans-serif;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  form {
+    padding: 0.5rem;
+  }
+
   input, button {
     font-size: 3rem;
     display: block;
-    width: 100%;
     margin-bottom: 1.5rem;
     border-radius: 5px;
+  }
+
+  label {
+    flex: 1;
+    display: block;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  input {
+    flex: 2;
+  }
+
+  div.row {
+    display: flex;
+    align-items: center;
   }
 
   button {
     background-color: navy;
     color: white;
+    display: block;
+    width: 100%;
   }
   </style>
 </head>
 <body>
   <form action="https://us-central1-resounding-axe-212717.cloudfunctions.net/send-a-text">
-    <input type="text" placeholder="Text Timmy" name="message" id="message" />
+    <div class="row">
+      <label for="message">Text:</label>
+      <input type="text" placeholder="Text Timmy" name="message" id="message" />
+    </div>
+    <div class="row">
+      <label for="times">Times:</label>
+      <input type="number" name="times" id="times" value="1" />
+    </div>
     <button type="submit">Send</button>
   </form>
 </body>
