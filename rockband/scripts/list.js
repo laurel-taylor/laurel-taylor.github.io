@@ -2213,7 +2213,7 @@ a.push(["Yeah Yeah Yeahs", "Date with the Night", "", ""]);
 a.push(["Yeah Yeah Yeahs", "Maps", "y", ""]);
 a.push(["Yellowcard", "Ocean Avenue", "y", ""]);
 a.push(["Yellowcard", "Only One", "", ""]);
-a.push(["Yes", "Heart of the Sunrise", "", ""]);
+a.push(["Yes", "Heart of the Sunrise", "y", ""]);
 a.push(["Yes", "I've Seen All Good People", "", ""]);
 a.push(["Yes", "Owner of a Lonely Heart", "y", ""]);
 a.push(["Yes", "Roundabout", "y", ""]);
