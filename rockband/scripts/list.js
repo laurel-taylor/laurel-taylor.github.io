@@ -211,7 +211,7 @@ a.push(["Billy Joel", "It's Still Rock and Roll to Me", "", ""]);
 a.push(["Billy Joel", "Miama 2017 (Seen the Lights Go Out on Broadway", "", ""]);
 a.push(["Billy Joel", "Movin' Out (Anthony's Song)", "y", ""]);
 a.push(["Billy Joel", "My Life", "", ""]);
-a.push(["Billy Joel", "Only the Good Die Young", "", ""]);
+a.push(["Billy Joel", "Only the Good Die Young", "y", ""]);
 a.push(["Billy Joel", "Piano Man", "y", ""]);
 a.push(["Billy Joel", "Prelude/Angry Young Man", "", ""]);
 a.push(["Billy Joel", "Pressure", "", ""]);
@@ -2413,6 +2413,9 @@ a.push(["Matchbox Twenty", "Push", "", ""]);
 a.push(["Hoobastank", "The Reason", "", ""]);
 a.push(["Darius Rucker", "Wagon Wheel", "", ""]);
 a.push(["Meredith Brooks", "Bitch", "", ""]);
+a.push(["The Dillinger Escape Plan", "Farewell, Mona Lisa", "", ""]);
+a.push(["Meshuggah", "Bleed", "", ""]);
+a.push(["Woe, Is Me", "[&] Delinquents", "", ""]);
 
 return a;
 }
