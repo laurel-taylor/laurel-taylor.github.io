@@ -2,8 +2,9 @@
 function getList(){
 	var array = new Array;
 	array.push('Superman'); 
-	array.push('Spider-gwen'); 
-	array.push('Spiderman'); 
+	array.push('Spider Gwen'); 
+	array.push('Spider-man'); 
+	array.push('Spider guy --- Spider-man variant'); 
 	array.push('Monty Python'); 
 	array.push('Wonder Woman'); 
 	array.push('Nightwing'); 
@@ -13,6 +14,8 @@ function getList(){
 	array.push('Winter Soldier --- Bucky'); 
 	array.push('Deadpool');
 	array.push('Pikachu');  
+	array.push('Pokemon --- anything NOT a pikachu');  
+	array.push('Pokemon trainer --- or Team Rocket');  
 	array.push('Detective Pikachu'); 
 	array.push('Deadpool variant --- like pikapool or bob ross-pool', ); 
 	array.push('Daredevil'); 
@@ -47,10 +50,29 @@ function getList(){
 	array.push('Look ma, no hands! --- costume uses both hands');
 	array.push('Where are my pants?? --- costume shows lots of skin');
 	array.push('I hate myself --- Wearing a wig');
-	array.push('I hate myself x2 --- Wearing a wig & leather');
-	array.push('Ow my feet --- person in uncomfortable shoes');
-	array.push('Oh that\'s new --- movie/game/tv show from the last 6 months');
+	array.push('I hate myself x2 --- Wearing a wig & leather --- or a long coat');
+	array.push('Ow my feet --- in uncomfortable shoes');
+	array.push('Oh, that\'s new --- movie/game/tv show from the last 6 months');
 	array.push('Legend of Zelda --- Any character');
 	array.push('Final Fantasy --- Any character');
+	array.push('Iron Man --- Full armor');
+	array.push('Captain Marvel');
+	array.push('Doctor Strange'); 
+	array.push('Marvel --- Any character'); 
+	array.push('No capes!! --- someone with a cape');   
+	array.push('Mortal Kombat --- Any character'); 
+	array.push('Sports Anime --- Someone with a numbered jersey'); 
+	array.push('Spot the protagonist --- super crazy anime hair'); 
+	array.push('I\'m with them --- one person in a group not in cosplay'); 
+	array.push('I know him! --- spot a famous person'); 
+	array.push('Wait wait don\'t tell me --- You know it, it\'s on the tip of your tongue...'); 
+	array.push('Gold Star --- last-minute cosplay'); 
+	array.push('Wolverine --- Xmen'); 
+	array.push('Wolverine --- Xmen'); 
+	array.push('Cosplaying while black --- hell yeah'); 
+	array.push('Wheelchair user --- in cosplay'); 
+	array.push('Hold my beer --- I could make that'); 
+	array.push('That\'s lit --- light-up costume'); 
+	array.push('Can I pet you? --- a textured costume'); 
 	return array;
 }
