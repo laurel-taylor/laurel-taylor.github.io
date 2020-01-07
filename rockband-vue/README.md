@@ -1,4 +1,4 @@
-# rockband-vue
+# Rockband list
 
 ## Project setup
 ```

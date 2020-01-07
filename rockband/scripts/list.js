@@ -194,7 +194,7 @@ a.push(["Belly", "Feed the Tree", "", ""]);
 a.push(["Ben Harper and Relentless7", "Shimmer & Shine", "", ""]);
 a.push(["Benjamin Booker", "Violent Shiver", "y", ""]);
 a.push(["Bent Knee", "These Hands", "", ""]);
-a.push(["Between the Buried and Me", "The Coma Machine", "", ""]);
+a.push(["Between the Buried and Me", "The Coma Machine", "y", ""]);
 a.push(["Between the Buried and Me", "Prequel to the Sequel", "y", ""]);
 a.push(["Big Country", "In a Big Country", "y", ""]);
 a.push(["Big Dipper", "All Going Out Together", "", ""]);
