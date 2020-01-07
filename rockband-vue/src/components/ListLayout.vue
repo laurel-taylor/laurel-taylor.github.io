@@ -64,6 +64,7 @@ export default {
 @media only screen and (min-device-width: 1024px) {
   body {
     font-size: 16px;
+    width: 100%;
   }
 }
 </style>

@@ -24,6 +24,10 @@ export default {
   color: #2c3e50;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .own,
 tr.own {
   background-color: #fff9c4;

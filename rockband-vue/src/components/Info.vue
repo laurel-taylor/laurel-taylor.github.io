@@ -1,18 +1,15 @@
 <template>
   <div v-if="show" class="clickme" @click="toggleShow">
-    <i
-      id="tooltipIcon"
-      class="tooltip-icon glyphicon glyphicon-remove-circle"
-    ></i>
+    <i id="tooltipIcon" class="tooltip-icon glyphicon glyphicon-info-sign"></i>
     About the list
   </div>
-  <div v-else @click="toggleShow">
+  <div class="clickme" v-else @click="toggleShow">
     <ul>
       <li>
         <span class="own"
           >Songs that are highlighted are ones we have downloaded.</span
         >
-        You can click the "only owned" checkbox to just show the songs we have.
+        <!-- You can click the "only owned" checkbox to just show the songs we have. -->
       </li>
       <li>
         Songs that aren't highlighted are for purchase. Each song is $2 - the
@@ -41,7 +38,17 @@ export default {
 </script>
 
 <style scoped>
+.clickme {
+  cursor: pointer;
+  margin: 50px 20px 12px;
+}
+
+i {
+  color: #999999;
+}
+
 ul {
-  list-style-type: disc;
+  list-style-type: circle;
+  padding: 0;
 }
 </style>

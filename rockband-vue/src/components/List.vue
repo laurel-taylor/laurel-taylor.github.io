@@ -1,9 +1,11 @@
 <template>
   <div>
-    <table>
+    <table v-if="filteredList.length">
       <thead>
-        <td>Artist</td>
-        <td>Song</td>
+        <tr>
+          <td>Artist</td>
+          <td>Song</td>
+        </tr>
       </thead>
 
       <tbody>
@@ -17,6 +19,7 @@
         </tr>
       </tbody>
     </table>
+    <div class="empty" v-else>No results...</div>
   </div>
 </template>
 
@@ -35,6 +38,15 @@ export default {
   },
   computed: {
     filteredList() {
+      if (this.search) {
+        const search = this.search.toLowerCase();
+        return this.list.filter(item => {
+          return (
+            item[0].toLowerCase().indexOf(search) >= 0 ||
+            item[1].toLowerCase().indexOf(search) >= 0
+          );
+        });
+      }
       return this.list;
     }
   }
@@ -47,13 +59,28 @@ table {
   width: 100%;
 }
 
-thead {
-  font-size: 1.25rem;
+thead td {
+  font-size: 2rem;
   font-weight: 500;
 }
 
 td {
-  border: 1px solid #e4e4e4;
   padding: 6px 10px;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+td:first-child {
+  width: 50%;
+  border-left: 1px solid #e4e4e4;
+}
+
+td:last-child {
+  border-right: 1px solid #e4e4e4;
+}
+
+.empty {
+  padding: 1rem;
+  font-style: italic;
 }
 </style>
