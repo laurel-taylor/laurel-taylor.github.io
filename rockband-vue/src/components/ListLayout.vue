@@ -1,8 +1,8 @@
 <template>
   <div class="list">
-    <Search @update="updateSearch" />
+    <Search @update="updateSearch" ref="search" />
     <Info />
-    <List :search="search" />
+    <List :search="search" @searchAgain="searchAgain" />
     <Footer />
   </div>
 </template>
@@ -31,6 +31,9 @@ export default {
   methods: {
     updateSearch(search) {
       this.search = search;
+    },
+    searchAgain() {
+      this.$refs.search.searchAgain();
     }
   }
 };

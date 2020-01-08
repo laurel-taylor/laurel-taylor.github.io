@@ -1,10 +1,15 @@
 <template>
-  <div v-if="show" class="clickme" @click="toggleShow">
-    <i id="tooltipIcon" class="tooltip-icon glyphicon glyphicon-info-sign"></i>
+  <div class="clickme" @click="toggleShow">
+    <i
+      id="tooltipIcon"
+      :class="[
+        'tooltip-icon glyphicon',
+        { 'glyphicon-info-sign': !show, 'glyphicon-remove-circle': show }
+      ]"
+    ></i>
     About the list
-  </div>
-  <div class="clickme" v-else @click="toggleShow">
-    <ul>
+
+    <ul v-if="show">
       <li>
         <span class="own"
           >Songs that are highlighted are ones we have downloaded.</span
@@ -40,7 +45,7 @@ export default {
 <style scoped>
 .clickme {
   cursor: pointer;
-  margin: 50px 20px 12px;
+  margin: 50px 2rem 1rem;
 }
 
 i {
@@ -50,5 +55,6 @@ i {
 ul {
   list-style-type: circle;
   padding: 0;
+  margin: 1rem 2rem;
 }
 </style>

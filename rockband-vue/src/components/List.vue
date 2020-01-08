@@ -19,7 +19,10 @@
         </tr>
       </tbody>
     </table>
-    <div class="empty" v-else>No results...</div>
+    <div class="empty" v-else>
+      No results...
+      <a href="#" @click.prevent.native="searchAgain">search again</a>
+    </div>
   </div>
 </template>
 
@@ -48,6 +51,11 @@ export default {
         });
       }
       return this.list;
+    }
+  },
+  methods: {
+    searchAgain() {
+      this.$emit("searchAgain");
     }
   }
 };

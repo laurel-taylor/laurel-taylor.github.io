@@ -5,6 +5,7 @@
       class="search"
       type="search"
       placeholder="Search..."
+      ref="search"
     />
     <i
       class="clear tooltip-icon glyphicon glyphicon-remove-circle"
@@ -35,6 +36,10 @@ export default {
     clear() {
       this.search = "";
       this.updateSearch();
+    },
+    searchAgain() {
+      this.clear();
+      this.$refs.search.focus();
     }
   }
 };

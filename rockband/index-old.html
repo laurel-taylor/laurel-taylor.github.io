@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <title>Rock Band Mondays at The Grid</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/rockband.css" />
+  <meta property="og:image" content="https://lbrugg.github.io/rockband/rbmonday.png" />
+  <meta property="og:image:width" content="500"/>
+  <meta property="og:image:height" content="385"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Come to The Grid: Games and Growlers in Mesa for Rock Band on Mondays, starting at 8!">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+  <link rel="icon" href="favicon.png" />
+</head>
+<body>
+  <div class="click-container">
+    <div class="clickme">
+      <i id="tooltipIcon" class="tooltip-icon glyphicon glyphicon-remove-circle"></i>
+      About the list
+    </div>
+    <div id="filters">
+      <label for="onlyOwned"><input type="checkbox" id="onlyOwned" class="filter" />Only owned</label>
+      <!-- <label for="comeBack"><input type="checkbox" id="comeBack" class="filter" />Come Back</label> -->
+      <!-- <label for="onlyFavorites"><input type="checkbox" id="onlyFavorites" class="filter" />Only favorites</label>
+      <label for="disableFavorites"><input type="checkbox" id="disableFavorites" checked />Disable favorites</label> -->
+    </div>
+    <i class="clear glyphicon glyphicon-remove"></i>
+  </div>
+  <div style="clear:both"></div>
+  <div id='tooltip' class="rb-tooltip">
+    <ul>
+      <li><span class="own">Songs that are highlighted are ones we have downloaded.</span> You can click the "only owned" checkbox to just show the songs we have.</li>
+      <li>Songs that aren't highlighted are for purchase. Each song is $2 - the bartender can put it on your tab. Once it's downloaded it'll be there forever!</li>
+      <!-- <li>You can add songs to your <span class="favorite">favorites list</span> by clicking them! Make sure you turn off the disable favorites checkbox to see them. That thing is there for noobs who are easily confused by too many colors.</li> -->
+    </ul>
+  </div>
+  <table id="list" class="hideFavorites">
+  </table>
+  <span class="top-container">
+    <i class="glyphicon glyphicon-chevron-up"></i>
+  </span>
+  <br/>
+  <!-- <button id="clearFavs">Clear favorites</button> -->
+  <div class="facebook">
+    <a href="https://www.facebook.com/groups/1923980484548681/" target="_blank"><img src="./fblogo.png" class="icon"/></a><br/>
+    <a href="https://www.facebook.com/groups/1923980484548681/" target="_blank">Check us out on Facebook!</a>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
+  <script src="scripts/list.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

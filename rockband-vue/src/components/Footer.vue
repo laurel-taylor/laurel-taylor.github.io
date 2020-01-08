@@ -17,6 +17,11 @@ export default {
 
 <style scoped>
 .facebook {
+  margin-top: 3rem;
   text-align: center;
+}
+
+.icon {
+  width: 50px;
 }
 </style>
