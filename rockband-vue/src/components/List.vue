@@ -21,7 +21,7 @@
     </table>
     <div class="empty" v-else>
       No results...
-      <a href="#" @click.prevent.native="searchAgain">search again</a>
+      <a href="#" @click.prevent="searchAgain">search again</a>
     </div>
   </div>
 </template>

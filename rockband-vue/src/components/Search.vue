@@ -2,14 +2,14 @@
   <div class="search-container">
     <input
       v-model="search"
-      class="search"
+      :class="['search', { 'has-text': search }]"
       type="search"
       placeholder="Search..."
       ref="search"
     />
     <i
       class="clear tooltip-icon glyphicon glyphicon-remove-circle"
-      @click="clear"
+      @click="searchAgain"
     ></i>
   </div>
 </template>
@@ -26,10 +26,19 @@ export default {
   },
   data() {
     return {
-      search: ""
+      search: "",
+      isFocus: false
     };
   },
+  computed: {
+    hasSearch() {
+      return this.search || this.isFocus;
+    }
+  },
   methods: {
+    focusSearch() {
+      this.$refs.search.focus();
+    },
     updateSearch() {
       this.$emit("update", this.search);
     },
@@ -39,7 +48,7 @@ export default {
     },
     searchAgain() {
       this.clear();
-      this.$refs.search.focus();
+      this.focusSearch();
     }
   }
 };
@@ -63,12 +72,20 @@ export default {
   border: 1px solid #e4e4e4;
 }
 
+.search:focus + .clear,
+.search.hasText + .clear {
+  opacity: 1;
+}
+
 .clear {
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
   cursor: pointer;
   font-size: 2rem;
   color: #999999;
   position: absolute;
-  right: 1rem;
-  top: 0.75rem;
+  right: 0rem;
+  top: 0rem;
+  padding: 10px;
 }
 </style>

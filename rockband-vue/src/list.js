@@ -1275,7 +1275,7 @@ export const buildSongList = () => {
   a.push(["Linkin Park", "In the End", "y", ""]);
   a.push(["Linkin Park", "Lying From You", "y", ""]);
   a.push(["Linkin Park", "New Divide", "y", ""]);
-  a.push(["Linkin Park", "Numb", "", ""]);
+  a.push(["Linkin Park", "Numb", "y", ""]);
   a.push(["Linkin Park", "Rebellion (ft. Daron Malakian)", "", ""]);
   a.push(["Linkin Park", "Shadow of the Day", "y", ""]);
   a.push(["Linkin Park", "Somewhere I Belong", "y", ""]);
@@ -1310,7 +1310,7 @@ export const buildSongList = () => {
   a.push(["Lynyrd Skynyrd", "That Smell", "y", ""]);
   a.push(["Lynyrd Skynyrd", "Tuesday's Gone", "", ""]);
   a.push(["Lynyrd Skynyrd", "What's Your Gone", "", ""]);
-  a.push(["Machbox Twenty", "3AM", "", ""]);
+  a.push(["Machbox Twenty", "3AM", "y", ""]);
   a.push(["Machine Head", "Aesthetics of Hate", "", ""]);
   a.push(["Macklemore & Ryan Lewis feat. Ray Dalton", "Can't Hold Us", "", ""]);
   a.push(["Magic!", "Rude", "", ""]);
@@ -2536,7 +2536,7 @@ export const buildSongList = () => {
     "",
     ""
   ]);
-  a.push(["Seether", "Fake It", "", ""]);
+  a.push(["Seether", "Fake It", "y", ""]);
   a.push(["Seether", "Rise Above This", "", ""]);
   a.push(["Five Finger Death Punch", "Burn It Down", "", ""]);
   a.push(["Five Finger Death Punch", "Hard to See", "", ""]);
