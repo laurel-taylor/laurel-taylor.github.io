@@ -1,8 +1,7 @@
 <template>
   <div class="list">
     <Search @update="updateSearch" ref="search" />
-    <Info />
-    <List :search="search" @searchAgain="searchAgain" />
+    <List class="list" :search="search" @searchAgain="searchAgain" />
     <Footer />
     <i
       class="glyphicon glyphicon-circle-arrow-up scroll-top"
@@ -15,7 +14,6 @@
 import List from "@/components/List";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
-import Info from "@/components/Info";
 
 export default {
   name: "HelloWorld",
@@ -23,8 +21,7 @@ export default {
   components: {
     List,
     Search,
-    Footer,
-    Info
+    Footer
   },
 
   data() {
@@ -62,6 +59,10 @@ export default {
 
 .scroll-top:hover {
   opacity: 1;
+}
+
+.list {
+  /* margin-top: 50px; */
 }
 
 /*iphone portrait*/
