@@ -4,6 +4,10 @@
     <Info />
     <List :search="search" @searchAgain="searchAgain" />
     <Footer />
+    <i
+      class="glyphicon glyphicon-circle-arrow-up scroll-top"
+      @click="scrollTop"
+    />
   </div>
 </template>
 
@@ -34,13 +38,32 @@ export default {
     },
     searchAgain() {
       this.$refs.search.searchAgain();
+    },
+    scrollTop() {
+      window.scrollTo(0, 0);
     }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.scroll-top {
+  cursor: pointer;
+  position: fixed;
+  top: 95vh;
+  right: 0;
+  color: #4685c4;
+  padding: 1rem;
+  z-index: 1;
+  font-size: 2rem;
+  opacity: 0.3;
+  transition: all 0.2s ease-in-out;
+}
+
+.scroll-top:hover {
+  opacity: 1;
+}
+
 /*iphone portrait*/
 @media only screen and (min-device-width: 300px) and (max-device-width: 767px) and (orientation: portrait) {
   body,

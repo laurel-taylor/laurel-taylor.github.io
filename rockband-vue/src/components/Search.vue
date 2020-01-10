@@ -69,7 +69,8 @@ export default {
   /* margin: 5px; */
   width: 100%;
   padding: 5px;
-  border: 1px solid #e4e4e4;
+  border: 0;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .search:focus + .clear,
