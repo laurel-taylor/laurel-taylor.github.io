@@ -2595,7 +2595,7 @@ export const buildSongList = () => {
   a.push(["Chvrches", "Graffiti", "", ""]);
   a.push(["Halestorm", "Uncomfortable", "", ""]);
   a.push(["Of Mice & Men", "Back to Me", "", ""]);
-  a.push(["Of Mice & Men", "Second & Sebring", "", ""]);
+  a.push(["Of Mice & Men", "Second & Sebring", "y", ""]);
   a.push(["Of Mice & Men", "Those in Glass Houses", "", ""]);
   a.push(["Octavision", "Three Lives", "", ""]);
   a.push(["Starset", "My Demons", "", ""]);
