@@ -2439,7 +2439,7 @@ export const buildSongList = () => {
   a.push(["Chuck Berry", "Johnny B. Goode", "y", ""]);
   a.push(["The Jackson 5", "I Want You Back", "", ""]);
   a.push(["Alice in Chains", "Down in a Hole", "", ""]);
-  a.push(["Alice in Chains", "Man in the Box", "", ""]);
+  a.push(["Alice in Chains", "Man in the Box", "y", ""]);
   a.push(["Alice in Chains", "Them Bones", "y", ""]);
   a.push(["Asia", "Heat of the Moment", "", ""]);
   a.push(["Survivor", "Eye of the Tiger", "y", ""]);
