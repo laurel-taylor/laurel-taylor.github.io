@@ -2373,7 +2373,7 @@ export const buildSongList = () => {
   a.push(["White Zombie ", "Thunder Kiss '65", "y", ""]);
   a.push(["Whitechapel", "This is Exile", "y", ""]);
   a.push(["Whitesnake", "Here I Go Again", "y", ""]);
-  a.push(["Whitesnake", "Still of the Night", "", ""]);
+  a.push(["Whitesnake", "Still of the Night", "y", ""]);
   a.push([
     "Whitney Houston",
     "I Wanna Dance with Somebody (Who Loves Me)",
