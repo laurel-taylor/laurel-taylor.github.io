@@ -576,7 +576,7 @@ export const buildSongList = () => {
   a.push(["Depeche Mode", "Never Let Me Down Again", "", ""]);
   a.push(["Depeche Mode", "People are People", "", ""]);
   a.push(["Depeche Mode", "Personal Jesus", "", ""]);
-  a.push(["Depeche Mode", "Policy of Truth", "", ""]);
+  a.push(["Depeche Mode", "Policy of Truth", "y", ""]);
   a.push([
     "The Devil Wears Prada",
     "Hey John, What's Your Name Again",
@@ -656,7 +656,7 @@ export const buildSongList = () => {
   a.push(["Dwight Yoakam", "Intentional Heartache", "", ""]);
   a.push(["Eagle-Eye Cherry", "Save Tonight", "y", ""]);
   a.push(["Eagles of Death Metal", "I Only Want You", "", ""]);
-  a.push(["Earth, Wind & Fire", "September", "", ""]);
+  a.push(["Earth, Wind & Fire", "September", "y", ""]);
   a.push(["Earth, Wind & Fire", "Shining Star", "y", ""]);
   a.push(["Echo & The Bunnymen", "The Killing Moon", "y", ""]);
   a.push(["Ed Sheeran", "Shape of You", "y", ""]);
@@ -1280,7 +1280,7 @@ export const buildSongList = () => {
   a.push(["Linkin Park", "Shadow of the Day", "y", ""]);
   a.push(["Linkin Park", "Somewhere I Belong", "y", ""]);
   a.push(["Linkin Park", "Waiting for the End", "y", ""]);
-  a.push(["Linkin Park", "What I've Done", "", ""]);
+  a.push(["Linkin Park", "What I've Done", "y", ""]);
   a.push(["Lit", "My Own Worst Enemy", "y", ""]);
   a.push(["Litfiba", "Proibito", "", ""]);
   a.push(["Little Big Town", "Little White Church", "y", ""]);
@@ -1442,7 +1442,7 @@ export const buildSongList = () => {
   a.push(["Mute Math", "Typical", "y", ""]);
   a.push(["My Chemical Romance", "Famous Last Words", "y", ""]);
   a.push(["My Chemical Romance", "Helena", "y", ""]);
-  a.push(["My Chemical Romance", "I'm Not Okay (I Promise)", "", ""]);
+  a.push(["My Chemical Romance", "I'm Not Okay (I Promise)", "y", ""]);
   a.push(["My Chemical Romance", "Sing", "", ""]);
   a.push(["My Chemical Romance", "Teenagers", "y", ""]);
   a.push(["My Chemical Romance", "Welcome to the Black Parade", "y", ""]);
@@ -1782,7 +1782,7 @@ export const buildSongList = () => {
   a.push(["The Psychedelic Furs", "Love My Way", "", ""]);
   a.push(["The Psychedelic Furs", "Pretty in Pink", "", ""]);
   a.push(["The Psychedelic Furs", "Sister Europe", "", ""]);
-  a.push(["Puddle of Mudd", "Blurry", "", ""]);
+  a.push(["Puddle of Mudd", "Blurry", "y", ""]);
   a.push(["Puddle of Mudd", "Control", "", ""]);
   a.push(["Puddle of Mudd", "She Hates Me", "", ""]);
   a.push(["Queen", "Another One Bites the Dust", "y", ""]);
@@ -1912,7 +1912,7 @@ export const buildSongList = () => {
   a.push(["Roy Orbison", "Blue Bayou", "", ""]);
   a.push(["Roy Orbison", "Claudette", "", ""]);
   a.push(["Roy Orbison", "Dream Baby (How Long Must I Dream)", "", ""]);
-  a.push(["Roy Orbison", "In Dreams", "", ""]);
+  a.push(["Roy Orbison", "In Dreams", "y", ""]);
   a.push(["Roy Orbison", "Mean Woman Blues", "", ""]);
   a.push(["Roy Orbison", "Oh, Pretty Woman", "y", ""]);
   a.push(["Roy Orbison", "Only the Lonely (Know the Way I Feel)", "", ""]);
@@ -2026,7 +2026,7 @@ export const buildSongList = () => {
   a.push(["The Smiths", "Stop Me if You Think You've Heard This", "y", ""]);
   a.push(["The Smiths", "This Charming Man", "", ""]);
   a.push(["Snoop Dogg", "Beautiful", "", ""]);
-  a.push(["Snoop Dogg", "Drop It Like It's Hot", "", ""]);
+  a.push(["Snoop Dogg", "Drop It Like It's Hot", "y", ""]);
   a.push(["Snoop Dogg", "Ridin' in My Chevy", "", ""]);
   a.push(["Snoop Dogg", "Sensual Seduction", "", ""]);
   a.push(["Snoop Dogg", "Tha Shiznit", "", ""]);
@@ -2265,7 +2265,7 @@ export const buildSongList = () => {
   a.push(["Trace Adkins", "Swing", "", ""]);
   a.push(["Tracy Bonham", "Mother Mother", "", ""]);
   a.push(["Train", "Drops of Jupiter", "y", ""]);
-  a.push(["Trapt", "Who's Going Home with You Tonight?", "", ""]);
+  a.push(["Trapt", "Who's Going Home with You Tonight?", "y", ""]);
   a.push(["Travie McCoy (ft. Bruno Mars)", "Billionaire", "", ""]);
   a.push(["Tribe", "Outside", "", ""]);
   a.push(["Trivium", "In Waves", "y", ""]);
