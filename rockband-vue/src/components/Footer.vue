@@ -17,7 +17,8 @@ export default {
 
 <style scoped>
 .facebook {
-  margin-top: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 

@@ -16,7 +16,7 @@ import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 
 export default {
-  name: "HelloWorld",
+  name: "ListLayout",
 
   components: {
     List,

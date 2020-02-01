@@ -158,12 +158,12 @@ export default {
   border-bottom: 1px solid #e4e4e4;
   height: 50px;
   background-color: #fff;
-  z-index: 1;
+  z-index: 2;
 }
 
 .info-container {
   position: relative;
-  top: 50px;
+  top: 88px;
   margin-right: 1rem;
   margin-left: 1rem;
   padding-bottom: 50px;

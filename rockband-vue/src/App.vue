@@ -8,7 +8,7 @@
 import ListLayout from "@/components/ListLayout";
 
 export default {
-  name: "app",
+  name: "App",
 
   components: {
     ListLayout

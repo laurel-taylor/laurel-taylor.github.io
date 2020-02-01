@@ -2,7 +2,7 @@ export const buildSongList = () => {
   const a = new Array();
   a.push([".38 Special", "Caught Up in You", "y", ""]);
   a.push([".38 Special", "Hold On Loosely", "", ""]);
-  a.push(["3 Doors Down", "Here Without You", "", ""]);
+  a.push(["3 Doors Down", "Here Without You", "y", ""]);
   a.push(["3 Doors Down", "It's Not My Time", "", ""]);
   a.push(["3 Doors Down", "Kryptonite", "y", ""]);
   a.push(["3 Doors Down", "When I'm Gone", "", ""]);
@@ -1271,7 +1271,7 @@ export const buildSongList = () => {
   a.push(["Linea 77", "Fantasma", "", ""]);
   a.push(["Linkin Park", "Breaking the Habit", "y", ""]);
   a.push(["Linkin Park", "Burnt It Down", "", ""]);
-  a.push(["Linkin Park", "Crawling", "", ""]);
+  a.push(["Linkin Park", "Crawling", "y", ""]);
   a.push(["Linkin Park", "In the End", "y", ""]);
   a.push(["Linkin Park", "Lying From You", "y", ""]);
   a.push(["Linkin Park", "New Divide", "y", ""]);
@@ -1927,7 +1927,7 @@ export const buildSongList = () => {
   a.push(["Rush", "2112: Discovery, Presentation", "", ""]);
   a.push(["Rush", "2112: Oracle: The Dream, Soliloquy, Grand Finale", "", ""]);
   a.push(["Rush", "2112: Overture, The Temples of Syrinx", "y", ""]);
-  a.push(["Rush", "The Camera Eye", "", ""]);
+  a.push(["Rush", "The Camera Eye", "y", ""]);
   a.push(["Rush", "Caravan", "", ""]);
   a.push(["Rush", "Closer to the Heart", "y", ""]);
   a.push(["Rush", "Fly by Night", "y", ""]);
@@ -2615,7 +2615,7 @@ export const buildSongList = () => {
   a.push(["Band of Horses", "Is There a Ghost", "", ""]);
   a.push(["Band of Horses", "No One's Gonna Love You", "", ""]);
   a.push(["Band of Horses", "The Funeral", "", ""]);
-  a.push(["Linkin Park", "One Step Closer", "", ""]);
+  a.push(["Linkin Park", "One Step Closer", "y", ""]);
   a.push(["The Offspring", "Come Out and Play (Keep 'Em Separated)", "y", ""]);
   a.push(["Imagine Dragons", "Natural", "", ""]);
   a.push(["Maroon 5", "Girls Like You", "", ""]);
@@ -2774,6 +2774,14 @@ export const buildSongList = () => {
     "",
     ""
   ]);
+  a.push(["Green Day", "Father of All...", "", ""]);
+  a.push(["Weezer", "The End of the Game", "", ""]);
+  a.push(["The Bronx", "Young Bloods", "", ""]);
+  a.push(["Fitz and The Tantrums", "I Just Wanna Shine", "", ""]);
+  a.push(["Jimmy Eat World", "All the Way (Stay)", "", ""]);
+  a.push(["The Summer Set", "Chelsea", "", ""]);
+  a.push(["Post Malone", "Circles", "", ""]);
+  a.push(["Ra Ra Riot", "Can You Tell", "", ""]);
 
   return a;
 };

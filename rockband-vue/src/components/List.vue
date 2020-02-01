@@ -25,15 +25,16 @@
           />
         </div>
       </div>
-
-      <div
-        class="tr"
-        v-for="(item, i) in filteredList"
-        :key="i"
-        :class="[{ own: item[2] === 'y' }]"
-      >
-        <div class="td band">{{ item[0] }}</div>
-        <div class="td song">{{ item[1] }}</div>
+      <div class="tbody">
+        <div
+          class="tr"
+          v-for="(item, i) in filteredList"
+          :key="i"
+          :class="[{ own: item[2] === 'y' }]"
+        >
+          <div class="td band">{{ item[0] }}</div>
+          <div class="td song">{{ item[1] }}</div>
+        </div>
       </div>
     </div>
     <div class="empty" v-else>
@@ -47,10 +48,12 @@
 import { buildSongList } from "@/list";
 
 export default {
-  name: "Search",
+  name: "List",
+
   props: {
     search: String
   },
+
   data() {
     return {
       list: buildSongList(),
@@ -58,6 +61,11 @@ export default {
       sortProp: 0
     };
   },
+
+  mounted() {
+    this.sortList();
+  },
+
   computed: {
     filteredList() {
       const list = this.list;
@@ -80,17 +88,29 @@ export default {
         const property = this.sortProp;
         const sortOrder = this.ascending ? 1 : -1;
 
-        const result =
+        let result =
           a[property].toLowerCase() < b[property].toLowerCase()
             ? -1
             : a[property].toLowerCase() > b[property].toLowerCase()
             ? 1
             : 0;
 
+        if (result === 0 && property === 0) {
+          result =
+            a[1].toLowerCase() < b[1].toLowerCase()
+              ? -1
+              : a[1].toLowerCase() > b[1].toLowerCase()
+              ? 1
+              : 0;
+        }
+
         return result * sortOrder;
       };
       this.list = this.list.sort(sortFunction);
+
+      window.scrollTo(0, 0);
     },
+
     setSort(property) {
       if (this.sortProp === property) {
         this.ascending = !this.ascending;
@@ -100,6 +120,7 @@ export default {
       }
       this.sortList();
     },
+
     searchAgain() {
       this.$emit("searchAgain");
     }
@@ -123,6 +144,14 @@ export default {
   font-size: 1rem;
 }
 
+.thead {
+  position: fixed;
+  top: 50px;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+}
+
 .thead .td {
   cursor: pointer;
   font-size: 2rem;
@@ -130,6 +159,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.tbody {
+  position: relative;
+  top: 42px;
 }
 
 .td {
