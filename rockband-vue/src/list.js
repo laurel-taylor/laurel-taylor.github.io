@@ -599,7 +599,7 @@ export const buildSongList = () => {
   a.push(["Disturbed", "Another Way to Die", "y", ""]);
   a.push(["Disturbed", "Asylum", "", ""]);
   a.push(["Disturbed", "Down with the Sickness", "y", ""]);
-  a.push(["Disturbed", "The Game", "", ""]);
+  a.push(["Disturbed", "The Game", "y", ""]);
   a.push(["Disturbed", "Immortalized", "", ""]);
   a.push(["Disturbed", "Indestructible", "y", ""]);
   a.push(["Disturbed", "Inside the Fire", "y", ""]);
@@ -629,7 +629,7 @@ export const buildSongList = () => {
   a.push(["The Doors", "Peace Frog", "y", ""]);
   a.push(["The Doors", "People Are Strange", "y", ""]);
   a.push(["The Doors", "Riders on the Storm", "", ""]);
-  a.push(["The Doors", "Roadhouse Blues", "", ""]);
+  a.push(["The Doors", "Roadhouse Blues", "y", ""]);
   a.push(["The Doors", "Soul Kitchen", "", ""]);
   a.push(["The Doors", "Touch Me", "", ""]);
   a.push(["Dover", "King Fire", "y", "come back"]);
@@ -1993,8 +1993,7 @@ export const buildSongList = () => {
   a.push(["Siouxsie and The Banshees", "Peek-a-Boo", "", ""]);
   a.push(["Sister Hazel", "All For You", "", ""]);
   a.push(["Sixx:A.M.", "Life is Beautiful", "y", ""]);
-  a.push(["Skillet", "Feel Invincible", "", ""]);
-  a.push(["Skillet", "Feel Invincible", "", ""]);
+  a.push(["Skillet", "Feel Invincible", "y", ""]);
   a.push(["Skillet", "Monster", "y", ""]);
   a.push(["Skizoo", "Dame Aire", "", ""]);
   a.push(["Skratch'N Snyf", "S.O.M.P.", "", ""]);
@@ -2074,7 +2073,7 @@ export const buildSongList = () => {
   a.push(["Staind", "Outside", "", ""]);
   a.push(["Staind", "So Far Away", "", ""]);
   a.push(["Staind", "This Is It", "", ""]);
-  a.push(["Starship", "We Built This City", "", ""]);
+  a.push(["Starship", "We Built This City", "y", ""]);
   a.push(["Static-X", "Push It", "y", ""]);
   a.push(["Steely Dan", "Black Friday", "", ""]);
   a.push(["Steely Dan", "My Old School", "y", ""]);
@@ -2533,7 +2532,7 @@ export const buildSongList = () => {
   a.push([
     "A Day to Remember",
     "I'm Made of Wax, Larry, What Are You Made Of?",
-    "",
+    "y",
     ""
   ]);
   a.push(["Seether", "Fake It", "y", ""]);
@@ -2669,7 +2668,7 @@ export const buildSongList = () => {
   a.push(["All That Remains", "Hold On", "", ""]);
   a.push(["In This Moment", "The Gun Show", "", ""]);
   a.push(["Vampire Weekend", "Harmony Hall", "", ""]);
-  a.push(["A Day to Remember", "It's Complicated", "", ""]);
+  a.push(["A Day to Remember", "It's Complicated", "y", ""]);
   a.push(["Catfish and the Bottlemen", "Longshot", "", ""]);
   a.push(["Arch Enemy", "Nemesis", "", ""]);
   a.push(["Judah & the Lion", "Over My Head", "", ""]);
@@ -2724,7 +2723,7 @@ export const buildSongList = () => {
   a.push(["All That Remains", "Undone", "", ""]);
   a.push(["The Limousines", "Very Busy People", "", ""]);
   a.push(["The Lumineers", "Gloria", "", ""]);
-  a.push(["A Day to Remember", "Have Faith in Me", "", ""]);
+  a.push(["A Day to Remember", "Have Faith in Me", "y", ""]);
   a.push(["Oliver Tree", "Hurt", "", ""]);
   a.push(["Sleater-Kinney", "Jumpers", "", ""]);
   a.push(["3 Inches of Blood", "Battles and Brotherhood", "", ""]);
@@ -2734,7 +2733,7 @@ export const buildSongList = () => {
   a.push(["Sleater-Kinney", "Entertain", "", ""]);
   a.push(["Lil Nas X ft. Billy Ray Cyrus", "Old Town Road (Remix)", "", ""]);
   a.push(["H.E.R.", "21", "", ""]);
-  a.push(["Rodrigo y Gabriela", "Buster Voodoo", "", ""]);
+  a.push(["Rodrigo y Gabriela", "Buster Voodoo", "y", ""]);
   a.push(["Bring Me the Horizon", "sugar honey ice & tea", "y", ""]);
   a.push(["Dirty Honey", "When I'm Gone", "", ""]);
   a.push(["DragonForce", "Highway to Oblivion", "", ""]);
@@ -2780,8 +2779,24 @@ export const buildSongList = () => {
   a.push(["Fitz and The Tantrums", "I Just Wanna Shine", "", ""]);
   a.push(["Jimmy Eat World", "All the Way (Stay)", "", ""]);
   a.push(["The Summer Set", "Chelsea", "", ""]);
-  a.push(["Post Malone", "Circles", "", ""]);
+  a.push(["Post Malone", "Circles", "y", ""]);
   a.push(["Ra Ra Riot", "Can You Tell", "", ""]);
+  a.push(["Simple Plan", "Addicted", "", ""]);
+  a.push(["Simple Plan", "Welcome to My Life", "", ""]);
+  a.push([
+    "Simple Plan & State Champs feat. We the Kings",
+    "Where I Belong",
+    "",
+    ""
+  ]);
+  a.push(["Alice Cooper", "No More Mr. Nice Guy", "", ""]);
+  a.push(["In This Moment", "Mechanical Love", "", ""]);
+  a.push(["Clutch", "50,000 Unstoppable Watts", "", ""]);
+  a.push(["Rodrigo y Gabriela", "Hanuman", "", ""]);
+  a.push(["Five Finger Death Punch", "Inside Out", "", ""]);
+  a.push(["The Unlikely Candidates", "Novocaine", "", ""]);
+  a.push(["A Day to Remember", "Sticks & Bricks", "", ""]);
+  a.push(["Fake Problems", "5678", "", ""]);
 
   return a;
 };
