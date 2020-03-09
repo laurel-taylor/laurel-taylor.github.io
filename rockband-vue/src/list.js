@@ -626,7 +626,7 @@ export const buildSongList = () => {
   a.push(["The Doors", "Light My Fire", "", ""]);
   a.push(["The Doors", "Love Her Madly", "", ""]);
   a.push(["The Doors", "Love Me Two Times", "", ""]);
-  a.push(["The Doors", "Peace Frog", "", ""]);
+  a.push(["The Doors", "Peace Frog", "y", ""]);
   a.push(["The Doors", "People Are Strange", "y", ""]);
   a.push(["The Doors", "Riders on the Storm", "", ""]);
   a.push(["The Doors", "Roadhouse Blues", "", ""]);
