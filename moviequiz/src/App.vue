@@ -48,9 +48,13 @@ h3, h4 {
 
 input {
   border: 1px solid #aaa;
-  font-size: 2rem;
-  width: 100%;
+  width: 94%;
   border-radius: 3px;
+
+  @media($small) {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
 }
 
 button {
