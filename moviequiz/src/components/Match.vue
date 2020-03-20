@@ -163,6 +163,7 @@ export default {
     }
 
     .option {
+        font-size: 1.5rem;
         cursor: pointer;
 
         &.crossed {
