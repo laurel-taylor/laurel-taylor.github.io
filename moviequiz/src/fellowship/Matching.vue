@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 v-if="step===0">Lord of the Rings: Fellowship of the Ring Quiz</h1>
+    <h1 v-if="step===1">Lord of the Rings: Fellowship of the Ring Quiz</h1>
 
     <match
-        v-if="step===0"
+        v-if="step===1"
         title="Match these Men with their picture"
         description="(we're gonna call Aragorn a man even tho he's Numenorean #closeenough)"
         :options="men"
@@ -11,21 +11,21 @@
     />
 
     <match
-        v-else-if="step===1"
+        v-else-if="step===2"
         title="Match these Elves with their picture"
         :options="elves"
         :show-options="true"
     />
 
     <match
-        v-else-if="step===2"
+        v-else-if="step===3"
         title="Match these Hobbits with their picture"
         :options="hobbits"
         :show-options="true"
     />
 
     <match
-        v-else-if="step===3"
+        v-else-if="step===4"
         title="Name these members of the fellowship:"
         description="No helpful options this time"
         :options="fellowship"
@@ -33,28 +33,17 @@
     />
 
     <match
-        v-else-if="step===4"
+        v-else-if="step===5"
         title="Forces of evil"
         description="Name those baddies"
         :options="badguys"
         :show-options="true"
-    />
-
-    <quiz-buttons
-        :show-back="showBack"
-        :step="step"
-        :steps="4"
-        @next="step++"
-        @back="step--"
-        @backSection="$emit('back')"
-        @nextSection="$emit('next')"
     />
   </div>
 </template>
 
 <script>
 import Match from '@/components/Match';
-import QuizButtons from '@/components/QuizButtons';
 import char from '@/fellowship/characters';
 
 export default {
@@ -62,17 +51,10 @@ export default {
 
     components: {
         Match,
-        QuizButtons,
     },
 
     props: {
-        showBack: Boolean,
-    },
-
-    data() {
-        return {
-            step: 0,
-        };
+        step: Number,
     },
 
     computed: {

@@ -1,11 +1,9 @@
 <template>
     <div class="buttons">
-        <button v-if="step===0 && showBack" @click="$emit('backSection')">Back</button>
-        <button v-if="step>0" @click="$emit('back')">Back</button>
+        <button v-if="step>1" @click="$emit('back')">Back</button>
         <div v-else>&nbsp;</div>
 
-        <button v-if="step<steps" @click="$emit('next')">Next</button>
-        <button v-if="step===steps" @click="$emit('nextSection')">Next</button>
+        <button @click="$emit('next')">Next</button>
     </div>
 </template>
 

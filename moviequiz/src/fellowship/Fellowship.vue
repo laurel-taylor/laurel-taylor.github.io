@@ -1,36 +1,37 @@
 <template>
-  <div class="about">
+  <div>
     <matching
-      v-if="section===0"
-      @next="section++"
-      @back="section--"
+      v-if="step<=matchingSteps"
+      :step="step"
     />
 
     <accessories
-      v-if="section===1"
-      @next="section++"
-      @back="section--"
-      show-back
+      v-else-if="step<=matchingSteps + accessoriesSteps"
+      :step="step - matchingSteps"
     />
 
     <plot
-      v-if="section===2"
-      @next="section++"
-      @back="section--"
-      show-back
+      v-else-if="step<=matchingSteps + accessoriesSteps + plotSteps"
+      :step="step - matchingSteps - accessoriesSteps"
     />
 
-    <div v-if="section>sections">
+    <div v-else>
       Nothing here yet!
-      <button @click="section--">Go back</button>
     </div>
 
+    <quiz-buttons
+        :step="step"
+        :steps="matchingSteps + accessoriesSteps + plotSteps"
+        @next="step++"
+        @back="step--"
+    />
   </div>
 </template>
 
 <script>
 import Matching from '@/fellowship/Matching';
 import Accessories from '@/fellowship/Accessories';
+import QuizButtons from '@/components/QuizButtons';
 import Plot from '@/fellowship/Plot';
 
 export default {
@@ -38,12 +39,15 @@ export default {
     Matching,
     Accessories,
     Plot,
+    QuizButtons,
   },
 
   data() {
     return {
-      section: 0,
-      sections: 2,
+      step: 1,
+      matchingSteps: 5,
+      accessoriesSteps: 4,
+      plotSteps: 3,
     };
   },
 

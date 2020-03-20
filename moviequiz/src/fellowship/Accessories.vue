@@ -3,7 +3,7 @@
     <h1>Accessories</h1>
 
     <match
-        v-if="step===0"
+        v-if="step===1"
         title="Who got the gift?"
         description="Galadriel gave out some stuff. Who got what?"
         :options="gifts"
@@ -12,7 +12,7 @@
     />
 
     <multiple-choice
-        v-if="step===1"
+        v-if="step===2"
         title="Name all the things that Boromir carries:"
         :picture="boromirPic"
         decription="Choose multiple"
@@ -21,32 +21,21 @@
 
     <open-ended
         description="These are open-ended; take a guess if you don't know"
-        v-if="step===2"
+        v-if="step===3"
         :options="accessories"
     />
 
     <multiple-choice
-        v-if="step===3"
+        v-if="step===4"
         title="Name all the people who have been a Ringbearer (keeper of the One Ring):"
         :picture="onering"
         :options="carriers"
-    />
-
-    <quiz-buttons
-        :show-back="showBack"
-        :step="step"
-        :steps="3"
-        @next="step++"
-        @back="step--"
-        @backSection="$emit('back')"
-        @nextSection="$emit('next')"
     />
   </div>
 </template>
 
 <script>
 import Match from '@/components/Match';
-import QuizButtons from '@/components/QuizButtons';
 import MultipleChoice from '@/components/MultipleChoice';
 import OpenEnded from '@/components/OpenEnded';
 import { gifts } from '@/fellowship/constants';
@@ -60,18 +49,17 @@ export default {
 
     components: {
         Match,
-        QuizButtons,
         MultipleChoice,
         OpenEnded,
     },
 
     props: {
         showBack: Boolean,
+        step: Number,
     },
 
     data() {
         return {
-            step: 0,
             boromirPic,
             onering,
         };

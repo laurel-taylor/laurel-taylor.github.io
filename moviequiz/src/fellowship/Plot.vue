@@ -1,39 +1,28 @@
 <template v-slot="slotProps">
   <div class="accessories">
-    <h1 v-if="step===0">Plot</h1>
+    <h1 v-if="step===1">Plot</h1>
 
     <open-ended
         description="These are open-ended; take a guess if you don't know"
-        v-if="step===0"
+        v-if="step===1"
         :options="destroy"
     />
 
     <open-ended
         title="Ring trivia"
-        v-if="step===1"
+        v-if="step===2"
         :options="ring"
     />
 
     <open-ended
         title="Where are they now?"
-        v-if="step===2"
+        v-if="step===3"
         :options="whereAreThey"
-    />
-
-    <quiz-buttons
-        :show-back="showBack"
-        :step="step"
-        :steps="2"
-        @next="step++"
-        @back="step--"
-        @backSection="$emit('back')"
-        @nextSection="$emit('next')"
     />
   </div>
 </template>
 
 <script>
-import QuizButtons from '@/components/QuizButtons';
 import OpenEnded from '@/components/OpenEnded';
 import chars from '@/fellowship/characters';
 
@@ -43,18 +32,12 @@ export default {
     name: 'plot',
 
     components: {
-        QuizButtons,
         OpenEnded,
     },
 
     props: {
         showBack: Boolean,
-    },
-
-    data() {
-        return {
-            step: 0,
-        };
+        step: Number,
     },
 
     computed: {
