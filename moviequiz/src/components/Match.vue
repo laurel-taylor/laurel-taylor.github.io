@@ -4,14 +4,17 @@
       <p class="description">{{ description }}</p>
 
       <h4 v-if="showOptions">Options:</h4>
-      <ul v-if="showOptions" class="options">
+      <ul v-if="showOptions" :class="['options', {'picture-options': showPictureOptions }]">
         <li
             v-for="(option) in myOptions"
             :class="['option',{ 'crossed': option.crossed }]"
             :key="option.name"
             @click="crossOption(option)"
         >
-            {{ option.name }}
+            <div class="image-wrapper picture-option" v-if="showPictureOptions">
+                <img :src="option.pictureOption" />
+            </div>
+            <div>{{ option.name }}</div>
         </li>
       </ul>
 
@@ -23,7 +26,7 @@
             </div>
 
             <div>
-                Your answer: <input
+                {{ option.answerPrompt || 'Your answer:' }} <input
                     :class="['match-input', { 'show-answers': showAnswers, correct: isCorrect(option) }]"
                     type="text"
                     v-model="option.myAnswer"
@@ -35,7 +38,7 @@
         </li>
       </ul>
 
-      <div class="show-answers">
+      <div class="answer-button">
         <show-answers
             :show="showAnswers"
             @show="setShowAnswers"
@@ -64,6 +67,7 @@ export default {
         },
         options: Array,
         showOptions: Boolean,
+        showPictureOptions: Boolean,
     },
 
     watch: {
@@ -113,34 +117,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/styles/main";
+@import "~@/styles/questions";
 
-    .match {
-        margin-top: 1.5rem;
-    }
-
-    .description {
-        color: #888;
-    }
-
-    input.show-answers {
-        border-color: $red;
-
-        &.correct {
-            border-color: $green;
-            background-color: $lightgreen;
-        }
-    }
-
-    .image-wrapper {
-        max-width: 200px;
-
-        img {
-            height: 100%;
-            width: 100%;
-        }
-    }
-
-    .pictures {
+    .pictures,
+    .picture-options {
         margin-top: 1.5rem;
         display: grid;
         grid-gap: 1rem;
@@ -149,25 +129,42 @@ export default {
         @media($small) {
             grid-template-columns: 1fr 1fr;
         }
+
+        .option {
+            font-size: 1rem;
+        }
     }
 
-    li.pic {
+    .pictures {
+        padding-top: 1rem;
+        border-top: 1px solid $gray;
+    }
+
+    .picture-options {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        @media($small) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    li {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    .show-answers {
-        display: flex;
-        justify-content: flex-end;
-    }
-
     .option {
         font-size: 1.5rem;
+        margin-bottom: 0.5rem;
         cursor: pointer;
 
         &.crossed {
             text-decoration: line-through;
         }
+    }
+
+    .options:not(.picture-options) {
+        list-style-type: disc;
     }
 </style>

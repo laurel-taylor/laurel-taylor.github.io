@@ -1,0 +1,26 @@
+.image-wrapper {
+    max-width: 200px;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.answer-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+input.show-answers {
+    border-color: $red;
+
+    &.correct {
+        border-color: $green;
+        background-color: $lightgreen;
+    }
+}
+
+.description {
+    color: $gray;
+}

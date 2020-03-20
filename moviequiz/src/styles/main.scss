@@ -1,6 +1,22 @@
-$small: "max-width: 949px";
+$small: "max-width: 500px";
 $green: #42b983;
 $lightgreen: #a6ffd7;
 $yellow: #9ea929;
 $red: rgb(206, 14, 14);
 $blue: #2099da;
+$gray: #888;
+
+
+h1 {
+    font-size: 1.5rem;
+}
+h3, h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+        margin-top: 0;
+    }
+}

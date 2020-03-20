@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
+  <div>
+    <h1 v-if="step===0">Lord of the Rings: Fellowship of the Ring Quiz</h1>
+
     <match
         v-if="step===0"
         title="Match these Men with their picture"
@@ -25,20 +27,34 @@
     <match
         v-else-if="step===3"
         title="Name these members of the fellowship:"
+        description="No helpful options this time"
         :options="fellowship"
         :show-options="false"
     />
 
-    <div class="buttons">
-        <button v-if="step>0" @click="step--">Back</button><div v-else>&nbsp;</div>
-        <button v-if="step<steps" @click="step++">Next</button>
-        <button v-if="step===steps" @click="$emit('next')">Next</button>
-    </div>
+    <match
+        v-else-if="step===4"
+        title="Forces of evil"
+        description="Name those baddies"
+        :options="badguys"
+        :show-options="true"
+    />
+
+    <quiz-buttons
+        :show-back="showBack"
+        :step="step"
+        :steps="4"
+        @next="step++"
+        @back="step--"
+        @backSection="$emit('back')"
+        @nextSection="$emit('next')"
+    />
   </div>
 </template>
 
 <script>
 import Match from '@/components/Match';
+import QuizButtons from '@/components/QuizButtons';
 import char from '@/fellowship/characters';
 
 export default {
@@ -46,12 +62,16 @@ export default {
 
     components: {
         Match,
+        QuizButtons,
+    },
+
+    props: {
+        showBack: Boolean,
     },
 
     data() {
         return {
             step: 0,
-            steps: 3,
         };
     },
 
@@ -76,6 +96,15 @@ export default {
                 char.legolas,
                 char.sam,
                 char.gandalf,
+            ];
+        },
+        badguys() {
+            return [
+                char.sauron,
+                char.saruman,
+                char.orc,
+                char.urukhai,
+                char.ringwraith,
             ];
         },
     },

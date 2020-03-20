@@ -4,19 +4,27 @@
           <img :src="picture" />
       </div>
 
-      <h2>{{ title }}</h2>
+      <h2 v-if="title">{{ title }}</h2>
 
       <p v-if="description" class="description">{{ description }}</p>
 
-      <ul :class="['options']">
-        <li
-            v-for="(option) in myAnswers"
-            :class="['option', { 'show-answers': showAnswers, correct: isCorrect(option) }]"
-            :key="option.id"
-            @click="setAnswer(option)"
-        >
-          <span :class="['checkbox', { 'checked': option.myAnswer }]" />
-          {{ option.label }}
+      <ul class="options">
+        <li class="option" v-for="(option) in myAnswers" :key="option.id">
+            <div class="image-wrapper" v-if="option.picture">
+                <img :src="option.picture" />
+            </div>
+
+            <div>{{ option.question }}</div>
+
+            <input
+                :class="[{ 'show-answers': showAnswers, correct: isCorrect(option) }]"
+                type="text"
+                v-model="option.myAnswer"
+            />
+
+            <div class="answer" v-if="showAnswers">
+                {{ option.answer }}
+            </div>
         </li>
       </ul>
 
@@ -42,7 +50,10 @@ export default {
     },
 
     props: {
-        title: String,
+        title:{
+            type: String,
+            default: '',
+        },
         picture: {
             type: String,
             default: '',
@@ -73,8 +84,13 @@ export default {
     },
 
     methods: {
-        isCorrect({correct, myAnswer}) {
-            return (!correct && !myAnswer) || myAnswer === correct;
+        isCorrect({ accepted, myAnswer }) {
+            const answer = myAnswer || '';
+
+            return answer && accepted.some((accept) => {
+                const regex = new RegExp(accept, 'gi');
+                return answer.match(regex);
+            });
         },
 
         setAnswer(option) {
@@ -102,42 +118,13 @@ export default {
 @import "~@/styles/main";
 @import "~@/styles/questions";
 
-$checkbox-size: 20px;
-
-.option {
-    font-size: 1.5rem;
-    cursor: pointer;
-
-    &.show-answers {
-        color: $red;
-
-        .checkbox.checked {
-          background-color: $red;
-        }
-
-        &.correct {
-          color: $green;
-
-          .checkbox.checked {
-            background-color: $green;
-          }
-        }
-    }
-}
-
-.checkbox {
-  display: inline-block;
-  width: $checkbox-size;
-  height: $checkbox-size;
-
-  border: 1px solid $blue;
-
-  &.checked {
-    background-color: $blue;
-  }
+li {
+    margin: 1.5rem 0;
 }
 
 .image-wrapper {
+    margin-bottom: 1rem;
+
     @media($small) {
         max-width: 100%;
     }

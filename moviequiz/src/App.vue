@@ -37,22 +37,17 @@
 
 ul {
   padding: 0;
-  list-style: none;
+  list-style-type: none;
   margin: 0.5rem 0;
 }
 
-h3, h4 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
 input {
+  font-size: 1.5rem;
   border: 1px solid #aaa;
   width: 94%;
   border-radius: 3px;
 
   @media($small) {
-    font-size: 1.5rem;
     padding: 5px;
   }
 }

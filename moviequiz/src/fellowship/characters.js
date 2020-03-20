@@ -2,6 +2,10 @@ import isildurPic from '@/assets/pics/isildur.png';
 import boromirPic from '@/assets/pics/boromir.png';
 import aragornPic from '@/assets/pics/aragorn.png';
 import legolasPic from '@/assets/pics/legolas.png';
+import orcPic from '@/assets/pics/orcs.png';
+import saurmanPic from '@/assets/pics/saruman.png';
+import urukhaiPic from '@/assets/pics/urukhai.png';
+import ringwraithPic from '@/assets/pics/ringwraith.png';
 
 export default {
     aragorn: {
@@ -78,5 +82,25 @@ export default {
         name: "Sauron",
         accepted: ["sauron"],
         picture: "https://vignette.wikia.nocookie.net/lotr/images/9/90/Sauron-2.jpg/revision/latest?cb=20110508182634",
+    },
+    saruman: {
+        name: "Saruman the White",
+        accepted: ["saruman", "sarumon", "white"],
+        picture: saurmanPic,
+    },
+    orc: {
+        name: "Orcs",
+        accepted: ["orcs", "orc"],
+        picture: orcPic,
+    },
+    urukhai: {
+        name: "Uruk-hai",
+        accepted: ["urukhai", "uruk", "uruk-hai"],
+        picture: urukhaiPic,
+    },
+    ringwraith: {
+        name: "Ringwraith aka Nazgul",
+        accepted: ["ringwraith", "ring", "wraith", "nazgul"],
+        picture: ringwraithPic,
     },
 }

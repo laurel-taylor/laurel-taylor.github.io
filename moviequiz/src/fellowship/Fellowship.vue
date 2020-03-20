@@ -1,10 +1,28 @@
 <template>
   <div class="about">
-    <h1>Lord of the Rings: Fellowship of the Ring Quiz</h1>
-    <matching v-if="step===0" @next="step++" />
-    <div v-if="step>=1">
+    <matching
+      v-if="section===0"
+      @next="section++"
+      @back="section--"
+    />
+
+    <accessories
+      v-if="section===1"
+      @next="section++"
+      @back="section--"
+      show-back
+    />
+
+    <plot
+      v-if="section===2"
+      @next="section++"
+      @back="section--"
+      show-back
+    />
+
+    <div v-if="section>sections">
       Nothing here yet!
-      <button @click="step--">Go back</button>
+      <button @click="section--">Go back</button>
     </div>
 
   </div>
@@ -12,15 +30,20 @@
 
 <script>
 import Matching from '@/fellowship/Matching';
+import Accessories from '@/fellowship/Accessories';
+import Plot from '@/fellowship/Plot';
 
 export default {
   components: {
     Matching,
+    Accessories,
+    Plot,
   },
 
   data() {
     return {
-      step: 0,
+      section: 0,
+      sections: 2,
     };
   },
 
