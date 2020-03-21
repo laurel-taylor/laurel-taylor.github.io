@@ -93,6 +93,7 @@ export default {
         setShowAnswers() {
             this.getCorrectAnswers();
             this.showAnswers = !this.showAnswers;
+            this.$emit('answers', { correct: this.correctAnswers, total: this.options.length });
         },
     }
 };

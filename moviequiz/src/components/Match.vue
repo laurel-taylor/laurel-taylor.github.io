@@ -32,7 +32,7 @@
                     v-model="option.myAnswer"
                 />
                 <div class="answer" v-if="showAnswers">
-                    Answer: {{ option.name }}
+                    {{ option.name }}
                 </div>
             </div>
         </li>
@@ -110,6 +110,7 @@ export default {
         setShowAnswers() {
             this.getCorrectAnswers();
             this.showAnswers = !this.showAnswers;
+            this.$emit('answers', { correct: this.correctAnswers, total: this.options.length });
         },
     }
 };

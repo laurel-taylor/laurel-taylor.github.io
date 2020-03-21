@@ -9,6 +9,8 @@
         :options="gifts"
         :show-options="true"
         :show-picture-options="true"
+        key="acc_1"
+        @answers="handleAnswers"
     />
 
     <multiple-choice
@@ -17,12 +19,16 @@
         :picture="boromirPic"
         decription="Choose multiple"
         :options="boromirAccessories"
+        key="acc_1"
+        @answers="handleAnswers"
     />
 
     <open-ended
         description="These are open-ended; take a guess if you don't know"
         v-if="step===3"
         :options="accessories"
+        key="acc_3"
+        @answers="handleAnswers"
     />
 
     <multiple-choice
@@ -30,6 +36,8 @@
         title="Name all the people who have been a Ringbearer (keeper of the One Ring):"
         :picture="onering"
         :options="carriers"
+        key="acc_4"
+        @answers="handleAnswers"
     />
   </div>
 </template>
@@ -177,6 +185,12 @@ export default {
                 },
             ]
         }
+    },
+
+    methods: {
+        handleAnswers(answers) {
+            this.$emit('answers', { ...answers, step: this.step });
+        },
     },
 };
 </script>

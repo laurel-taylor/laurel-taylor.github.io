@@ -1,10 +1,11 @@
 $small: "max-width: 500px";
+$darkgreen: #2a7453;
 $green: #42b983;
 $lightgreen: #a6ffd7;
 $yellow: #9ea929;
 $red: rgb(206, 14, 14);
 $blue: #2099da;
-$gray: #888;
+$gray: rgb(153, 158, 165);
 
 
 h1 {
@@ -19,4 +20,16 @@ h1, h2, h3, h4, h5, h6 {
     &:first-child {
         margin-top: 0;
     }
+}
+
+.green, .perfect {
+    color: $green;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.red {
+    color: $red;
 }

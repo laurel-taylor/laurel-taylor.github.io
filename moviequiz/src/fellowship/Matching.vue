@@ -8,6 +8,8 @@
         description="(we're gonna call Aragorn a man even tho he's Numenorean #closeenough)"
         :options="men"
         :show-options="true"
+        key="match_1"
+        @answers="handleAnswers"
     />
 
     <match
@@ -15,6 +17,8 @@
         title="Match these Elves with their picture"
         :options="elves"
         :show-options="true"
+        key="match_2"
+        @answers="handleAnswers"
     />
 
     <match
@@ -22,22 +26,28 @@
         title="Match these Hobbits with their picture"
         :options="hobbits"
         :show-options="true"
+        key="match_3"
+        @answers="handleAnswers"
     />
 
     <match
         v-else-if="step===4"
+        key="match_4"
         title="Name these members of the fellowship:"
         description="No helpful options this time"
         :options="fellowship"
         :show-options="false"
+        @answers="handleAnswers"
     />
 
     <match
         v-else-if="step===5"
+        key="match_5"
         title="Forces of evil"
         description="Name those baddies"
         :options="badguys"
         :show-options="true"
+        @answers="handleAnswers"
     />
   </div>
 </template>
@@ -90,13 +100,11 @@ export default {
             ];
         },
     },
+
+    methods: {
+        handleAnswers(answers) {
+            this.$emit('answers', { ...answers, step: this.step });
+        },
+    },
 };
 </script>
-
-<style scoped>
-    .buttons {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: space-between;
-    }
-</style>

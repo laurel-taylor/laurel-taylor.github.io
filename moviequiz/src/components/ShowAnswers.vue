@@ -1,8 +1,9 @@
 <template>
-    <div>
+    <div class="buttons">
         <span :class="['show', color]" v-if="show"> Total correct: {{ totalCorrect }}/{{ total }}</span>
+
         <button type="button" @click="$emit('show')">
-            <span v-if="!show">Show</span>
+            <span v-if="!show">Check</span>
             <span v-else>Hide</span>
             answers
         </button>
@@ -38,18 +39,6 @@ export default {
         font-size: 1rem;
 
         margin-right: 1rem;
-
-        &.green {
-            color: $green;
-        }
-
-        &.yellow {
-            color: $yellow;
-        }
-
-        &.red {
-            color: $red;
-        }
     }
 
     button {

@@ -6,18 +6,24 @@
         description="These are open-ended; take a guess if you don't know"
         v-if="step===1"
         :options="destroy"
+        :key="1"
+        @answers="handleAnswers"
     />
 
     <open-ended
         title="Ring trivia"
         v-if="step===2"
         :options="ring"
+        :key="2"
+        @answers="handleAnswers"
     />
 
     <open-ended
         title="Where are they now?"
         v-if="step===3"
+        :key="3"
         :options="whereAreThey"
+        @answers="handleAnswers"
     />
   </div>
 </template>
@@ -45,8 +51,8 @@ export default {
             return [
                 {
                     question: "Where is the group headed? (They can't simply walk there). Which direction is it?",
-                    answer: "Mordor, to the fires of Mt Doom (the volcano). It's to the west.",
-                    accepted: [...mtdoom, "west"],
+                    answer: "Mordor, to the fires of Mt Doom (the volcano). It's to the east.",
+                    accepted: [...mtdoom, "east", "mountain", "volcano"],
                 },
                 {
                     question: "Who created the One Ring (that rules them all)? Starts with an S",
@@ -60,7 +66,7 @@ export default {
                 },
                 {
                     question: "Why does the ring need to get destroyed?",
-                    answer: 'cause if not it will "cover all the land in a second darkness" or some shit',
+                    answer: `'cause if not it will "cover all the land in a second darkness" or some shit`,
                     accepted: ["darkness", "bad", "evil", "dark", "doom"],
                 },
                 {
@@ -108,6 +114,12 @@ export default {
                     accepted: ["captured", "kidnapped", "captive", "taking the hobbits", "uruk-hai", "saruman", "isengard"],
                 },
             ]
+        },
+    },
+
+    methods: {
+        handleAnswers(answers) {
+            this.$emit('answers', { ...answers, step: this.step });
         },
     },
 };
