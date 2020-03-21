@@ -1,5 +1,5 @@
 <template>
-  <div class="match">
+  <form class="match" @submit.prevent="setShowAnswers">
       <h2>{{ title }}</h2>
       <p class="description">{{ description }}</p>
 
@@ -41,12 +41,11 @@
       <div class="answer-button">
         <show-answers
             :show="showAnswers"
-            @show="setShowAnswers"
             :total="options.length"
             :total-correct="correctAnswers"
         />
       </div>
-  </div>
+  </form>
 </template>
 
 <script>

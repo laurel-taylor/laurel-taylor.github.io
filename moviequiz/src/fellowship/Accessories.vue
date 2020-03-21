@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import clonedeep from 'lodash.clonedeep';
 import Match from '@/components/Match';
 import MultipleChoice from '@/components/MultipleChoice';
 import OpenEnded from '@/components/OpenEnded';
@@ -117,17 +118,20 @@ export default {
         accessories() {
             return [
                 {
+                    id: 'sting',
                     question: "What is Frodo's sword's name?",
                     picture: stingPic,
                     answer: "Sting",
                     accepted: ["sting"],
                 },
                 {
+                    id: 'sting_special',
                     question: "Why is his sword special?",
                     answer: "It was made by elves and glows blue when orcs are close.",
                     accepted: ["blue", "glows", "orcs"],
                 },
                 {
+                    id: 'isildur_sword',
                     question: "What is Isildur's sword's name? Why is it special?",
                     picture: narsilPic,
                     answer: "Narsil, it's the one that struck down Sauron the first time. It's probably made by elves or some shit, but it's a fancy sword fit for a king and everyone knows it.",

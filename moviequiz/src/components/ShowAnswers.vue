@@ -2,7 +2,9 @@
     <div class="buttons">
         <span :class="['show', color]" v-if="show"> Total correct: {{ totalCorrect }}/{{ total }}</span>
 
-        <button type="button" @click="$emit('show')">
+        <button
+            type="submit"
+        >
             <span v-if="!show">Check</span>
             <span v-else>Hide</span>
             answers

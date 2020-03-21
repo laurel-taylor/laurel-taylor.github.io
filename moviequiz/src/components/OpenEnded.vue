@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <form @submit.prevent="setShowAnswers">
       <div v-if="picture" class="image-wrapper">
           <img :src="picture" />
       </div>
@@ -31,12 +31,11 @@
       <div class="answer-button">
         <show-answers
             :show="showAnswers"
-            @show="setShowAnswers"
             :total="options.length"
             :total-correct="correctAnswers"
         />
       </div>
-  </div>
+  </form>
 </template>
 
 <script>

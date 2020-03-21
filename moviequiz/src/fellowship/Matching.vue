@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import clonedeep from 'lodash.clonedeep';
 import Match from '@/components/Match';
 import char from '@/fellowship/characters';
 
@@ -69,16 +70,16 @@ export default {
 
     computed: {
         men() {
-            return [char.aragorn, char.boromir, char.isildur]
+            return clonedeep([char.aragorn, char.boromir, char.isildur]);
         },
         elves() {
-            return [char.legolas, char.elrond, char.arwen, char.galadriel]
+            return clonedeep([char.legolas, char.elrond, char.arwen, char.galadriel]);
         },
         hobbits() {
-            return [char.frodo, char.sam, char.bilbo, char.merry, char.pippin]
+            return clonedeep([char.frodo, char.sam, char.bilbo, char.merry, char.pippin]);
         },
         fellowship() {
-            return [
+            return clonedeep([
                 char.aragorn,
                 char.gimli,
                 char.frodo,
@@ -88,16 +89,16 @@ export default {
                 char.legolas,
                 char.sam,
                 char.gandalf,
-            ];
+            ]);
         },
         badguys() {
-            return [
+            return clonedeep([
                 char.sauron,
                 char.saruman,
                 char.orc,
                 char.urukhai,
                 char.ringwraith,
-            ];
+            ]);
         },
     },
 
