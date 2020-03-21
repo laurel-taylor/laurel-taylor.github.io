@@ -70,7 +70,7 @@ export default {
                 {
                     id: 'why_destroyed',
                     question: "Why does the ring need to get destroyed?",
-                    answer: `'cause if not it will "cover all the land in a second darkness" or some shit`,
+                    answer: `'cause if not it will "cover all the land in a second darkness" or something`,
                     accepted: ["darkness", "bad", "evil", "dark", "doom"],
                 },
                 {
