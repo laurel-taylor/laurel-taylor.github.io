@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom trigger</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png" />
+  <style>
+    a.btn {
+      font-size: 3vh;
+      line-height: 2;
+      margin-bottom: 10px;
+    }
+    body {
+      padding: 20px;
+    }
+    .bottom {
+      display: flex;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn" onclick="myFunction()">Click me</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+
+  fetch('https://us-central1-is-automation-event-xform-intg.cloudfunctions.net/customTrigger', {
+    method: 'POST',
+    body: {
+      "account_id": "gn249intg",
+      "user_id": 22,
+      "event_id": 55,
+      "event_type": "custom_trigger",
+      "event_date": "2020-07-30T00:07:29.170Z",
+      "source_type": "test",
+      "source_id": "SIMPLE_TEST",
+      "actor_type": "contact",
+      "actor_id": 459
+    },
+    headers: {
+      'Content-type': 'application/json'
+    }
+  }).then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }
+    return Promise.reject(response);
+  }).then(function (data) {
+    console.log(data);
+  }).catch(function (error) {
+    console.warn('Something went wrong.', error);
+  });
+
+
+  document.getElementById("demo").innerHTML = "Sent!";
+}
+</script>
+</body>
+</html>
