@@ -28,7 +28,6 @@
 </template>
 
 <script>
-/* eslint-disable no-plusplus */
 import data from '@/components/rowData';
 
 export default {
@@ -62,31 +61,7 @@ export default {
 
   methods: {
     findColor(round) {
-      const foundColor = -1;
-      const { colors } = this.colorGroup;
-      for (let i = 0; i < colors.length; i++) {
-        const color = colors[i];
-
-        for (let j = 0; j < color.length; j++) {
-          const r1 = color[j];
-
-          if (r1 === round) {
-            return i;
-          }
-        }
-      }
-
-      console.log('could not find', round.index, 'in', this.colorGroup.title);
-      return foundColor;
-    },
-
-    getStyle(row) {
-      const styles = {
-        backgroundColor: row.color,
-      };
-
-      //   styles.transform = 'rotate(135deg)';
-      return styles;
+      return data.findColorIndex(round, this.colorGroup);
     },
   },
 };

@@ -6,13 +6,22 @@
         <Template :color-group="colorGroup" :my-colors="myColors" />
 
         <color-schemes @choose="applyColors" />
+
+        <div v-if="showSkeins && colorList" class="copyme-container">
+          <textarea v-if="colorList" ref="copyMe" v-model="colorList" class="copyme" />
+          <p><button v-if="colorList" @click="copyColors">Click to copy</button></p>
+          <p v-if="showCopied" class="small">Text copied to clipboard!</p>
+        </div>
       </div>
 
       <div class="form">
-        <h2>Sophie's Universe yarn calculator</h2>
+        <div class="header">
+          <h2>Sophie's Universe yarn calculator</h2>
+          <a href="https://lbrugg.github.io/sophie/public/about.html">About</a>
+        </div>
 
         <div class="sizes">
-          <div>Choose a size</div>
+          <div>Choose a size:</div>
           <div class="button-group">
             <button
               v-for="(size, i) in Object.keys($options.sizes)"
@@ -26,8 +35,10 @@
           <p>
             <strong>Finished size:</strong> {{ size.finished }}
           </p>
-          <p><strong>Hooks:</strong> {{ size.hook1 }}, {{ size.hook2 }}</p>
-          <p class="small">(Switch to bigger hook size after row 24)</p>
+          <p>
+            <strong>Hooks:</strong> {{ size.hook1 }}, {{ size.hook2 }}
+            <span class="small">(Switch to bigger hook size after row 24)</span>
+          </p>
         </div>
 
         <div class="color-group">
@@ -44,7 +55,14 @@
         </div>
 
         <div class="color-group">
-          <div>Colors:</div>
+          <div>
+            Colors:
+
+            <template v-if="showSkeins">
+              <input type="text" v-model="globalSkeinSize" class="global-skein" />
+              <button @click="updateMySkeins">Apply size to all skeins</button>
+            </template>
+          </div>
             <div
               v-for="(color, i) in colorGroup.colors"
               :key="i"
@@ -57,7 +75,11 @@
                   </span>
                   <span>Color {{ i+1 }}:</span>
                 </div>
-                <input type="color" v-model="myColors[i]" @input="editing = true" />
+                <input
+                  type="color"
+                  :value="myColors[i]"
+                  @input="(payload) => updateColor(payload, i)"
+                />
                 <div class="color-amount">
                   Amount: {{ mySkeins[i].yardage }}m
                 </div>
@@ -72,17 +94,19 @@
                   </span>
                 </div>
               </div>
-              <div class="small color-description">{{ getColorName(myColors[i]) }}</div>
+              <div class="small color-description" v-if="showSkeins">
+                <div>Color name: <input v-model="myColorNames[i]" @input="editing = true" /></div>
+              </div>
             </div>
         </div>
         <div>
           <button @click="showSkeins = !showSkeins">
             {{ showSkeins ? 'Hide' : 'Calculate' }} Skeins
           </button>
-          <template v-if="showSkeins">
-            <input type="text" v-model="globalSkeinSize" class="global-skein" />
-            <button @click="updateMySkeins">Apply size to all skeins</button>
-          </template>
+          <div v-if="showSkeins">
+            <button @click="getColorList">Export colors per round</button>
+            <button @click="getSkeinList">Export skein list</button>
+          </div>
         </div>
         <div v-if="editing">
           <button @click="resetDefault">
@@ -153,7 +177,13 @@ export default {
       myColorNames: [],
       mySkeinSize: skeinSize,
       globalSkeinSize: skeinSize[0],
+      colorList: '',
+      showCopied: false,
     };
+  },
+
+  mounted() {
+    this.init();
   },
 
   computed: {
@@ -175,8 +205,29 @@ export default {
   },
 
   methods: {
+    init() {
+      this.setColorNames();
+    },
+
+    setColorNames() {
+      this.myColors.forEach((color, i) => {
+        this.$set(this.myColorNames, i, this.getColorName(color));
+      });
+    },
+
+    updateColor(event, i) {
+      this.editing = true;
+
+      if (this.myColorNames[i] === this.getColorName(this.myColors[i])) {
+        this.$set(this.myColorNames, i, '');
+      }
+
+      this.$set(this.myColors, i, event.target.value);
+    },
+
     resetDefault() {
       this.myColors = [...this.colorGroup.defaultColors];
+      this.setColorNames();
       this.editing = false;
     },
 
@@ -225,26 +276,73 @@ export default {
 
     applyColors(colors) {
       this.myColors = [...colors];
+      this.myColorNames = [];
       this.editing = true;
     },
 
     moveUp(i) {
       if (i <= 0) return;
       const tempColor = this.myColors[i];
-      const lastColor = this.myColors[i - 1];
-      this.$set(this.myColors, i, lastColor);
+      const tempColorName = this.myColorNames[i];
+      this.$set(this.myColors, i, this.myColors[i - 1]);
+      this.$set(this.myColorNames, i, this.myColorNames[i - 1]);
       this.$set(this.myColors, i - 1, tempColor);
+      this.$set(this.myColorNames, i - 1, tempColorName);
     },
 
     moveDown(i) {
       if (i + 1 >= this.colorGroup.colors.length) return;
       const tempColor = this.myColors[i];
-      const lastColor = this.myColors[i + 1];
-      this.$set(this.myColors, i, lastColor);
+      const tempColorName = this.myColorNames[i];
+      this.$set(this.myColors, i, this.myColors[i + 1]);
+      this.$set(this.myColorNames, i, this.myColorNames[i + 1]);
       this.$set(this.myColors, i + 1, tempColor);
+      this.$set(this.myColorNames, i + 1, tempColorName);
+    },
+
+    getColorList() {
+      let colorList = 'Sophie\'s Universe colors by row:\n\n';
+
+      Object.keys(data.rows).forEach((key) => {
+        const row = data.rows[key];
+        const colorIndex = this.findColorIndex(row);
+
+        colorList += `${row.name ? row.name : `Round ${row.index}`}: ${this.myColorNames[colorIndex]}\n`;
+      });
+
+      this.colorList = colorList;
+    },
+
+    getSkeinList() {
+      let colorList = 'Yarns for Sophie\'s Universe:\n\n';
+
+      this.mySkeins.forEach((skein, i) => {
+        colorList += `${this.myColorNames[i]}: ${skein.amount}\n`;
+      });
+
+      this.colorList = colorList;
+    },
+
+    findColorIndex(round) {
+      return data.findColorIndex(round, this.colorGroup);
+    },
+
+    copyColors() {
+      const copyText = this.$refs.copyMe;
+
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+      /* Copy the text inside the text field */
+      document.execCommand('copy');
+
+      this.showCopied = true;
+      setTimeout(() => {
+        this.showCopied = false;
+      }, 3000);
     },
   },
-
 };
 </script>
 
@@ -259,9 +357,15 @@ body {
   background-color: #ffffff;
 }
 
+.header {
+  display: flex;
+  align-items: baseline;
+}
+
 h2 {
   margin-top: 0;
   margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 #app {
@@ -302,13 +406,13 @@ button.selected {
 }
 
 .color-title {
-  margin-bottom: 5px;
   display: flex;
   align-items: center;
 }
 
 .color-description {
   margin-left: 15px;
+  margin-bottom: 5px;
 }
 
 .small {
@@ -345,13 +449,27 @@ input.yardage, input.global-skein {
   display: block;
   width: 15px;
   height: 15px;
-  padding: 2px;
+  padding: 3px;
   font-size: 14px;
   opacity: 0;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .arrow:hover {
   opacity: 1;
+}
+
+.copyme-container {
+  display: grid;
+}
+
+.copyme-container, .copyme-container * {
+  z-index: 1001;
+}
+
+.copyme {
+  width: 100%;
+  height: 80px;
 }
 </style>

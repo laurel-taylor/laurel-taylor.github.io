@@ -1,5 +1,6 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable max-len */
+/* eslint-disable no-plusplus */
 const rows = {
   r_1: { small: 2, medium: 2, large: 3, index: '1' },
   r_2: { small: 3, medium: 3, large: 3, index: '2' },
@@ -37,7 +38,7 @@ const rows = {
   r_34: { small: 15, medium: 24, large: 23, index: '34' },
   r_35: { small: 14, medium: 23, large: 24, index: '35' },
   r_36: { small: 20, medium: 28, large: 29, index: '36' },
-  optional_flowers: { small: 10, medium: 10, large: 12, index: '36.5' },
+  optional_flowers: { small: 10, medium: 10, large: 12, index: '36.5', name: 'Optional flowers' },
   r_37: { small: 20, medium: 31, large: 32, index: '37' },
   r_38: { small: 17, medium: 20, large: 24, index: '38' },
   r_39: { small: 41, medium: 53, large: 65, index: '39' },
@@ -120,6 +121,7 @@ const rows = {
 const colorGroups = {
   small: {
     title: 'Pattern 1',
+    index: 'small',
     yarn: 'Scheepjes Color 8',
     colors: [
       [rows.r_1, rows.r_8, rows.r_16, rows.r_27, rows.r_34, rows.r_39, rows.r_49, rows.r_66, rows.r_88],
@@ -138,6 +140,7 @@ const colorGroups = {
   },
   medium_colorcrafter: {
     title: 'Pattern 2',
+    index: 'medium_colorcrafter',
     yarn: 'Colour crafter',
     colors: [
       [rows.r_1, rows.r_8, rows.r_16, rows.r_27, rows.r_34, rows.r_39, rows.r_49, rows.r_66, rows.r_88],
@@ -155,6 +158,7 @@ const colorGroups = {
   },
   medium_softfun: {
     title: 'Pattern 3',
+    index: 'medium_softfun',
     yarn: 'Scheepjes Softfun',
     colors: [
       [rows.r_1, rows.r_16, rows.r_34, rows.r_39, rows.r_49, rows.r_66, rows.r_82, rows.r_88],
@@ -173,6 +177,7 @@ const colorGroups = {
   },
   large: {
     title: 'Pattern 4',
+    index: 'large',
     yarn: 'Scheepjes Softfun XL',
     colors: [
       [rows.r_1, rows.r_5, rows.r_6, rows.r_7, rows.r_8, rows.r_14, rows.r_15, rows.r_24, rows.r_25, rows.r_27, rows.r_30, rows.r_32, rows.r_34, rows.r_35, rows.r_42, rows.r_43, rows.r_44, rows.r_45, rows.r_46, rows.r_47, rows.r_49, rows.r_51, rows.r_52, rows.r_53, rows.r_56, rows.r_57, rows.r_61, rows.r_62, rows.r_67, rows.r_68, rows.r_69, rows.r_72, rows.r_75, rows.r_80, rows.r_82, rows.r_85, rows.r_87, rows.r_89, rows.r_91, rows.r_92, rows.r_93, rows.r_94, rows.r_95, rows.r_96, rows.r_97, rows.r_101, rows.r_102, rows.r_105, rows.r_106, rows.r_108, rows.r_109, rows.r_111],
@@ -235,8 +240,28 @@ const colorMap = [
   { code: '#4EA2CA', name: 'Den Helder' },
 ];
 
+const findColorIndex = (round, colorGroup) => {
+  const foundColor = -1;
+  const { colors } = colorGroup;
+  for (let i = 0; i < colors.length; i++) {
+    const color = colors[i];
+
+    for (let j = 0; j < color.length; j++) {
+      const r1 = color[j];
+
+      if (r1 === round) {
+        return i;
+      }
+    }
+  }
+
+  console.log('could not find', round.index, 'in', colorGroup.title);
+  return foundColor;
+};
+
 export default {
   rows,
   colorGroups,
   colorMap,
+  findColorIndex,
 };
