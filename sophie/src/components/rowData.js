@@ -120,7 +120,7 @@ const rows = {
 
 const colorGroups = {
   small: {
-    title: 'Pattern 1',
+    title: 'Small pattern',
     index: 'small',
     yarn: 'Scheepjes Color 8',
     colors: [
@@ -136,10 +136,22 @@ const colorGroups = {
       [rows.r_5, rows.r_6, rows.r_7, rows.r_14, rows.r_15, rows.r_23, rows.r_24, rows.r_25, rows.r_32, rows.r_37, rows.r_45, rows.r_46, rows.r_47, rows.r_56, rows.r_57, rows.r_61, rows.r_67, rows.r_68, rows.r_72, rows.r_77, rows.r_82, rows.r_91, rows.r_92, rows.r_93, rows.r_94, rows.r_95, rows.r_96, rows.r_97, rows.r_101, rows.r_102, rows.r_105, rows.r_106, rows.r_108, rows.r_109, rows.r_111],
       [rows.r_22, rows.r_33, rows.r_70, rows.r_84, rows.r_90, rows.r_98],
     ],
-    defaultColors: ['#FADE4F', '#D7B9C8', '#B4497B', '#FEDFDD', '#B10144', '#C3CC87', '#11A3C6', '#85E0EE', '#A1A0CA', '#351B25', '#844B76'],
+    defaultColors: [
+      '#FADE4F', // canary
+      '#D7B9C8', // lt pink
+      '#FEDFDD', // pink
+      '#B4497B', // fushsia
+      '#A1A0CA', // violet
+      '#844B76', // lt purple
+      '#B10144', // moors
+      '#351B25', // heath
+      '#C3CC87', // lt green
+      '#85E0EE', // lt tqoise
+      '#11A3C6', // turquoise
+    ],
   },
   medium_colorcrafter: {
-    title: 'Pattern 2',
+    title: 'Med pattern',
     index: 'medium_colorcrafter',
     yarn: 'Colour crafter',
     colors: [
@@ -157,7 +169,7 @@ const colorGroups = {
     defaultColors: ['#E4CB63', '#DDC1C5', '#D88AAA', '#B63949', '#9186AC', '#945491', '#40172F', '#B4B269', '#ACCACE', '#4EA2CA', '#844B76'],
   },
   medium_softfun: {
-    title: 'Pattern 3',
+    title: 'Med pattern 2',
     index: 'medium_softfun',
     yarn: 'Scheepjes Softfun',
     colors: [
@@ -173,10 +185,22 @@ const colorGroups = {
       [rows.r_5, rows.r_6, rows.r_7, rows.r_8, rows.r_14, rows.r_15, rows.r_23, rows.r_24, rows.r_25, rows.r_32, rows.r_37, rows.r_45, rows.r_46, rows.r_47, rows.r_56, rows.r_57, rows.r_61, rows.r_67, rows.r_68, rows.r_69, rows.r_72, rows.r_77, rows.r_91, rows.r_92, rows.r_93, rows.r_94, rows.r_95, rows.r_96, rows.r_97, rows.r_106],
       [rows.r_22, rows.r_33, rows.r_70, rows.r_84],
     ],
-    defaultColors: ['#FADE4F', '#FAB7DE', '#F595A5', '#921519', '#972344', '#A6A342', '#11BEDF', '#95C0DF', '#FEDFDD', '#351B25', '#A1A0CA'],
+    defaultColors: [
+      '#FADE4F', // canary
+      '#FAB7DE', // lt rose
+      '#F595A5', // rose
+      '#921519', // bordeaux
+      '#FEDFDD', // pink
+      '#A1A0CA', // violet
+      '#972344', // cyclamen
+      '#351B25', // heath
+      '#A6A342', // olive
+      '#95C0DF', // lt blue
+      '#11BEDF', // dk tqoise
+    ],
   },
   large: {
-    title: 'Pattern 4',
+    title: 'Large pattern',
     index: 'large',
     yarn: 'Scheepjes Softfun XL',
     colors: [

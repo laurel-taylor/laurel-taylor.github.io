@@ -240,6 +240,7 @@ export default {
 
       if (!this.editing) {
         this.myColors = [...group.defaultColors];
+        this.setColorNames();
       }
     },
 
