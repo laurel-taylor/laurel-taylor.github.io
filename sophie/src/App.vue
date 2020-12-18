@@ -95,9 +95,9 @@
 </template>
 
 <script>
-import data from './components/rowData';
-import Template from './components/Template.vue';
-import ColorSchemes from './components/ColorSchemes.vue';
+import data from '@/components/rowData';
+import Template from '@/components/Template.vue';
+import ColorSchemes from '@/components/ColorSchemes.vue';
 
 const sizes = {
   small: {

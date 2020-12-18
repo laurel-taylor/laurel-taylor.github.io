@@ -29,7 +29,7 @@
 
 <script>
 /* eslint-disable no-plusplus */
-import data from './rowData';
+import data from '@/components/rowData';
 
 export default {
   name: 'Template',
