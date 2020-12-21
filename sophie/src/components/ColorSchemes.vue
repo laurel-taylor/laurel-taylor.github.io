@@ -1,6 +1,6 @@
 <template>
   <div class="scheme-container">
-    <p>Example color pallets:</p>
+    <p>Example color palettes:</p>
     <div class="schemes">
       <div
           v-for="(scheme, i) in $options.schemes"
@@ -95,11 +95,15 @@ export default {
 .schemes {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 }
 
 .scheme-container, .scheme-container > p {
   display: grid;
   z-index: 1001;
+}
+.scheme-container > p {
+  margin-left: 20px;
 }
 
 .scheme {
@@ -107,6 +111,7 @@ export default {
     transition: all 0.2s ease-in-out;
     z-index: 1001;
     height: 50px;
+    width: 110px;
     display: flex;
     margin: 5px;
     border: 1px solid transparent;

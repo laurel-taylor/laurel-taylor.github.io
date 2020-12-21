@@ -8,7 +8,7 @@
 
         <textarea ref="invisible" v-model="invisible" class="invisible" />
 
-        <div v-if="copyText" class="copyme-container">
+        <div v-if="admin || (copyText && showSkeins)" class="copyme-container">
           <textarea v-if="copyText" ref="copyMe" v-model="copyText" class="copyme" />
           <p><button v-if="copyText" @click="copyColors">Click to copy</button></p>
         </div>
@@ -17,7 +17,7 @@
           <button @click="getSharableLink">
             Share my colors
           </button>
-          <p v-if="showCopiedText" class="small good">{{ showCopiedText }}</p>
+          <p v-if="showCopiedText" class="good">{{ showCopiedText }}</p>
         </div>
       </div>
 
@@ -66,8 +66,8 @@
             Colors:
 
             <template v-if="showSkeins">
-              <input type="text" v-model="globalSkeinSize" class="global-skein" />
-              <button @click="updateMySkeins">Apply size to all skeins</button>
+              <input type="text" v-model="globalSkeinSize" class="global-skein" />m
+              <button :style="{ marginLeft: '10px' }" @click="updateMySkeins">Apply size to all skeins</button>
             </template>
           </div>
             <div
@@ -121,7 +121,7 @@
         </div>
         <div v-if="editing">
           <div>
-            <button @click="resetDefault">
+            <button @click="resetDefault" class="reset-default">
             Reset default colors
             </button>
           </div>
@@ -463,6 +463,7 @@ h2 {
   z-index: 1000;
   padding-left: 20px;
   background-color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -551,5 +552,10 @@ input.yardage, input.global-skein {
 textarea.copyme {
   width: 100%;
   height: 80px;
+}
+
+.reset-default {
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 </style>
