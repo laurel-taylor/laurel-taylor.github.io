@@ -24,6 +24,9 @@
 
     <p>You can find links for where to buy the recommended yarn on <a href="https://lookatwhatimade.net/crafts/yarn/crochet/sophies-universe-cal-2015/sophies-universe-cal-2015-information/">her site</a>!</p>
     <p><a href="https://lbrugg.github.io/about.html">&lt;3 Laurel</a></p>
+
+    <br/><br/>
+    <p><a href="https://lbrugg.github.io">See more of Laurel's projects</a></p>
   </div>
 </template>
 
