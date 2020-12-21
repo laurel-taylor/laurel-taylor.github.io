@@ -71,13 +71,30 @@ export default {
         '#264653',
       ],
     },
+    {
+      name: 'Tatiana',
+      colors: [
+        '#d0c6bc',
+        '#8395a2',
+        '#151514',
+        '#654c43',
+        '#b3b1a2',
+        '#a09ea0',
+        '#2c3f87',
+        '#8cada6',
+        '#8395a2',
+        '#98cbd2',
+        '#c6e7f0',
+      ],
+    },
   ],
 };
 </script>
 
 <style scoped>
 .schemes {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .scheme-container, .scheme-container > p {

@@ -8,7 +8,7 @@
 
         <textarea ref="invisible" v-model="invisible" class="invisible" />
 
-        <div v-if="showSkeins && copyText" class="copyme-container">
+        <div v-if="copyText" class="copyme-container">
           <textarea v-if="copyText" ref="copyMe" v-model="copyText" class="copyme" />
           <p><button v-if="copyText" @click="copyColors">Click to copy</button></p>
         </div>
@@ -106,13 +106,17 @@
               </div>
             </div>
         </div>
-        <div>
+        <div class="controls">
           <button @click="showSkeins = !showSkeins">
-            {{ showSkeins ? 'Hide' : 'Calculate' }} Skeins
+            {{ showSkeins ? 'Hide' : 'Calculate' }} Skeins / {{ showSkeins ? 'Hide' : 'Show' }} Color names
           </button>
           <div v-if="showSkeins">
             <button @click="getColorList">Export colors per round</button>
             <button @click="getSkeinList">Export skein list</button>
+          </div>
+          <div v-if="admin">
+            <button @click="exportColorScheme">export color scheme</button>
+            <button @click="exportColorNames">export color names</button>
           </div>
         </div>
         <div v-if="editing">
@@ -146,7 +150,7 @@ const sizes = {
     title: 'Medium',
     index: 'medium',
     yarn: 'DK (#3)',
-    example: 'Scheepjes Color Crafter or Softfun',
+    example: 'Scheepjes Colour Crafter or Softfun',
     finished: '1.4m x 1.4m',
     hook1: '3.5mm',
     hook2: '4mm',
@@ -189,6 +193,7 @@ export default {
       copyText: '',
       invisible: '',
       showCopiedText: '',
+      admin: false,
     };
   },
 
@@ -234,13 +239,14 @@ export default {
 
     setColorNames() {
       this.myColors.forEach((color, i) => {
-        this.$set(this.myColorNames, i, this.getColorName(color));
+        const colorName = this.getColorName(color) || '';
+        this.$set(this.myColorNames, i, colorName);
       });
     },
 
     setFromParams() {
       const {
-        colors, skeinSizes, colorNames, size, colorGroup,
+        colors, skeinSizes, colorNames, size, colorGroup, admin,
       } = this.$route.query;
 
       if (colors && skeinSizes && colorNames && size && colorGroup) {
@@ -253,6 +259,10 @@ export default {
         this.colorGroup = this.$options.colorGroups[colorGroupKey];
 
         this.editing = true;
+      }
+
+      if (admin) {
+        this.admin = admin;
       }
     },
 
@@ -319,7 +329,7 @@ export default {
 
     applyColors(colors) {
       this.myColors = [...colors];
-      this.myColorNames = [];
+      this.setColorNames();
       this.editing = true;
     },
 
@@ -363,6 +373,25 @@ export default {
     getSharableLink() {
       this.replaceRoute();
       this.copyUrl();
+    },
+
+    exportColorScheme() {
+      let text = '[\n';
+
+      this.myColors.forEach((color) => {
+        text += `'${color}', \n`;
+      });
+      text += ']';
+      this.copyText = text;
+    },
+
+    exportColorNames() {
+      let text = '';
+
+      this.myColorNames.forEach((name, i) => {
+        text += `{ code: '${this.myColors[i]}', name: '${name}' },\n`;
+      });
+      this.copyText = text;
     },
 
     getSkeinList() {
@@ -443,10 +472,6 @@ h2 {
 .button-group {
   display: flex;
   margin-bottom: 10px;
-}
-
-button.selected {
-  color: blue;
 }
 
 .color-number {

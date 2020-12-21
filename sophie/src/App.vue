@@ -21,4 +21,19 @@ body {
   padding: 0;
   background-color: #ffffff;
 }
+
+button {
+  min-width: 80px;
+  padding: 5px 10px;
+  border-radius: 0;
+  font-size: 16px;
+  background-color: #f1f1f1;
+  border: 1px solid darkslateblue;
+  color: darkslateblue;
+}
+
+button.selected, button:active {
+  color: white;
+  background-color: darkslateblue;
+}
 </style>

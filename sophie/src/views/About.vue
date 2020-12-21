@@ -11,6 +11,7 @@
   <p>When you press the "calculate skeins" button it will show you how many balls you will need, given the meterage of your skeins. Green means you'll probably be good, red means you might want to up your # of balls (or play a nice game of yarn chicken). If you want to give yourself extra room to play, decrease your skein size by a few (or 20) yards.</p>
 
   <p>You can also export & copy/paste your chosen yarn colors after calculating your meterage, or export a shopping list for how many balls of each color you'll need.</p>
+  <p>Share your colors by clicking the Share button! This will give you a sharable link that anyone can use.</p>
   <p>The default yarn color names are Scheepjes brand, and were the ones used in Dedri's original projects, but this calculator makes it possible to mix and match patterns, colors, and sizes.</p>
 
   <p>Recommended defaults:</p>

@@ -262,6 +262,18 @@ const colorMap = [
   { code: '#B4B269', name: 'Delftzijl' },
   { code: '#ACCACE', name: 'Urk' },
   { code: '#4EA2CA', name: 'Den Helder' },
+  { code: '#d0c6bc', name: 'pink quartzite (821)' },
+  { code: '#8395a2', name: 'blue apatite (805)' },
+  { code: '#151514', name: 'Black Onyx (803)' },
+  { code: '#654c43', name: 'brown agate (822)' },
+  { code: '#b3b1a2', name: 'crystal quartz (814)' },
+  { code: '#a09ea0', name: 'smokey quartz (802)' },
+  { code: '#2c3f87', name: 'oostende (2005)' },
+  { code: '#8cada6', name: 'ameland (1725)' },
+  { code: '#8395a2', name: 'blue apatite (805)' },
+  { code: '#98cbd2', name: 'amazonite (813)' },
+  { code: '#c6e7f0', name: 'wheaton (950)' },
+
 ];
 
 const findColorIndex = (round, colorGroup) => {
