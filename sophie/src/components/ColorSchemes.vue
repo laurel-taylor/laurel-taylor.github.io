@@ -1,16 +1,19 @@
 <template>
-  <div class="schemes">
-    <div
-        v-for="(scheme, i) in $options.schemes"
-        :key="i"
-        @click="$emit('choose', scheme.colors)"
-        class="scheme"
-    >
-        <div v-for="(color, j) in scheme.colors"
-            :key="j"
-            :style="{ backgroundColor: color }"
-            class="color"
-        />
+  <div class="scheme-container">
+    <p>Example color pallets:</p>
+    <div class="schemes">
+      <div
+          v-for="(scheme, i) in $options.schemes"
+          :key="i"
+          @click="$emit('choose', scheme.colors)"
+          class="scheme"
+      >
+          <div v-for="(color, j) in scheme.colors"
+              :key="j"
+              :style="{ backgroundColor: color }"
+              class="color"
+          />
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +78,11 @@ export default {
 <style scoped>
 .schemes {
     display: flex;
+}
+
+.scheme-container, .scheme-container > p {
+  display: grid;
+  z-index: 1001;
 }
 
 .scheme {

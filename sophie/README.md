@@ -1,4 +1,6 @@
-# sophie
+# Sophie's Universe yarn calculator
+
+See the About page for info on the project
 
 ## Project setup
 ```
@@ -27,3 +29,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Contributing
+
+Feel free to make pull requests against the lbrugg.io repo; or just fork this code and host it if you like.

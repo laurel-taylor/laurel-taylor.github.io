@@ -1,11 +1,6 @@
-<html>
-<head>
-  <title>About Sophie's Universe yarn calculator</title>
-  <meta name="description" content="About Sophie's Universe yarn calculator">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="padding:20px; font-family: sans-serif">
-  <h1>About Sophie's Universe</h1>
+<template>
+  <div class="about">
+    <h1>About Sophie's Universe</h1>
   <p>Sophie's Universe is the name of a crochet project that was made by  Dedri Uys of <a href="https://lookatwhatimade.net">https://lookatwhatimade.net</a>, and was the CAL (crochet-along) project of 2015.</p>
   <p><a href="https://lookatwhatimade.net/crafts/yarn/crochet/sophies-universe-cal-2015/sophies-universe-cal-2015-information/">Please check out her site for all the information about the project!</a></p>
   <p>The crochet pattern is FREE and there is SO MUCH helpful information on the site. Luckily, Dedri kept track of the amount of yarn used for each round; I just threw that data into this project (it's used with permission).</p>
@@ -28,5 +23,5 @@
 
   <p>You can find links for where to buy the recommended yarn on <a href="https://lookatwhatimade.net/crafts/yarn/crochet/sophies-universe-cal-2015/sophies-universe-cal-2015-information/">her site</a>!</p>
   <p><a href="https://lbrugg.github.io/about.html">&lt;3 Laurel</a></p>
-</body>
-</html>
+  </div>
+</template>
