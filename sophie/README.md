@@ -32,4 +32,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Contributing
 
-Feel free to make pull requests against the lbrugg.io repo; or just fork this code and host it if you like.
+Feel free to make pull requests against the laurel-taylor.io repo; or just fork this code and host it if you like.

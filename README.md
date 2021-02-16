@@ -1,3 +1,3 @@
-# lbrugg.github.io
+# laurel-taylor.github.io
 
-Go to the site [here](https://lbrugg.github.io)
+Go to the site [here](https://laurel-taylor.github.io)
