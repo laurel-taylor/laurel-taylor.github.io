@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.set {
+  display: flex;
+  margin: 5px;
+}
+
+.map {
+  margin: 5px;
+}
+
+.pixel {
+  width: 1px;
+  height: 1px;
+}
+
+.pixel-row {
+  display: flex;
+}
+
+.box {
+  width: 22px;
+  height: 22px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -1px;
+}
+
+.row {
+  display: flex;
+}
+.row:nth-child(2n) {
+  margin-left: 10px;
+}
+
+.circle {
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.size-1 {
+  width: 2px;
+  height: 2px;
+}
+
+.size-2 {
+  width: 4px;
+  height: 4px;
+}
+
+.size-3 {
+  width: 6px;
+  height: 6px;
+}
+
+.size-4 {
+  width: 8px;
+  height: 8px;
+}
+
+.size-5 {
+  width: 10px;
+  height: 10px;
+}
+
+.size-6 {
+  width: 12px;
+  height: 12px;
+}
+
+.size-7 {
+  width: 14px;
+  height: 14px;
+}
+
+.size-8 {
+  width: 16px;
+  height: 16px;
+}
+
+.size-9 {
+  width: 18px;
+  height: 18px;
+}
+
+.size-10 {
+  width: 20px;
+  height: 20px;
+}
+
+.page {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+@media print {
+  .page {
+    padding: 0;
+  }
+
+  .set, .map {
+    margin: 0;
+  }
+
+  h1, .img, p {
+    display: none;
+  }
+
+  .circle {
+    border: 1px solid lightgray;
+    background-color: white;
+  }
+
+  .page {
+    height: 100%;
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

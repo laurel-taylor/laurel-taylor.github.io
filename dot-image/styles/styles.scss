@@ -1,0 +1,104 @@
+$buckets:10;
+$circleSize: 2px;
+
+* {
+  // box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin-top: 0;
+}
+
+.set {
+  display: flex;
+  margin: 5px;
+}
+.map {
+  margin: 5px;
+}
+
+.pixel {
+  width: 1px;
+  height: 1px;
+  // border: 1px solid gray;
+}
+
+.pixel-row {
+  display: flex;
+}
+
+.box {
+  width: $circleSize * ($buckets + 1);
+  height: $circleSize * ($buckets + 1);
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -1px;
+  // border: 1px solid gray;
+}
+
+.row {
+  display: flex;
+  // margin-top: -2px;
+
+  &:nth-child(2n) {
+    margin-left: $buckets * $circleSize / 2;
+  }
+}
+
+.circle {
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+}
+
+#image {
+}
+
+@for $i from 1 through $buckets {
+  .size-#{$i} {
+    width: $i * $circleSize;
+    height: $i * $circleSize;
+  }
+}
+
+.page {
+  padding:20px;
+  font-family: sans-serif;
+}
+
+@mixin hideEverything {
+  .page {
+    padding: 0;
+  }
+  .set, .map {
+    margin: 0;
+  }
+  h1, .img, p {
+    display: none;
+  }
+
+  .circle {
+    border: 1px solid lightgray;
+    background-color: white;
+  }
+}
+
+.hide-everything {
+  // @include hideEverything;
+}
+
+@media print {
+  @include hideEverything;
+  .page {
+    height: 100%;
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+  }
+}
