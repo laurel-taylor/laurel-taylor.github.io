@@ -32,20 +32,25 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -1px;
+  margin: -4px 5px;
 }
 
 .row {
   display: flex;
 }
 .row:nth-child(2n) {
-  margin-left: 10px;
+  margin-left: 16px;
 }
 
 .circle {
   border: 1px solid black;
   border-radius: 50%;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: red;
 }
 
 .size-1 {
@@ -98,6 +103,11 @@ h1 {
   height: 20px;
 }
 
+.size-11 {
+  width: 22px;
+  height: 22px;
+}
+
 .page {
   padding: 20px;
   font-family: sans-serif;
@@ -119,6 +129,7 @@ h1 {
   .circle {
     border: 1px solid lightgray;
     background-color: white;
+    color: transparent;
   }
 
   .page {

@@ -1,8 +1,8 @@
 const MAX = 16777215;
 const BUCKETS = 10;
-const MAX_PIXEL_WIDTH = 37;
+const MAX_PIXEL_WIDTH = 32;
 const bucketSize = MAX / BUCKETS;
-const imageName = "../images/processing/font.json";
+const imageName = "../images/processing/sugasmile.json";
 
 decimalColorToHTMLcolor = (number) => {
   var intnumber = number - 0;
@@ -68,7 +68,7 @@ const getCircleObjFromHexString = (elem) => {
     orig: elem,
     hex: `${elem}`,
     dec,
-    className: `size-${BUCKETS-circleSize}`,
+    size: BUCKETS-circleSize,
   }
 }
 
@@ -118,25 +118,28 @@ const findAverage = (rowStart, colStart, pixelWidth, imageMap, grayscale = false
 const pixelate = (imageMap, pixelWidth, grayscale = true) => {
   const pixelMap = [];
   let pixelRowIndex = 0;
-  const offset = Math.floor(pixelWidth / 2);
+  const offset = Math.round(pixelWidth * 1);
 
-  for (let i = 0; i < imageMap.length; i += pixelWidth) {
+  for (let i = 0; i < imageMap.length;) {
     const imageRow = imageMap[0];
     pixelMap[pixelRowIndex] = [];
 
     const colStart = pixelRowIndex %2 == 1 ? offset : 0;
-    for (let j = colStart; j < imageRow.length; j += pixelWidth) {
+    for (let j = colStart; j < imageRow.length;) {
       const avg = findAverage(i, j, pixelWidth, imageMap, grayscale);
       const elem = getCircleObjFromHexString(avg);
       pixelMap[pixelRowIndex].push(elem);
+
+      j+=pixelWidth*2;
     }
 
     pixelRowIndex++;
-    // if (pixelRowIndex % 2 == 1) {
-    //   i-= Math.ceil(pixelWidth / 4);
-    // } else {
-    //   i+= Math.ceil(pixelWidth / 4);
-    // }
+    i+= Math.round(pixelWidth * 0.9);
+    if (pixelRowIndex % 2 == 1) {
+      // i-= 1; //Math.ceil(pixelWidth * 3/4);
+    } else {
+      // i+=Math.ceil(pixelWidth / 4);
+    }
   }
 
   return pixelMap;
@@ -190,12 +193,12 @@ const main = async () => {
 
   // const randomMap = generateRandomImage(10);
 
-  const PIXEL_WIDTH = Math.floor(arr[0].length / MAX_PIXEL_WIDTH);
+  const PIXEL_WIDTH = Math.floor(arr[0].length / MAX_PIXEL_WIDTH/2);
   const pixelMap = pixelate(arr, PIXEL_WIDTH);
 
-  // _createImage(arr);
+  _createImage(arr);
   _drawPixels(pixelMap, PIXEL_WIDTH / 2);
-  _addSize(pixelMap.length, pixelMap[0].length);
+  _addSize(`${pixelMap[0].length}w x ${pixelMap.length}h, ${arr.length * arr[0].length} pixels, pixel width: ${PIXEL_WIDTH}`);
   //console.log(pixelMap);
 };
 

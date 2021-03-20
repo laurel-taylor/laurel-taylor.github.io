@@ -21,20 +21,20 @@ const _drawPixels = (pixelMap, offset, selector="pixel") => {
       const rowIndex = i+1;
       _createRow(i, offset, selector);
 
-    pixelMap[i].forEach(elem => {
-      _addToTable({ text: elem.dec, color: elem.hex, className: elem.className }, rowIndex, selector);
+    pixelMap[i].forEach(({ size, dec, hex }) => {
+      _addToTable({ text: dec, color: hex, size }, rowIndex, selector);
     })
   }
 }
 
-const _addToTable = ({ text, color, className }, rowIndex, selector="pixel") => {
+const _addToTable = ({ text, color, size }, rowIndex, selector="pixel") => {
   const container = document.createElement('div');
   container.className = 'box';
   // container.style.backgroundColor = color;
 
   const circle = document.createElement('div');
-  circle.className = `${className} circle`;
-  // elem.innerHTML = text;
+  circle.className = `size-${size} circle`;
+  // circle.innerHTML = size;
 
   container.appendChild(circle);
 
@@ -58,7 +58,7 @@ const _createRow = (i, offset, selector="pixel") => {
   table.appendChild(row);
 }
 
-const _addSize = (y, x, selector="size") => {
+const _addSize = (text, selector="size") => {
   const elem = document.getElementById(selector)
-  elem.innerHTML = `${x}w x ${y}h`;
+  elem.innerHTML = text;
 }

@@ -1,5 +1,7 @@
-$buckets:10;
+$buckets:11;
 $circleSize: 2px;
+$row-padding: -4px;
+$column-padding: 5px;
 
 * {
   // box-sizing: border-box;
@@ -31,22 +33,22 @@ h1 {
 }
 
 .box {
-  width: $circleSize * ($buckets + 1);
-  height: $circleSize * ($buckets + 1);
+  width: $circleSize * ($buckets);
+  height: $circleSize * ($buckets);
   color: red;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -1px;
+  margin: $row-padding $column-padding;
   // border: 1px solid gray;
 }
 
 .row {
   display: flex;
-  // margin-top: -2px;
+  // margin-top: (($buckets) * $circleSize + 1) * -1/2;
 
   &:nth-child(2n) {
-    margin-left: $buckets * $circleSize / 2;
+    margin-left: (($buckets)* $circleSize + $column-padding * 2) / 2;
   }
 }
 
@@ -54,6 +56,11 @@ h1 {
   border: 1px solid black;
   border-radius: 50%;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: red;
 }
 
 #image {
@@ -85,6 +92,7 @@ h1 {
   .circle {
     border: 1px solid lightgray;
     background-color: white;
+    color: transparent;
   }
 }
 
