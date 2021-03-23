@@ -113,6 +113,10 @@ h1 {
   font-family: sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
 @media print {
   .page {
     padding: 0;
@@ -127,9 +131,20 @@ h1 {
   }
 
   .circle {
-    border: 1px solid lightgray;
     background-color: white;
     color: transparent;
+  }
+
+  .light .circle {
+    border-color: lightgray;
+  }
+
+  .medium .circle {
+    border-color: #888;
+  }
+
+  .dark .circle {
+    border-color: black;
   }
 
   .page {

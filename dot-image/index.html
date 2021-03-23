@@ -8,16 +8,35 @@
 <body class="hide-everything">
   <section class="page">
     <h1>Dot Image</h1>
-    <p>Instructions: </p>
-    <p>Install `readline` for node and <a href="https://imagemagick.org/script/download.php">imagemagick</a></p>
-    <p>Save image in images/processing</p>
-    <p>Open ./images in terminal</p>
-    <p>Run "convert processing/&lt;filename&gt; txt: >> processing/img.txt && node ./makeJson.js"</p>
+    <p>
+      Instructions:<br/>
+      Install `readline` for node and <a href="https://imagemagick.org/script/download.php">imagemagick</a><br/>
+      Save image in images/processing<br/>
+      Open ./images in terminal<br/>
+      Run "convert processing/&lt;filename&gt; txt: >> processing/img.txt && node ./makeJson.js"<br/>
+    </p>
     <p>Image size: <span id="size"></span> (butter: 33w x 110h)</p>
+    <p id="configs">
+      <span id="showImageContainer"><input type="checkbox" name="showImage" onclick="toggleShowImage()" id="showImage" /><label for="showImage">Show image</label></span><br/>
+      Print line color:
+        <input type="radio" name="thickness" value="light" id="light" checked="checked" onclick="darkness('light')" /><label for="light">Light</label>
+        <input type="radio" name="thickness" value="medium" id="medium" onclick="darkness('medium')" /><label for="medium">Medium</label>
+        <input type="radio" name="thickness" value="dark" id="dark" onclick="darkness('dark')" /><label for="dark">Dark</label>
+        <br/>
+      <span id="samples">Show sample:
+        <input type="radio" name="sample" value="suga" id="suga" onclick="sample('suga')" /><label for="suga">Suga</label>
+        <input type="radio" name="sample" value="sugasmile" id="sugasmile" onclick="sample('sugasmile')" /><label for="medium">Suga2</label>
+        <input type="radio" name="sample" value="jhope" id="jhope" onclick="sample('jhope')" /><label for="dark">J-Hope</label>
+      </span>
+    </p>
+
+    <p id="loading" class="hidden">Drawing...</p>
+
+    <p class="hidden"><textarea id="textPaste"></textarea></p>
 
     <div class="set center">
-      <div class="map img" id="image"></div>
-      <div class="map pxl" id="pixel"></div>
+      <div class="map img hidden" id="image"></div>
+      <div class="map pxl light" id="pixel"></div>
     </div>
   </section>
 

@@ -2,7 +2,7 @@ const MAX = 16777215;
 const BUCKETS = 10;
 const MAX_PIXEL_WIDTH = 32;
 const bucketSize = MAX / BUCKETS;
-const imageName = "../images/processing/sugasmile.json";
+const imageName = "../images/processing/jhope.json";
 
 decimalColorToHTMLcolor = (number) => {
   var intnumber = number - 0;
@@ -188,6 +188,7 @@ const main = async () => {
       .then(json => {
         arr = json;
       });
+      hideShowById('showImageContainer');
     }
   }
 
@@ -197,9 +198,24 @@ const main = async () => {
   const pixelMap = pixelate(arr, PIXEL_WIDTH);
 
   _createImage(arr);
-  _drawPixels(pixelMap, PIXEL_WIDTH / 2);
+  _drawPixels(pixelMap);
+  _pasteBin(pixelMap);
   _addSize(`${pixelMap[0].length}w x ${pixelMap.length}h, ${arr.length * arr[0].length} pixels, pixel width: ${PIXEL_WIDTH}`);
   //console.log(pixelMap);
+};
+
+const sample = (filename) => {
+  let arr = [];
+  try {
+    fetch(`../scripts/samples/${filename}.json`)
+    .then(response => response.json())
+    .then(json => {
+      arr = json;
+      _drawSample(arr);
+    });
+  } catch {
+    console.log('error drawing pixelmap');
+  }
 };
 
 main();
