@@ -16,38 +16,93 @@ const _createImage = (imageMap, selector='image') => {
   });
 };
 
-const _drawPixels = (pixelMap, selector="pixel") => {
-  for (let i=0; i<pixelMap.length; i++) {
-      const rowIndex = i+1;
-      _createRow(i, selector);
+const getRainbow = () => {
+  const large = 5;
+  const small = 2;
+  return [
+    {color: 'red', rows: large},
+    {color: 'orange', rows: large},
+    {color: 'goldenrod', rows: small},
+    {color: 'green', rows: large},
+    {color: 'blue', rows: large},
+    {color: 'purple', rows: large},
+    {color: 'violet', rows: small}
+  ]
+};
 
-    pixelMap[i].forEach(({ size, dec, hex }) => {
-      _addObjToTable({ text: dec, color: hex, size }, rowIndex, selector);
-    })
+const createRainbow = () => {
+  const rainbow = [];
+  let og = getRainbow();
+  og = og.concat(og);
+  og.forEach(({color, rows}) => {
+    for(var i=0; i<rows; i++) {
+      rainbow.push(color);
+    }
+  });
+
+  return rainbow;
+};
+
+const _drawPixels = (pixelMap, selector="pixel") => {
+  const rotator = createRainbow();
+  const randomRainbow = getRainbow();
+  const rowPadding = document.getElementById('rowPadding').value;
+  for (let rowIndex=0; rowIndex<pixelMap.length; rowIndex++) {
+      if (rowIndex % 2 !== 0) {
+        const removed = rotator.splice(0, 1);
+        rotator.push(removed);
+      }
+      _createRow(rowIndex, selector);
+
+    pixelMap[rowIndex].forEach(({ size, dec, hex }, colIndex) => {
+      const randomRainbowIndex = Math.floor(Math.random() * randomRainbow.length);
+      _addObjToTable({
+        obj: {
+        text: dec,
+        color: hex,
+        size,
+        rainbowColor: rotator[colIndex],
+        randomColor: randomRainbow[randomRainbowIndex].color
+      }, rowIndex: rowIndex+1, selector, rowPadding });
+    });
   }
 };
 
 const _drawSample = (sizeMap, selector="pixel") => {
   document.getElementById(selector).innerHTML = "";
   document.getElementById('showImageContainer').className = 'hidden';
+  const rowPadding = document.getElementById('rowPadding').value;
 
   for (let i=0; i<sizeMap.length; i++) {
     const rowIndex = i+1;
     _createRow(i, selector);
 
     sizeMap[i].forEach((size) => {
-      _addToTable(size, rowIndex, selector);
+      _addToTable({
+        obj: {size},
+        rowIndex,
+        selector,
+        rowPadding,
+      });
     });
   }
 };
 
-const _addToTable = (size, rowIndex, selector="pixel") => {
+const _addToTable = ({
+  obj: { size, rainbowColor, randomColor },
+  rowIndex,
+  selector,
+  rowPadding,
+} = { selector: 'pixel', rowPadding: -3 }) => {
   const container = document.createElement('div');
   container.className = 'box';
-  // container.style.backgroundColor = color;
+  container.style.marginTop = `${rowPadding}px`;
+  container.style.marginBottom = `${rowPadding}px`;
 
   const circle = document.createElement('div');
   circle.className = `size-${size} circle`;
+  // circle.style.backgroundColor = randomColor;
+  // circle.style.borderColor = randomColor;
   // circle.innerHTML = size;
 
   container.appendChild(circle);
@@ -56,8 +111,8 @@ const _addToTable = (size, rowIndex, selector="pixel") => {
   row.appendChild(container);
 };
 
-const _addObjToTable = ({ size }, rowIndex, selector) => {
-  _addToTable(size, rowIndex, selector);
+const _addObjToTable = ({obj, rowIndex, selector, rowPadding}) => {
+  _addToTable({ obj, rowIndex, selector, rowPadding });
 };
 
 const _createRow = (i, selector="pixel") => {

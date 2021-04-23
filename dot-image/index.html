@@ -28,13 +28,15 @@
         <input type="radio" name="sample" value="sugasmile" id="sugasmile" onclick="sample('sugasmile')" /><label for="medium">Suga2</label>
         <input type="radio" name="sample" value="jhope" id="jhope" onclick="sample('jhope')" /><label for="dark">J-Hope</label>
       </span>
+      <br/>
+      <span>Row padding: <input type="number" step="0.1" id="rowPadding" value="-4" /> <button type="button" onclick="redraw()">Redraw</button></span>
     </p>
 
     <p id="loading" class="hidden">Drawing...</p>
 
     <p class="hidden"><textarea id="textPaste"></textarea></p>
 
-    <div class="set center">
+    <div class="set center" id="pixelContainer">
       <div class="map img hidden" id="image"></div>
       <div class="map pxl light" id="pixel"></div>
     </div>

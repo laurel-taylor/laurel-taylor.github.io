@@ -9,7 +9,7 @@ let data = [];
 try {
   fs.unlinkSync(outputFilename);
 } catch (e) {
-  console.log('error deleting..', e);
+  console.log('error deleting.. but don\'t worry about it');
 }
 
 function processFile() {

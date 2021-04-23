@@ -1,8 +1,11 @@
 const MAX = 16777215;
 const BUCKETS = 10;
-const MAX_PIXEL_WIDTH = 32;
+const MAX_PIXEL_WIDTH = 36;
+const VERTICAL_OFFSET = 0.9;
 const bucketSize = MAX / BUCKETS;
-const imageName = "../images/processing/jhope.json";
+const imageName = "../images/processing/rm_one.json";
+let GLOBAL_IMAGE;
+let GLOBAL_SAMPLE;
 
 decimalColorToHTMLcolor = (number) => {
   var intnumber = number - 0;
@@ -124,7 +127,7 @@ const pixelate = (imageMap, pixelWidth, grayscale = true) => {
     const imageRow = imageMap[0];
     pixelMap[pixelRowIndex] = [];
 
-    const colStart = pixelRowIndex %2 == 1 ? offset : 0;
+    const colStart = pixelRowIndex % 2 == 1 ? offset : 0;
     for (let j = colStart; j < imageRow.length;) {
       const avg = findAverage(i, j, pixelWidth, imageMap, grayscale);
       const elem = getCircleObjFromHexString(avg);
@@ -134,12 +137,7 @@ const pixelate = (imageMap, pixelWidth, grayscale = true) => {
     }
 
     pixelRowIndex++;
-    i+= Math.round(pixelWidth * 0.9);
-    if (pixelRowIndex % 2 == 1) {
-      // i-= 1; //Math.ceil(pixelWidth * 3/4);
-    } else {
-      // i+=Math.ceil(pixelWidth / 4);
-    }
+    i += Math.round(pixelWidth * VERTICAL_OFFSET);
   }
 
   return pixelMap;
@@ -194,14 +192,30 @@ const main = async () => {
 
   // const randomMap = generateRandomImage(10);
 
-  const PIXEL_WIDTH = Math.floor(arr[0].length / MAX_PIXEL_WIDTH/2);
+  let PIXEL_WIDTH = Math.floor(arr[0].length / MAX_PIXEL_WIDTH/1.6);
+  if (arr[0].length > 300) {
+    PIXEL_WIDTH = Math.floor(arr[0].length / MAX_PIXEL_WIDTH/2);
+  }
   const pixelMap = pixelate(arr, PIXEL_WIDTH);
+  GLOBAL_IMAGE = pixelMap;
+  GLOBAL_SAMPLE = undefined;
 
   _createImage(arr);
   _drawPixels(pixelMap);
   _pasteBin(pixelMap);
   _addSize(`${pixelMap[0].length}w x ${pixelMap.length}h, ${arr.length * arr[0].length} pixels, pixel width: ${PIXEL_WIDTH}`);
   //console.log(pixelMap);
+};
+
+const redraw = () => {
+  const div = document.getElementById('pixel');
+  while(div.firstChild && div.removeChild(div.firstChild));
+
+  if (GLOBAL_IMAGE) {
+    _drawPixels(GLOBAL_IMAGE);
+  } else {
+    _drawSample(GLOBAL_SAMPLE);
+  }
 };
 
 const sample = (filename) => {
@@ -211,6 +225,8 @@ const sample = (filename) => {
     .then(response => response.json())
     .then(json => {
       arr = json;
+      GLOBAL_SAMPLE = arr;
+      GLOBAL_IMAGE = undefined;
       _drawSample(arr);
     });
   } catch {
