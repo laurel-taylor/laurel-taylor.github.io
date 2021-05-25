@@ -1714,7 +1714,7 @@ export const buildSongList = () => {
   a.push(["Phoenix", "Lasso", "y", ""]);
   a.push(["Phoenix", "Lisztomania", "y", ""]);
   a.push(["The Physical World", "Follow Me Down", "", ""]);
-  a.push(["Pierce the Veil", "Circles", "", ""]);
+  a.push(["Pierce the Veil", "Circles", "y", ""]);
   a.push(["Pierce the Veil", "King for A Day (ft. Kellin Quinn)", "", ""]);
   a.push(["Pixies", "Crackity Jones", "", ""]);
   a.push(["Pixies", "Dead", "", ""]);
@@ -1918,7 +1918,7 @@ export const buildSongList = () => {
   a.push(["Roy Orbison", "Only the Lonely (Know the Way I Feel)", "", ""]);
   a.push(["Roy Orbison", "Ooby Dooby", "", ""]);
   a.push(["Roy Orbison", "You Got It", "y", ""]);
-  a.push(["Royal Blood", "Figure It Out", "", ""]);
+  a.push(["Royal Blood", "Figure It Out", "y", ""]);
   a.push(["Ruby Rose Fox", "Pain Killer", "", ""]);
   a.push(["Ruby Rose Fox", "Skydiver", "", ""]);
   a.push(["Rufus (ft. Chaka Khan)", "Tell Me Something Good", "", ""]);
