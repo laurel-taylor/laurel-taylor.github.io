@@ -407,7 +407,7 @@ export const buildSongList = () => {
   a.push(["The Chemical Brothers ", "Let Forever Be", "", ""]);
   a.push(["Chevelle", "Face to the Floor", "", ""]);
   a.push(["Chevelle", "The Red", "", ""]);
-  a.push(["Chevelle", "Send the Pain Below", "", ""]);
+  a.push(["Chevelle", "Send the Pain Below", "y", ""]);
   a.push(["The Chevelles", "Get It On", "y", ""]);
   a.push(["Chicago", "25 or 6 to 4", "y", ""]);
   a.push(["Chicago", "Feelin' Stronger Every Day", "", ""]);
@@ -569,7 +569,7 @@ export const buildSongList = () => {
   a.push(["Def Leppard", "Photograph", "", ""]);
   a.push(["Def Leppard", "Pour Some Sugar on Me (Live)", "y", ""]);
   a.push(["Def Leppard", "Undefeated", "", ""]);
-  a.push(["Deftones", "Cherry Waves", "", ""]);
+  a.push(["Deftones", "Cherry Waves", "y", ""]);
   a.push(["Deftones", "Hole in the Earth", "y", ""]);
   a.push(["Deftones", "Minerva", "y", ""]);
   a.push(["Deftones", "My Own Summer (Shove It)", "", ""]);
@@ -683,7 +683,7 @@ export const buildSongList = () => {
     ""
   ]);
   a.push(["Eric Church", "Hell on the Heart", "", ""]);
-  a.push(["Escape the Fate", "The Flood", "", ""]);
+  a.push(["Escape the Fate", "The Flood", "y", ""]);
   a.push(["Evanescence", "Bring Me to Life", "y", ""]);
   a.push(["Evanescence", "Call Me When You're Sober", "", ""]);
   a.push(["Evanescence", "Everybody's Fool", "", ""]);
@@ -810,7 +810,7 @@ export const buildSongList = () => {
   a.push(["Giant Target", "Signs", "", ""]);
   a.push(["Gin Blossoms", "Follow You Down", "y", ""]);
   a.push(["Gin Blossoms", "Found Out About You", "", ""]);
-  a.push(["Gin Blossoms", "Hey Jealousy", "", ""]);
+  a.push(["Gin Blossoms", "Hey Jealousy", "y", ""]);
   a.push(["GLaDOS", "Still Alive", "y", ""]);
   a.push(["Glasvegas", "Geraldine", "", ""]);
   a.push(["Go-Go's", "Our Lips Are Sealed", "", ""]);
@@ -928,7 +928,7 @@ export const buildSongList = () => {
   a.push(["Hawk Nelson", "Live Life Loud", "", ""]);
   a.push(["Hawkwind", "Master of the Universe", "", ""]);
   a.push(["Heart", "Alone in My Head", "", ""]);
-  a.push(["Heart", "Barracuda", "", ""]);
+  a.push(["Heart", "Barracuda", "y", ""]);
   a.push(["Heart", "Kick It Out", "y", ""]);
   a.push(["Heart", "What About Love?", "", ""]);
   a.push(["Heaven's Basement", "I Am Electric", "y", ""]);
@@ -1375,7 +1375,7 @@ export const buildSongList = () => {
   a.push(["Megasus", "Megasus", "", ""]);
   a.push(["Meghan Trainor", "All About That Bass", "", ""]);
   a.push(["Men At Work", "Down Under", "y", ""]);
-  a.push(["Men At Work", "Overkill", "", ""]);
+  a.push(["Men At Work", "Overkill", "y", ""]);
   a.push(["Merle Haggard", "Mama Tried", "y", ""]);
   a.push(["Metric", "Combat Baby", "y", ""]);
   a.push(["MGMT", "Kids", "", ""]);
@@ -1841,7 +1841,7 @@ export const buildSongList = () => {
   a.push(["Radiohead", "My Iron Lung", "y", ""]);
   a.push(["Rage Against the Machine", "Testify", "", ""]);
   a.push(["Rage Agaisnt the Machine", "Bombtrack", "", ""]);
-  a.push(["Rage Agaisnt the Machine", "Bulls on Parade", "", ""]);
+  a.push(["Rage Agaisnt the Machine", "Bulls on Parade", "y", ""]);
   a.push(["Rage Agaisnt the Machine", "Guerrilla Radio", "y", ""]);
   a.push(["Rage Agaisnt the Machine", "Killing in the Name", "y", ""]);
   a.push(["Rage Agaisnt the Machine", "Sleep Now in the Fire", "", ""]);
@@ -1880,7 +1880,7 @@ export const buildSongList = () => {
   a.push(["Red Hot Chili Peppers", "Snow ((Hey Oh))", "y", ""]);
   a.push(["Relient K", "Must Have Done Something Right", "", ""]);
   a.push(["REO Speedwagon", "Keep On Loving You", "", ""]);
-  a.push(["REO Speedwagon", "Ridin' the Storm Out", "", ""]);
+  a.push(["REO Speedwagon", "Ridin' the Storm Out", "y", ""]);
   a.push(["REO Speedwagon", "Roll with the Changes", "", ""]);
   a.push(["REO Speedwagon", "Take It on the Run", "", ""]);
   a.push(["The Replacements", "Kids Don't Follow", "", ""]);
@@ -1985,7 +1985,7 @@ export const buildSongList = () => {
   a.push(["Silvertide", "Blue Jeans", "", ""]);
   a.push(["Simon & Garfunkel", "I Am a Rock", "", ""]);
   a.push(["Simon & Garfunkel", "The Sounds of Silence", "y", ""]);
-  a.push(["Simple Minds", "Don't You (Forget About Me)", "", ""]);
+  a.push(["Simple Minds", "Don't You (Forget About Me)", "y", ""]);
   a.push(["Siouxsie and The Banshees", "Cities in Dust", "", ""]);
   a.push(["Siouxsie and The Banshees", "Hong Kong Garden", "", ""]);
   a.push(["Siouxsie and The Banshees", "The Killing Jar", "", ""]);
@@ -2258,7 +2258,7 @@ export const buildSongList = () => {
   a.push(["Tommy Tutone", "867-5309/Jenny", "", ""]);
   a.push(["Tonic", "If You Could Only See", "y", ""]);
   a.push(["Toto", "Africa", "y", ""]);
-  a.push(["Toto", "Hold the Line", "", ""]);
+  a.push(["Toto", "Hold the Line", "y", ""]);
   a.push(["Toto", "Rosanna", "", ""]);
   a.push(["Trace Adkins", "Ride", "", ""]);
   a.push(["Trace Adkins", "Swing", "", ""]);
@@ -2756,16 +2756,16 @@ export const buildSongList = () => {
   a.push(["Sea Wolf", "You're A Wolf", "", ""]);
   a.push(["Asking Alexandria", "Dear Insanity", "", ""]);
   a.push(["Asking Alexandria", "Morte et Dabo", "", ""]);
-  a.push(["Dinosaur Pile-Up", "Back Foot", "", ""]);
+  a.push(["Dinosaur Pile-Up", "Back Foot", "y", ""]);
   a.push(["Hellyeah", "Welcome Home", "", ""]);
   a.push(["Of Mice & Men", "Taste of Regret", "", ""]);
-  a.push(["Beach Bunny", "Prom Queen", "", ""]);
+  a.push(["Beach Bunny", "Prom Queen", "y", ""]);
   a.push(["The Glorious Sons", "Panic Attack", "", ""]);
-  a.push(["Highly Suspect", "16", "", ""]);
+  a.push(["Highly Suspect", "16", "y", ""]);
   a.push(["Dave Matthews Band", "Crush", "", ""]);
   a.push(["Mumford & Sons", "Blind Leading the Blind", "", ""]);
   a.push(["The New Pornographers", "One Kind of Solomon", "", ""]);
-  a.push(["Billie Eilish", "bad guy", "", ""]);
+  a.push(["Billie Eilish", "bad guy", "y", ""]);
   a.push(["Coldplay", "Orphans", "", ""]);
   a.push([
     "Post Malone feat. Ozzy Osbourne & Travis Scott",
@@ -2851,7 +2851,7 @@ a.push(["Anti-Flag", "We Are the One", "", ""]);
 a.push(["Theory of a Deadman", "History of Violence", "", ""]);
 a.push(["Asking Alexandria", "Antisocialist", "", ""]);
 a.push(["Norma Jean", "Deathbed Atheist", "", ""]);
-a.push(["All Time Low ft. Blackbear", "Monsters", "", ""]);
+a.push(["All Time Low ft. Blackbear", "Monsters", "y", ""]);
 a.push(["Iron & Wine", "Flightless Bird, American Mouth", "", ""]);
 a.push(["Band of Skulls", "I Know What I Am", "", ""]);
 a.push(["Gabby Barrett", "I Hope", "", ""]);
@@ -2874,7 +2874,7 @@ a.push(["The Killers", "Caution", "", ""]);
 a.push(["Say Anything", "Alive With The Glory Of Love", "", ""]);
 a.push(["Taking Back Sunday", "Cute Without The 'E' (Cut From the Team)", "", ""]);
 a.push(["AC/DC", "Shot in the Dark", "", ""]);
-a.push(["The Pretty Reckless", "Death by Rock and Roll", "", ""]);
+a.push(["The Pretty Reckless", "Death by Rock and Roll", "y", ""]);
 a.push(["Juice WRLD & Marshmello", "Come & Go", "", ""]);
 a.push(["Limp Bizkit", "Rollin' (Air Raid Vehicle)", "", ""]);
 a.push(["David Bowie", "Rebel Rebel", "", ""]);
@@ -2912,7 +2912,7 @@ a.push(["After the Burial", "Aspiration", "", ""]);
 a.push(["AJR", "Way Less Sad", "", ""]);
 a.push(["Machine Gun Kelly & blackbear", "My Ex's Best Friend", "", ""]);
 a.push(["Norma Jean", "Leaderless and Self Enlisted", "", ""]);
-a.push(["All Time Low", "Dear Maria, Count Me In", "", ""]);
+a.push(["All Time Low", "Dear Maria, Count Me In", "y", ""]);
 a.push(["The Get Up Kids", "The One You Want", "", ""]);
 a.push(["A Day to Remember", "Mindreader", "", ""]);
 a.push(["A Day to Remember", "Paranoia", "", ""]);
