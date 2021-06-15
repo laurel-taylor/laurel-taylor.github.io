@@ -3,7 +3,7 @@ const BUCKETS = 10;
 const MAX_PIXEL_WIDTH = 36;
 const VERTICAL_OFFSET = 0.9;
 const bucketSize = MAX / BUCKETS;
-const imageName = "../images/processing/rm_one.json";
+const imageName = "../images/processing/king.json";
 let GLOBAL_IMAGE;
 let GLOBAL_SAMPLE;
 

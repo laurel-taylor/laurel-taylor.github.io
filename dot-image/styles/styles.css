@@ -114,10 +114,33 @@ h1 {
   font-family: sans-serif;
 }
 
-.hidden {
+.hidden,
+.hide-client {
   display: none;
 }
 
+.only-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .only-mobile {
+    display: block;
+  }
+
+  .sample {
+    display: inline-flex;
+    width: 30%;
+    height: 30px;
+  }
+}
+@media (max-width: 1199px) {
+  .sample {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+  }
+}
 @media print {
   .page {
     padding: 0;
@@ -127,7 +150,7 @@ h1 {
     margin: 0;
   }
 
-  h1, .img, p {
+  h1, h2, .img, p, .only-mobile {
     display: none;
   }
 

@@ -2,6 +2,11 @@ $buckets:11;
 $circleSize: 2px;
 $column-padding: 5px;
 
+$small: "max-width: 767px";
+$medium: "min-width: 768px";
+$medium-down: "max-width: 1199px";
+$large: "min-width: 1200px";
+
 body {
   margin: 0;
   padding: 0;
@@ -79,7 +84,7 @@ h1 {
   .set, .map {
     margin: 0;
   }
-  h1, .img, p {
+  h1, h2, .img, p, .only-mobile {
     display: none;
   }
 
@@ -105,8 +110,33 @@ h1 {
   // @include hideEverything;
 }
 
-.hidden {
+.hidden,
+.hide-client {
   display: none;
+}
+
+.only-mobile {
+  display: none;
+}
+
+@media($small) {
+  .only-mobile {
+    display: block;
+  }
+
+  .sample {
+    display: inline-flex;
+    width: 30%;
+    height: 30px;
+  }
+}
+
+@media($medium-down) {
+  .sample {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+  }
 }
 
 @media print {

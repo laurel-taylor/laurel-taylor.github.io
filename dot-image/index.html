@@ -8,25 +8,26 @@
 <body class="hide-everything">
   <section class="page">
     <h1>Dot Image</h1>
-    <p>
+    <h2 class="only-mobile">Not suited for small screens :(</h2>
+    <p class="hide-client">
       Instructions:<br/>
       Install `readline` for node and <a href="https://imagemagick.org/script/download.php">imagemagick</a><br/>
       Save image in images/processing<br/>
       Open ./images in terminal<br/>
       Run "convert processing/&lt;filename&gt; txt: >> processing/img.txt && node ./makeJson.js"<br/>
     </p>
-    <p>Image size: <span id="size"></span> (butter: 33w x 110h)</p>
+    <p class="hide-client">Image size: <span id="size"></span> (butter: 33w x 110h)</p>
     <p id="configs">
-      <span id="showImageContainer"><input type="checkbox" name="showImage" onclick="toggleShowImage()" id="showImage" /><label for="showImage">Show image</label></span><br/>
+      <span id="showImageContainer"><input type="checkbox" name="showImage" onclick="toggleShowImage()" id="showImage" /><label for="showImage">Show image (warning: this can take a while)</label></span><br/>
       Print line color:
-        <input type="radio" name="thickness" value="light" id="light" checked="checked" onclick="darkness('light')" /><label for="light">Light</label>
-        <input type="radio" name="thickness" value="medium" id="medium" onclick="darkness('medium')" /><label for="medium">Medium</label>
-        <input type="radio" name="thickness" value="dark" id="dark" onclick="darkness('dark')" /><label for="dark">Dark</label>
-        <br/>
+      <span class="sample"><input type="radio" name="thickness" value="light" id="light" checked="checked" onclick="darkness('light')" /><label for="light">Light</label></span>
+      <span class="sample"><input type="radio" name="thickness" value="medium" id="medium" onclick="darkness('medium')" /><label for="medium">Medium</label></span>
+      <span class="sample"><input type="radio" name="thickness" value="dark" id="dark" onclick="darkness('dark')" /><label for="dark">Dark</label></span>
+      <br/>
       <span id="samples">Show sample:
-        <input type="radio" name="sample" value="suga" id="suga" onclick="sample('suga')" /><label for="suga">Suga</label>
-        <input type="radio" name="sample" value="sugasmile" id="sugasmile" onclick="sample('sugasmile')" /><label for="medium">Suga2</label>
-        <input type="radio" name="sample" value="jhope" id="jhope" onclick="sample('jhope')" /><label for="dark">J-Hope</label>
+        <span class="sample"><input type="radio" name="sample" value="suga" id="suga" onclick="sample('suga')" /><label for="suga">Suga</label></span>
+        <span class="sample"><input type="radio" name="sample" value="sugasmile" id="sugasmile" onclick="sample('sugasmile')" /><label for="medium">Suga2</label></span>
+        <span class="sample"><input type="radio" name="sample" value="jhope" id="jhope" onclick="sample('jhope')" /><label for="dark">J-Hope</label></span>
       </span>
       <br/>
       <span>Row padding: <input type="number" step="0.1" id="rowPadding" value="-4" /> <button type="button" onclick="redraw()">Redraw</button></span>
