@@ -356,7 +356,7 @@ export const buildSongList = () => {
   a.push(["Brian Setzer", "Rock This Town", "", ""]);
   a.push(["Brian Setzer", "Stray Cat Strut", "", ""]);
   a.push(["Bring Me the Horizon", "Happy Song", "", ""]);
-  a.push(["Bring Me the Horizon", "Throne", "", ""]);
+  a.push(["Bring Me the Horizon", "Throne", "y", ""]);
   a.push(["The Bronx", "False Alarm", "y", ""]);
   a.push(["Brooks & Dunn", "Hillybilly Deluxe", "", ""]);
   a.push(["Bruno Mars", "24K Magic", "", ""]);
@@ -384,7 +384,7 @@ export const buildSongList = () => {
   a.push(["Cannibal Corpse", "Hammer Smashed Face", "y", ""]);
   a.push(["Capital Cities", "Safe and Sound", "", ""]);
   a.push(["Carly Rae Jepsen", "Call Me Maybe", "y", ""]);
-  a.push(["Carrie Underwood", "All-American Girl", "", ""]);
+  a.push(["Carrie Underwood", "All-American Girl", "y", ""]);
   a.push(["Carrie Underwood", "Before He Cheats", "y", ""]);
   a.push(["Carrie Underwood", "Blown Away", "", ""]);
   a.push(["Carrie Underwood", "Cowboy Casanova", "", ""]);
@@ -997,7 +997,7 @@ export const buildSongList = () => {
   a.push(["Iron Maiden", "Phantom of the Opera", "", ""]);
   a.push(["Iron Maiden", "Powerslave", "y", ""]);
   a.push(["Iron Maiden", "The Prisoner", "", ""]);
-  a.push(["Iron Maiden", "Rime of the Ancient Mariner", "", ""]);
+  a.push(["Iron Maiden", "Rime of the Ancient Mariner", "y", ""]);
   a.push(["Iron Maiden", "Run to the Hills (original)", "y", ""]);
   a.push(["Iron Maiden", "Seventh Son of a Seventh Son", "", ""]);
   a.push(["Iron Maiden", "The Trooper", "y", ""]);
@@ -2288,7 +2288,7 @@ export const buildSongList = () => {
   a.push(["U2", "Vertigo", "", ""]);
   a.push(["U2", "Where The Streets Have No Name", "", ""]);
   a.push(["Underoath", "Desperate Times, Desperate Measures", "y", ""]);
-  a.push(["Underoath", "Reinventing Your Exit", "", ""]);
+  a.push(["Underoath", "Reinventing Your Exit", "y", ""]);
   a.push(["Underoath", "Writing on the Walls", "", ""]);
   a.push(["The Used", "The Taste of Ink", "y", ""]);
   a.push(["The Used ", "Blood on My Hands", "", ""]);
@@ -2426,7 +2426,7 @@ export const buildSongList = () => {
   a.push(["Yngwie Malmsteen's Rising Force", "Caprici di Diablo", "y", ""]);
   a.push(["Yngwie Malmsteen's Rising Force", "Damnation Game", "y", ""]);
   a.push(["Yngwie Malmsteen's Rising Force", "Red Devil", "y", ""]);
-  a.push(["Young the Giant", "My Body", "", ""]);
+  a.push(["Young the Giant", "My Body", "y", ""]);
   a.push(["Zac Brown Band", "Chicken Fried", "", ""]);
   a.push(["Zac Brown Band", "Homegrown", "", ""]);
   a.push(["Zac Brown Band", "The Wind", "", ""]);
@@ -2576,7 +2576,7 @@ export const buildSongList = () => {
   a.push(["Silverstein", "American Dream", "", ""]);
   a.push(["Rupert Holmes", "Escape (The Piña Colada Song)", "y", ""]);
   a.push(["UB40", "Red Red Wine", "", ""]);
-  a.push(["Wallows", "Pictures of Girls", "", ""]);
+  a.push(["Wallows", "Pictures of Girls", "y", ""]);
   a.push(["Young the Giant", "Simplify", "", ""]);
   a.push(["The Devil Wears Prada", "Dogs Can Grow Beards All Over", "", ""]);
   a.push(["The Devil Wears Prada", "HTML Rulez D00d", "", ""]);
@@ -2867,7 +2867,7 @@ export const buildSongList = () => {
   a.push([
     "Between the Buried and Me",
     "Selkies: The Endless Obsession",
-    "",
+    "y",
     ""
   ]);
   a.push(["Five Finger Death Punch", "A Little Bit Off", "", ""]);
@@ -2876,7 +2876,7 @@ export const buildSongList = () => {
   a.push(["We the Kings", "Spin", "", ""]);
   a.push(["OK Go", "White Knuckles", "", ""]);
   a.push(["The Killers", "Caution", "", ""]);
-  a.push(["Say Anything", "Alive With The Glory Of Love", "", ""]);
+  a.push(["Say Anything", "Alive With The Glory Of Love", "y", ""]);
   a.push([
     "Taking Back Sunday",
     "Cute Without The 'E' (Cut From the Team)",
@@ -2890,7 +2890,7 @@ export const buildSongList = () => {
   a.push(["David Bowie", "Rebel Rebel", "", ""]);
   a.push(["Greta Van Fleet", "My Way, Soon", "", ""]);
   a.push(["Fountains of Wayne", "Stacy's Mom", "", ""]);
-  a.push(["Dance Gavin Dance", "Prisoner", "", ""]);
+  a.push(["Dance Gavin Dance", "Prisoner", "y", ""]);
   a.push(["Redbone", "Come and Get Your Love", "", ""]);
   a.push(["Harry Styles", "Golden", "", ""]);
   a.push(["Shawn Mendes", "Higher", "", ""]);
