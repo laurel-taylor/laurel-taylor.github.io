@@ -11,7 +11,7 @@ export const buildSongList = () => {
   a.push(["30 Seconds to Mars", "Closer to the Edge", "", ""]);
   a.push(["30 Seconds to Mars", "The Kill", "y", ""]);
   a.push(["30 Seconds to Mars", "Kings and Queens", "y", ""]);
-  a.push(["30 Seconds to Mars", "This Is War", "", ""]);
+  a.push(["30 Seconds to Mars", "This Is War", "y", ""]);
   a.push(["311", "Amber", "y", ""]);
   a.push(["311", "Beautiful Disaster", "y", ""]);
   a.push(["311", "Down", "y", ""]);
@@ -2892,7 +2892,7 @@ export const buildSongList = () => {
   a.push(["Fountains of Wayne", "Stacy's Mom", "", ""]);
   a.push(["Dance Gavin Dance", "Prisoner", "y", ""]);
   a.push(["Redbone", "Come and Get Your Love", "", ""]);
-  a.push(["Harry Styles", "Golden", "", ""]);
+  a.push(["Harry Styles", "Golden", "y", ""]);
   a.push(["Shawn Mendes", "Higher", "", ""]);
   a.push(["Blink-182", "Anthem Part Two", "", ""]);
   a.push(["Lifehouse", "Hanging by a Moment", "", ""]);
