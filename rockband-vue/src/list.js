@@ -335,7 +335,7 @@ export const buildSongList = () => {
   a.push(["Boston", "Foreplay/Long Time", "y", ""]);
   a.push(["Boston", "Hitch A Ride", "y", ""]);
   a.push(["Boston", "More Than a Feeling", "y", ""]);
-  a.push(["Boston", "Peace of Mind", "", ""]);
+  a.push(["Boston", "Peace of Mind", "y", ""]);
   a.push(["Boston", "Rock and Roll Band", "", ""]);
   a.push(["Boston", "Smokin'", "y", ""]);
   a.push(["Boston", "Something About You", "", ""]);
@@ -507,7 +507,7 @@ export const buildSongList = () => {
   a.push(["Creedence Clearwater Revival", "Who'll Stop the Rain", "", ""]);
   a.push(["Crooked X", "Nightmare", "y", ""]);
   a.push(["Cross Canadian Ragweed", "Cry Lonely", "", ""]);
-  a.push(["Crossfade", "Cold", "", ""]);
+  a.push(["Crossfade", "Cold", "y", ""]);
   a.push(["Crown of Thorns", "Rock Ready", "", ""]);
   a.push(["The Cult", "She Sells Sanctuary", "", ""]);
   a.push(["Culture Club", "Do You Really Want to Hurt Me", "", ""]);
@@ -2105,7 +2105,7 @@ export const buildSongList = () => {
   a.push(["Stevie Ray Vaughan and Double Trouble", "Texas Flood", "y", ""]);
   a.push(["Stevie Ray Vaughan and Double Trouble Love", "Struck Baby", "", ""]);
   a.push(["Stevie Wonder", "Higher Ground", "", ""]);
-  a.push(["Stevie Wonder", "I Wish", "", ""]);
+  a.push(["Stevie Wonder", "I Wishy", ""]);
   a.push(["Stevie Wonder", "Living for the City", "", ""]);
   a.push(["Stevie Wonder", "Sir Duke", "", ""]);
   a.push(["Stevie Wonder", "Superstition ", "", ""]);
@@ -2778,7 +2778,7 @@ export const buildSongList = () => {
   a.push(["The Bronx", "Young Bloods", "", ""]);
   a.push(["Fitz and The Tantrums", "I Just Wanna Shine", "", ""]);
   a.push(["Jimmy Eat World", "All the Way (Stay)", "", ""]);
-  a.push(["The Summer Set", "Chelsea", "", ""]);
+  a.push(["The Summer Set", "Chelsea", "y", ""]);
   a.push(["Post Malone", "Circles", "y", ""]);
   a.push(["Ra Ra Riot", "Can You Tell", "", ""]);
   a.push(["Simple Plan", "Addicted", "", ""]);
@@ -2900,7 +2900,7 @@ export const buildSongList = () => {
   a.push(["Machine Gun Kelly", "bloody valentine", "", ""]);
   a.push(["New Found Glory", "All Downhill from Here", "", ""]);
   a.push(["New Found Glory", "Greatest of All Time", "", ""]);
-  a.push(["New Found Glory", "My Friends Over You", "", ""]);
+  a.push(["New Found Glory", "My Friends Over You", "y", ""]);
   a.push(["Asking Alexandria", "To the Stage", "", ""]);
   a.push(["Of Monsters and Men", "Visitor", "", ""]);
   a.push(["Bayside", "Sick, Sick, Sick", "", ""]);
@@ -2937,6 +2937,18 @@ export const buildSongList = () => {
   a.push(["Nonpoint", "Miracle", "", ""]);
   a.push(["Between the Buried and Me", "All Bodies", "", ""]);
   a.push(["Chelsea Grin", "Cheyne Stokes", "", ""]);
+  a.push(["Children of Nova", "The Complexity of Light", "", ""]);
+  a.push(["Imagine Dragons", "Follow You", "", ""]);
+  a.push(["Masked Wolf", "Astronaut in the Ocean", "", ""]);
+  a.push(["Our Last Night", "Astronaut in the Ocean", "", ""]);
+  a.push(["Hall & Oates", "Rich Girl", "", ""]);
+  a.push(["Weezer", "All My Favorite Songs", "", ""]);
+  a.push(["A Skylit Drive", "Too Little Too Late", "", ""]);
+  a.push(["Cake", "Comfort Eagle", "", ""]);
+  a.push(["Damone", "Roll the Dice", "", ""]);
+  a.push(["Ghost", "Rats", "", ""]);
+  a.push(["The Apples in Stereo", "Energy", "", ""]);
+  a.push(["Reel Big Fish", "Sell Out", "", ""]);
 
   return a;
 };

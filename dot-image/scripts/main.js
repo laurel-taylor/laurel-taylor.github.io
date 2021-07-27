@@ -158,35 +158,53 @@ const generateRandomImage = (rows = 10) => {
   return imageMap;
 }
 
+const getImageFromParam = async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('name');
+
+  if (myParam) {
+    return await fetch(`../images/processing/${myParam}.json`)
+    .then(response => response.json())
+    .then(json => json);
+  }
+
+  return Promise.reject();
+}
+
 const main = async () => {
   let arr = [[]];
 
   try {
-    await fetch(imageName)
-    .then(response => response.json())
-    .then(json => {
-      arr = json;
-    });
+    arr = await getImageFromParam();
   } catch {
-    const backupImageName = "../images/processing/img.json";
-    console.log(imageName, 'not found, falling back to', backupImageName);
-
+    console.log('name param not found, falling back to', imageName);
     try {
-      await fetch(backupImageName)
+      await fetch(imageName)
       .then(response => response.json())
       .then(json => {
         arr = json;
       });
     } catch {
-      const fallback = "../images/test.json";
-      console.log(backupImageName, 'not found, falling back to', fallback);
+      const backupImageName = "../images/processing/img.json";
+      console.log(imageName, 'not found, falling back to', backupImageName);
 
-      await fetch(fallback)
-      .then(response => response.json())
-      .then(json => {
-        arr = json;
-      });
-      hideShowById('showImageContainer');
+      try {
+        await fetch(backupImageName)
+        .then(response => response.json())
+        .then(json => {
+          arr = json;
+        });
+      } catch {
+        const fallback = "../images/test.json";
+        console.log(backupImageName, 'not found, falling back to', fallback);
+
+        await fetch(fallback)
+        .then(response => response.json())
+        .then(json => {
+          arr = json;
+        });
+        hideShowById('showImageContainer');
+      }
     }
   }
 

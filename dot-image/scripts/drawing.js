@@ -30,6 +30,22 @@ const getRainbow = () => {
   ]
 };
 
+const getGradient = () => {
+  return [
+    {color: '#eeeeee'},
+    {color: '#dddddd'},
+    {color: '#cccccc'},
+    {color: '#bbbbbb'},
+    {color: '#999999'},
+    {color: '#666666'},
+    {color: '#444444'},
+    {color: '#333333'},
+    {color: '#222222'},
+    {color: '#111111'},
+    {color: '#000000'}
+  ]
+};
+
 const createRainbow = () => {
   const rainbow = [];
   let og = getRainbow();
@@ -46,6 +62,7 @@ const createRainbow = () => {
 const _drawPixels = (pixelMap, selector="pixel") => {
   const rotator = createRainbow();
   const randomRainbow = getRainbow();
+  const gradient = getGradient();
   const rowPadding = document.getElementById('rowPadding').value;
   for (let rowIndex=0; rowIndex<pixelMap.length; rowIndex++) {
       if (rowIndex % 2 !== 0) {
@@ -56,13 +73,14 @@ const _drawPixels = (pixelMap, selector="pixel") => {
 
     pixelMap[rowIndex].forEach(({ size, dec, hex }, colIndex) => {
       const randomRainbowIndex = Math.floor(Math.random() * randomRainbow.length);
-      _addObjToTable({
+      _addToTable({
         obj: {
         text: dec,
         color: hex,
         size,
         rainbowColor: rotator[colIndex],
-        randomColor: randomRainbow[randomRainbowIndex].color
+        randomColor: randomRainbow[randomRainbowIndex].color,
+        gradientColor: gradient[size].color,
       }, rowIndex: rowIndex+1, selector, rowPadding });
     });
   }
@@ -89,7 +107,7 @@ const _drawSample = (sizeMap, selector="pixel") => {
 };
 
 const _addToTable = ({
-  obj: { size, rainbowColor, randomColor },
+  obj: { size, rainbowColor, randomColor, gradientColor },
   rowIndex,
   selector,
   rowPadding,
@@ -103,16 +121,14 @@ const _addToTable = ({
   circle.className = `size-${size} circle`;
   // circle.style.backgroundColor = randomColor;
   // circle.style.borderColor = randomColor;
+  // circle.style.backgroundCo`lor = gradientColor;
+  // circle.style.borderColor = gradientColor;
   // circle.innerHTML = size;
 
   container.appendChild(circle);
 
   const row = document.getElementById(`${selector}-${rowIndex}`);
   row.appendChild(container);
-};
-
-const _addObjToTable = ({obj, rowIndex, selector, rowPadding}) => {
-  _addToTable({ obj, rowIndex, selector, rowPadding });
 };
 
 const _createRow = (i, selector="pixel") => {
