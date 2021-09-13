@@ -594,7 +594,7 @@ export const buildSongList = () => {
   a.push(["Dio", "Rainbow in the Dark", "y", ""]);
   a.push(["Dio", "Stand Up and Shout", "y", ""]);
   a.push(["Dire Straits", "Walk of Life", "y", ""]);
-  a.push(["The Distillers", "Drain the Blood", "", ""]);
+  a.push(["The Distillers", "Drain the Blood", "y", ""]);
   a.push(["Disturbed", "The Animal", "", ""]);
   a.push(["Disturbed", "Another Way to Die", "y", ""]);
   a.push(["Disturbed", "Asylum", "", ""]);
@@ -2572,7 +2572,7 @@ export const buildSongList = () => {
   a.push(["lovelytheband", "Broken", "", ""]);
   a.push(["AJR feat. Rivers Cuomo", "Sober Up", "", ""]);
   a.push(["Amberian Dawn", "River of Tuoni", "", ""]);
-  a.push(["The Bronx", "Knifeman", "", ""]);
+  a.push(["The Bronx", "Knifeman", "y", ""]);
   a.push(["Silverstein", "American Dream", "", ""]);
   a.push(["Rupert Holmes", "Escape (The Piña Colada Song)", "y", ""]);
   a.push(["UB40", "Red Red Wine", "", ""]);
@@ -2644,7 +2644,7 @@ export const buildSongList = () => {
   a.push(["Meredith Brooks", "Bitch", "", ""]);
   a.push(["The Dillinger Escape Plan", "Farewell, Mona Lisa", "", ""]);
   a.push(["Meshuggah", "Bleed", "", ""]);
-  a.push(["Woe, Is Me", "[&] Delinquents", "", ""]);
+  a.push(["Woe, Is Me", "[&] Delinquents", "y", ""]);
   a.push(["Bring Me the Horizon", "Drown", "", ""]);
   a.push(["Bring Me the Horizon", "MANTRA", "", ""]);
   a.push(["Bring Me the Horizon", "Pray for Plagues", "", ""]);
@@ -2652,7 +2652,7 @@ export const buildSongList = () => {
   a.push(["Fall Out Boy", "Uma Thurman", "", ""]);
   a.push(["Young the Giant", "Superposition", "", ""]);
   a.push(["Five Finger Death Punch", "When the Seasons Change", "", ""]);
-  a.push(["Dance Gavin Dance", "Lemon Meringue Tie", "", ""]);
+  a.push(["Dance Gavin Dance", "Lemon Meringue Tie", "y", ""]);
   a.push(["Pierce the Veil", "Caraphernelia", "y", ""]);
   a.push(["The Word Alive", "Battle Royale", "", ""]);
   a.push(["The Glorious Sons", "S.O.S.", "", ""]);
@@ -2710,7 +2710,7 @@ export const buildSongList = () => {
   a.push(["Chiodos", "Caves", "", ""]);
   a.push(["Flogging Molly", "Requiem for a Dying Song", "", ""]);
   a.push(["All That Remains", "For We Are Many", "", ""]);
-  a.push(["Between the Buried and Me", "Obfuscation", "", ""]);
+  a.push(["Between the Buried and Me", "Obfuscation", "y", ""]);
   a.push(["Of Monsters and Men", "Alligator", "", ""]);
   a.push(["A Day to Remember", "The Plot to Bomb the Panhandle", "y", ""]);
   a.push([
@@ -2897,7 +2897,7 @@ export const buildSongList = () => {
   a.push(["Blink-182", "Anthem Part Two", "", ""]);
   a.push(["Lifehouse", "Hanging by a Moment", "", ""]);
   a.push(["Anarbor", "Let The Games Begin", "", ""]);
-  a.push(["Machine Gun Kelly", "bloody valentine", "", ""]);
+  a.push(["Machine Gun Kelly", "bloody valentine", "y", ""]);
   a.push(["New Found Glory", "All Downhill from Here", "", ""]);
   a.push(["New Found Glory", "Greatest of All Time", "", ""]);
   a.push(["New Found Glory", "My Friends Over You", "y", ""]);
@@ -2949,6 +2949,17 @@ export const buildSongList = () => {
   a.push(["Ghost", "Rats", "", ""]);
   a.push(["The Apples in Stereo", "Energy", "", ""]);
   a.push(["Reel Big Fish", "Sell Out", "", ""]);
+  a.push(["Calling All Captains", "Tailspin", "", ""]);
+
+  a.push(["The Used", "The Bird and the Worm", "", ""]);
+  a.push(["Capstan", "take my breath away // noose", "", ""]);
+  a.push(["Modest Mouse", "We Are Between", "", ""]);
+  a.push(["The Offspring", "Let the Bad Times Roll", "", ""]);
+  a.push(["The Offspring", "You're Gonna Go Far, Kid", "y", ""]);
+  a.push(["I Prevail", "Hurricane", "", ""]);
+  a.push(["Rise Against", "Nowhere Generation", "", ""]);
+  a.push(["Eve 6", "Here's to the Night", "", ""]);
+  a.push(["KennyHoopla ft. Travis Barker", "estella//", "", ""]);
 
   return a;
 };
