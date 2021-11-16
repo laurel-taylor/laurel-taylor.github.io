@@ -90,7 +90,7 @@ export const buildSongList = () => {
   a.push(["All That Remains", "Divide", "", ""]);
   a.push(["All That Remains", "This Calling", "y", ""]);
   a.push(["All That Remains", "Two Weeks", "y", ""]);
-  a.push(["All That Remains", "What If I Was Nothing", "", ""]);
+  a.push(["All That Remains", "What If I Was Nothing", "y", ""]);
   a.push(["All Time Low", "Weightless", "", ""]);
   a.push(["All-American Rejects", "Dirty Little Secret", "y", ""]);
   a.push(["All-American Rejects", "Gives You Hell", "y", ""]);
@@ -148,7 +148,7 @@ export const buildSongList = () => {
   a.push(["Avenged Sevenfold", "Unholy Confessions", "", ""]);
   a.push(["Avenged Sevenfold", "Welcome to the Family", "", ""]);
   a.push(["Average White Band", "Pick Up the Pieces", "", ""]);
-  a.push(["Avicii feat. Aloe Blacc", "Wake Me Up", "", ""]);
+  a.push(["Avicii feat. Aloe Blacc", "Wake Me Up", "y", ""]);
   a.push(["Avril Lavigne", "Complicated", "y", ""]);
   a.push(["Avril Lavigne", "My Happy Ending", "", ""]);
   a.push(["Avril Lavigne", "What the Hell", "", ""]);
@@ -669,7 +669,7 @@ export const buildSongList = () => {
   a.push(["Elle King", "Ex's & Oh's", "y", ""]);
   a.push(["Elton John", "The b*tch is Back", "", ""]);
   a.push(["Elton John", "Don't Let the Sun Go Down on Me", "", ""]);
-  a.push(["Elton John", "I'm Still Standing", "", ""]);
+  a.push(["Elton John", "I'm Still Standing", "y", ""]);
   a.push(["Elton John", "Saturday Night's Alright for Fighting", "y", ""]);
   a.push(["Elvis Costello", "Radio Radio", "", ""]);
   a.push(["Elvis Presley", "Suspicious Minds", "y", ""]);
@@ -2203,7 +2203,7 @@ export const buildSongList = () => {
   a.push(["Three Days Grace", "Animal I Have Become", "", ""]);
   a.push(["Three Days Grace", "The Good Life", "", ""]);
   a.push(["Three Days Grace", "I Hate Everything About You", "", ""]);
-  a.push(["Three Days Grace", "Never Too Late", "", ""]);
+  a.push(["Three Days Grace", "Never Too Late", "y", ""]);
   a.push(["Three Days Grace", "Pain", "", ""]);
   a.push(["Thrice", "Image of the Invisible", "", ""]);
   a.push(["Tickle Me Pink", "The Time is Wrong", "y", ""]);
