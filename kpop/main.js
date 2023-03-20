@@ -21,7 +21,7 @@ const dateDiff = ( start, end ) => {
 };
 
 const main = () => {
-  const end = "2023-03-02T07:00:00.000Z";
+  const end = "2023-04-04T07:00:00.000Z";
 
   setInterval(() => {
     const dt = dateDiff(new Date(), end);
