@@ -1,0 +1,46 @@
+
+function getList(){
+	var array = new Array;
+	array.push('Where are my pants?? --- outfit shows lots of leg skin');
+	array.push('Grrl u gonna b cold --- outfit shows lots of arm skin');
+	array.push('Am I tall yet?? --- short person wearing tall shoes');
+	array.push('TOO TALL --- tall person wearing tall shoes');
+	array.push('Colored plats --- non-black platform shoes');
+	array.push('Break a leg --- VERY tall platforms');
+	array.push('I really hate --- High top converse');
+	array.push('Stay?? --- platform converse');
+	array.push('Ow my feet --- wearing heels');
+	array.push('A twofer --- wearing merch for this concert');
+	array.push('Flexing --- wearing merch from another concert');
+	array.push('Pins --- on their bag');
+	array.push('Porcupine --- 3+ pins on their bag');
+	array.push('Yoongi PC --- displayed on their person');
+	array.push('BTS member PC --- NOT Suga');
+	array.push('Too soon --- something military related');
+	array.push('Twinsies! --- same lightstick decoration as you');
+	array.push('Freebees! --- Someone giving them out');
+	array.push('Wrong con --- outfit for a different BTS member');
+	array.push('Ddaeng --- coat or fan');
+	array.push('Haegeum --- cosplay');
+	array.push('Homemade --- cosplay');
+	array.push('I like that --- That That cosplay');
+	array.push('Mother\'s day --- with their mom');
+	array.push('Shooky --- accessory');
+	array.push('not Shooky! --- non-shooky bt21');
+	array.push('Marry Me --- a sign');
+	array.push('That\'s lit --- light-up outfit or sign');
+	array.push('Latinas 4 Yoongi --- a sign or flag');
+	array.push('Gays 4 Yoongi --- a sign or flag');
+	array.push('Black mask --- wearing one');
+	array.push('Mask up --- 3+ people in a group wearing a mask');
+	array.push('Leather --- or pleather');
+	array.push('Wedding dress --- they did that');
+	array.push('Wedding theme --- not an actual dress');
+	array.push('Tangerine --- outfit theme');
+	array.push('Purple clothes --- Borahae');
+	array.push('Purple hair --- Borahae');
+	array.push('BTS shirt --- Simple but elegant');
+	array.push('Cat ears --- meow');
+	array.push('Can I pet you? --- a textured outfit');
+	return array;
+}
