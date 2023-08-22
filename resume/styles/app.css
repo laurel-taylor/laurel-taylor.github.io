@@ -3,87 +3,116 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Raleway", Helvetica, Arial, sans-serif;
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 
 a {
   text-decoration: none;
   transition: all 0.5s;
   color: mediumblue;
-  border-bottom: 1px solid transparent; }
-  a:hover {
-    border-bottom: 1px solid mediumblue; }
+  border-bottom: 1px solid transparent;
+}
+a:hover {
+  border-bottom: 1px solid mediumblue;
+}
 
 ul {
   margin-top: 1em;
-  padding-left: 1em; }
+  padding-left: 1em;
+}
 
 h1, h2, h3 {
   font-weight: normal;
-  margin: 0; }
+  margin: 0;
+}
 
 .skillset {
-  display: none; }
+  display: none;
+}
 
 .silly {
-  display: none; }
+  display: none;
+}
 
 .em {
-  color: sandybrown;
-  font-weight: bold; }
+  color: darkorange;
+  font-weight: bold;
+}
 
 header {
-  margin-top: 1em; }
-  header ul.basic-info {
-    list-style: none;
-    padding: 0;
-    margin: 0.5em 0; }
-    header ul.basic-info li {
-      text-align: center; }
-  header h1 {
-    text-align: center;
-    font-variant: small-caps; }
+  margin-top: 1em;
+}
+header ul.basic-info {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0;
+}
+header ul.basic-info li {
+  text-align: center;
+}
+header h1 {
+  text-align: center;
+  font-variant: small-caps;
+}
 
 footer {
-  background-color: #f3f3f3; }
-  footer section {
-    padding: 1em; }
-  footer ul {
-    margin: 0;
-    list-style: none; }
+  background-color: #f3f3f3;
+}
+footer section {
+  padding: 1em;
+}
+footer ul {
+  margin: 0;
+  list-style: none;
+}
 
 .resume {
-  margin: 0.5em 1em 1em; }
-  .resume h2 {
-    font-variant: small-caps;
-    border-bottom: 1px solid #a3a3a3; }
-  .resume section > ul {
-    list-style: none; }
-  .resume ul.experience-items {
-    list-style: square; }
-  .resume .title {
-    font-weight: bold;
-    margin-right: 6px; }
-  .resume .experience > li {
-    margin-bottom: 1.4em; }
-  .resume .title, .resume .business {
-    font-size: 1.2em; }
-  .resume .location, .resume .dates {
-    color: #a3a3a3;
-    font-style: italic; }
+  margin: 0.5em 1em 1em;
+}
+.resume h2 {
+  font-variant: small-caps;
+  border-bottom: 1px solid #707070;
+}
+.resume section > ul {
+  list-style: none;
+}
+.resume ul.experience-items {
+  list-style: square;
+}
+.resume .title {
+  font-weight: bold;
+  margin-right: 6px;
+}
+.resume .experience > li {
+  margin-bottom: 1.4em;
+}
+.resume .title, .resume .business {
+  font-size: 1.2em;
+}
+.resume .location, .resume .dates {
+  color: #707070;
+  font-style: italic;
+}
 
 @media only screen and (min-width: 500px) {
   .title, .business {
-    display: inline-block; }
-
+    display: inline-block;
+  }
   .title::after {
-    content: ','; }
-
+    content: ",";
+  }
   header .basic-info {
-    display: flex; }
-    header .basic-info li {
-      flex: 1; }
-
+    display: flex;
+  }
+  header .basic-info li {
+    flex: 1;
+  }
   footer {
-    display: flex; }
-    footer section {
-      flex: 1; } }
+    display: flex;
+  }
+  footer section {
+    flex: 1;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
