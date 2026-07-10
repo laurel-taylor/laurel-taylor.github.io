@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,600,700);
 
 $secondary-color: #707070;
@@ -37,16 +39,98 @@ h1, h2, h3 {
   margin: 0;
 }
 
-// TODO
+$max-level: 7;
+$bar-height: 0.75rem;
+$bar-track: #e0e0e0;
+
+@function skill-fill-pct($level) {
+  @return math.div($level, $max-level) * 100%;
+}
+
+.skills-list {
+  .skills-list-items {
+    margin-bottom: 0;
+  }
+
+  .skills-list-items,
+  .skillset {
+    min-width: 0;
+  }
+
+  .skills-list-items {
+    list-style: none;
+
+    > li {
+      display: list-item;
+      list-style-type: square;
+      margin-bottom: 0.75em;
+
+      > ul {
+        list-style-type: circle;
+        padding-left: 1em;
+        margin-top: 0.25em;
+      }
+    }
+  }
+}
+
 .skillset {
-  display: none;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 0.75rem;
+    row-gap: 0.4rem;
+    align-items: center;
+  }
+
+  li {
+    display: contents;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: $bar-height;
+      background-color: $bar-track;
+      background-image: linear-gradient(to right, $em-color, $em-color);
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+    }
+  }
+
+  @for $i from 1 through $max-level {
+    $pct: skill-fill-pct($i);
+
+    @keyframes skill-fill-#{$i} {
+      to {
+        background-size: $pct 100%;
+      }
+    }
+
+    li[data-level="#{$i}"]::after {
+      animation: skill-fill-#{$i} 0.8s ease-out forwards;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    @for $i from 1 through $max-level {
+      $pct: skill-fill-pct($i);
+
+      li[data-level="#{$i}"]::after {
+        animation: none;
+        background-size: $pct 100%;
+      }
+    }
+  }
 }
 
 .silly {
   display: none;
 }
 
-// note that I find this a bit douche-y
 .em {
   color: $em-color;
   font-weight: bold;
@@ -68,7 +152,6 @@ header {
   }
 }
 
-
 footer {
   background-color: #f3f3f3;
   section {
@@ -78,7 +161,13 @@ footer {
     margin: 0;
     list-style: none;
   }
-
+  .last-updated {
+    @include secondary;
+    text-align: right;
+    margin: 0;
+    padding: 0 1rem 0.5rem;
+    width: 100%;
+  }
 }
 
 .resume {
@@ -110,6 +199,25 @@ footer {
 }
 
 @media only screen and (min-width: 500px) {
+  .skills-list {
+    display: flex;
+
+    > ul,
+    .skillset {
+      flex: 1;
+    }
+
+    .skillset ul {
+      text-align: right;
+      padding: 1rem;
+    }
+
+    .skills-list-items {
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+
   .title, .business {
     display: inline-block;
   }
@@ -126,8 +234,12 @@ footer {
   }
   footer {
     display: flex;
+    flex-wrap: wrap;
     section {
       flex: 1;
+    }
+    .last-updated {
+      flex-basis: 100%;
     }
   }
 }

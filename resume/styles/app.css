@@ -26,8 +26,135 @@ h1, h2, h3 {
   margin: 0;
 }
 
-.skillset {
-  display: none;
+.skills-list .skills-list-items {
+  margin-bottom: 0;
+}
+.skills-list .skills-list-items,
+.skills-list .skillset {
+  min-width: 0;
+}
+.skills-list .skills-list-items {
+  list-style: none;
+}
+.skills-list .skills-list-items > li {
+  display: list-item;
+  list-style-type: square;
+  margin-bottom: 0.75em;
+}
+.skills-list .skills-list-items > li > ul {
+  list-style-type: circle;
+  padding-left: 1em;
+  margin-top: 0.25em;
+}
+
+.skillset ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 0.75rem;
+  row-gap: 0.4rem;
+  align-items: center;
+}
+.skillset li {
+  display: contents;
+}
+.skillset li::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.75rem;
+  background-color: #e0e0e0;
+  background-image: linear-gradient(to right, darkorange, darkorange);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+}
+@keyframes skill-fill-1 {
+  to {
+    background-size: 14.2857142857% 100%;
+  }
+}
+.skillset li[data-level="1"]::after {
+  animation: skill-fill-1 0.8s ease-out forwards;
+}
+@keyframes skill-fill-2 {
+  to {
+    background-size: 28.5714285714% 100%;
+  }
+}
+.skillset li[data-level="2"]::after {
+  animation: skill-fill-2 0.8s ease-out forwards;
+}
+@keyframes skill-fill-3 {
+  to {
+    background-size: 42.8571428571% 100%;
+  }
+}
+.skillset li[data-level="3"]::after {
+  animation: skill-fill-3 0.8s ease-out forwards;
+}
+@keyframes skill-fill-4 {
+  to {
+    background-size: 57.1428571429% 100%;
+  }
+}
+.skillset li[data-level="4"]::after {
+  animation: skill-fill-4 0.8s ease-out forwards;
+}
+@keyframes skill-fill-5 {
+  to {
+    background-size: 71.4285714286% 100%;
+  }
+}
+.skillset li[data-level="5"]::after {
+  animation: skill-fill-5 0.8s ease-out forwards;
+}
+@keyframes skill-fill-6 {
+  to {
+    background-size: 85.7142857143% 100%;
+  }
+}
+.skillset li[data-level="6"]::after {
+  animation: skill-fill-6 0.8s ease-out forwards;
+}
+@keyframes skill-fill-7 {
+  to {
+    background-size: 100% 100%;
+  }
+}
+.skillset li[data-level="7"]::after {
+  animation: skill-fill-7 0.8s ease-out forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skillset li[data-level="1"]::after {
+    animation: none;
+    background-size: 14.2857142857% 100%;
+  }
+  .skillset li[data-level="2"]::after {
+    animation: none;
+    background-size: 28.5714285714% 100%;
+  }
+  .skillset li[data-level="3"]::after {
+    animation: none;
+    background-size: 42.8571428571% 100%;
+  }
+  .skillset li[data-level="4"]::after {
+    animation: none;
+    background-size: 57.1428571429% 100%;
+  }
+  .skillset li[data-level="5"]::after {
+    animation: none;
+    background-size: 71.4285714286% 100%;
+  }
+  .skillset li[data-level="6"]::after {
+    animation: none;
+    background-size: 85.7142857143% 100%;
+  }
+  .skillset li[data-level="7"]::after {
+    animation: none;
+    background-size: 100% 100%;
+  }
 }
 
 .silly {
@@ -65,6 +192,14 @@ footer ul {
   margin: 0;
   list-style: none;
 }
+footer .last-updated {
+  color: #707070;
+  font-style: italic;
+  text-align: right;
+  margin: 0;
+  padding: 0 1rem 0.5rem;
+  width: 100%;
+}
 
 .resume {
   margin: 0.5em 1em 1em;
@@ -95,6 +230,21 @@ footer ul {
 }
 
 @media only screen and (min-width: 500px) {
+  .skills-list {
+    display: flex;
+  }
+  .skills-list > ul,
+  .skills-list .skillset {
+    flex: 1;
+  }
+  .skills-list .skillset ul {
+    text-align: right;
+    padding: 1rem;
+  }
+  .skills-list .skills-list-items {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+  }
   .title, .business {
     display: inline-block;
   }
@@ -109,9 +259,13 @@ footer ul {
   }
   footer {
     display: flex;
+    flex-wrap: wrap;
   }
   footer section {
     flex: 1;
+  }
+  footer .last-updated {
+    flex-basis: 100%;
   }
 }
 
