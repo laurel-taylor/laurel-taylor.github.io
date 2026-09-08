@@ -5,7 +5,7 @@
 $secondary-color: #707070;
 $larger-font: 1.2em;
 $link-color: mediumblue;
-$em-color: darkorange;
+$em-color: #b65e28;
 
 @mixin secondary {
   color: $secondary-color;
@@ -42,6 +42,7 @@ h1, h2, h3 {
 $max-level: 7;
 $bar-height: 0.75rem;
 $bar-track: #e0e0e0;
+$bar-color: #ff8c00;
 
 @function skill-fill-pct($level) {
   @return math.div($level, $max-level) * 100%;
@@ -95,7 +96,7 @@ $bar-track: #e0e0e0;
       width: 100%;
       height: $bar-height;
       background-color: $bar-track;
-      background-image: linear-gradient(to right, $em-color, $em-color);
+      background-image: linear-gradient(to right, $bar-color, $bar-color);
       background-repeat: no-repeat;
       background-size: 0% 100%;
     }
@@ -198,6 +199,10 @@ footer {
   }
 }
 
+.show-print {
+  display: none;
+}
+
 @media only screen and (min-width: 500px) {
   .skills-list {
     display: flex;
@@ -241,5 +246,20 @@ footer {
     .last-updated {
       flex-basis: 100%;
     }
+  }
+}
+
+@media print {
+  .skillset,
+  footer {
+    display: none;
+  }
+
+  a {
+    color: black;
+  }
+
+  .show-print {
+    display: inline;
   }
 }
