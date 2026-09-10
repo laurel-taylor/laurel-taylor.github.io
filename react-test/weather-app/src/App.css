@@ -1,0 +1,59 @@
+.app {
+  width: min(640px, 100%);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app__header {
+  text-align: left;
+}
+
+.app__title {
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--on-sky);
+}
+
+.app__subtitle {
+  margin: 0.4rem 0 0;
+  color: var(--on-sky-muted);
+  font-size: 1.05rem;
+}
+
+.app__place-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app__place {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--on-sky);
+}
+
+.app__status,
+.app__error {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+}
+
+.app__error {
+  color: var(--error);
+}
+
+.forecast-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}

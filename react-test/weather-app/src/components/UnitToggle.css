@@ -1,0 +1,29 @@
+.unit-toggle {
+  display: inline-flex;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--panel);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.unit-toggle__option {
+  position: relative;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.unit-toggle__option--active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.unit-toggle__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}

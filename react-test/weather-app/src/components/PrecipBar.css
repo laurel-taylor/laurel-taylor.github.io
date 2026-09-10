@@ -1,0 +1,25 @@
+.precip-bar {
+  display: flex;
+  align-items: center;
+}
+
+.precip-bar__track {
+  display: block;
+  width: 1.5rem;
+  height: 1.9rem;
+  border-radius: 5px;
+  background: rgba(31, 111, 139, 0.16);
+  overflow: hidden;
+  position: relative;
+}
+
+.precip-bar__fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--precip, 0%);
+  border-radius: 0;
+  background: #7eb6ea;
+  transition: height 0.2s ease;
+}
