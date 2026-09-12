@@ -1,53 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Laurel's Github page</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laurel Taylor</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JavaScript side-projects by Laurel Taylor — karaoke, games, and the occasional BTS." />
   <link rel="icon" href="favicon.png" />
-  <style>
-    a.btn {
-      font-size: 3vh;
-      line-height: 2;
-      margin-bottom: 10px;
-    }
-    body {
-      padding: 20px;
-    }
-    .bottom {
-      display: flex;
-      justify-content: flex-end;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/menu.css" />
 </head>
 <body>
-  <p class='bottom'>
-    <a href="about.html">About</a>
-  </p>
-  <p>Lists</p>
-  <a class='btn btn-success col-xs-12' href="rockband/index.html">🎸 Rock Band @ The Grid</a>
-  <!-- <a class='btn btn-primary col-xs-12' href="whatwegot/index.html">RockBand util</a> -->
-  <a class='btn btn-primary col-xs-12' href="karaokelist/index.html">🎤 Karaoke @ The Grid</a>
+  <div class="page">
+    <header>
+      <div class="intro">
+        <h1>Laurel Taylor</h1>
+        <p>JavaScript side-projects — karaoke, games, and the occasional BTS.</p>
+      </div>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="resume/fullstack.html">Resume</a>
+      </nav>
+    </header>
 
-  <p>Art</p>
-  <a class='btn btn-success col-xs-12' href="sophie/dist/index.html">🧶 Sophie's universe yarn calc</a>
-  <a class='btn btn-primary col-xs-12' href="dot-image/index.html">⚫️ Dot image</a>
+    <main>
+      <section>
+        <h2>Lists</h2>
+        <div class="grid">
+          <a class="card" href="rockband/index.html">
+            <span class="emoji" aria-hidden="true">🎸</span>
+            <span class="title">Rock Band @ Bombada Harbor</span>
+          </a>
+          <!-- <a class="card" href="whatwegot/index.html">RockBand util</a> -->
+          <a class="card" href="karaokelist/index.html">
+            <span class="emoji" aria-hidden="true">🎤</span>
+            <span class="title">Karaoke @ The Grid</span>
+          </a>
+        </div>
+      </section>
 
-  <p>Games</p>
-	<a class='btn btn-success col-xs-12' href="karaokebingo/index.html">🎤 Karaoke Bingo</a>
-	<a class='btn btn-primary col-xs-12' href="comiconbingo/comiconBingo.html">🦸‍♀️ Comicon Bingo</a>
-	<a class='btn btn-primary col-xs-12' href="yoongibingo/bingo.html">🍊 Yoongi Bingo</a>
-  <a class='btn btn-primary col-xs-12' href="wheeloflunch/index.html">🌮 Wheel of Lunch</a>
-  <a class='btn btn-success col-xs-12' href="moviequiz/dist/index.html">🎬 Movie quizzes</a>
-  <a class='btn btn-success col-xs-12' href="khbbsmeld/index.html">🗝 KH:BBS Meld list</a>
-  <a class='btn btn-success col-xs-12' href="ffx2spherebreak/index.html">🥇 FFX-2 Sphere Break</a>
+      <section>
+        <h2>Art</h2>
+        <div class="grid">
+          <a class="card" href="sophie/dist/index.html">
+            <span class="emoji" aria-hidden="true">🧶</span>
+            <span class="title">Sophie's universe yarn calc</span>
+          </a>
+          <a class="card" href="dot-image/index.html">
+            <span class="emoji" aria-hidden="true">⚫️</span>
+            <span class="title">Dot image</span>
+          </a>
+        </div>
+      </section>
 
-  <p>Informative</p>
-  <a class='btn btn-success col-xs-12' href="react-test/weather-app/dist/index.html">☀️ Weather</a>
-  <!-- <a class='btn btn-success col-xs-12' href="kpop/index.html">🥺 Taemin</a> -->
-  <a class='btn btn-primary col-xs-12' href="bootstrap-workshop/bootstrap/index.html">✍️ Bootstrap Workshop</a>
-  <a class='btn btn-primary col-xs-12' href="text-timmy/index.html">🌩 Cloud functions for fun</a>
-  <a class='btn btn-default col-xs-12' href="resume/index.html">👩‍🔧 My Resume</a>
+      <section>
+        <h2>Games</h2>
+        <div class="grid">
+          <a class="card" href="karaokebingo/index.html">
+            <span class="emoji" aria-hidden="true">🎤</span>
+            <span class="title">Karaoke Bingo</span>
+          </a>
+          <a class="card" href="comiconbingo/comiconBingo.html">
+            <span class="emoji" aria-hidden="true">🦸‍♀️</span>
+            <span class="title">Comicon Bingo</span>
+          </a>
+          <a class="card" href="yoongibingo/bingo.html">
+            <span class="emoji" aria-hidden="true">🍊</span>
+            <span class="title">Yoongi Bingo</span>
+          </a>
+          <a class="card" href="wheeloflunch/index.html">
+            <span class="emoji" aria-hidden="true">🌮</span>
+            <span class="title">Wheel of Lunch</span>
+          </a>
+          <a class="card" href="moviequiz/dist/index.html">
+            <span class="emoji" aria-hidden="true">🎬</span>
+            <span class="title">Movie quizzes</span>
+          </a>
+          <a class="card" href="khbbsmeld/index.html">
+            <span class="emoji" aria-hidden="true">🗝</span>
+            <span class="title">KH:BBS Meld list</span>
+          </a>
+          <a class="card" href="ffx2spherebreak/index.html">
+            <span class="emoji" aria-hidden="true">🥇</span>
+            <span class="title">FFX-2 Sphere Break</span>
+          </a>
+        </div>
+      </section>
 
+      <section>
+        <h2>Informative</h2>
+        <div class="grid">
+          <a class="card" href="react-test/weather-app/dist/index.html">
+            <span class="emoji" aria-hidden="true">☀️</span>
+            <span class="title">Weather</span>
+          </a>
+          <!-- <a class="card" href="kpop/index.html">🥺 Taemin</a> -->
+          <a class="card" href="bootstrap-workshop/bootstrap/index.html">
+            <span class="emoji" aria-hidden="true">✍️</span>
+            <span class="title">Bootstrap Workshop</span>
+          </a>
+          <a class="card" href="text-timmy/index.html">
+            <span class="emoji" aria-hidden="true">🌩</span>
+            <span class="title">Cloud functions for fun</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
