@@ -1,4 +1,5 @@
 # Grocery List
+A simple grocery list made with human fingers to practice React.
 
 # Build
 ```
