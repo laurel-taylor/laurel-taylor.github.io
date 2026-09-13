@@ -39,13 +39,23 @@ export function useCharacter(url) {
   return useQuery({ ...characterQuery(url ?? ''), enabled: Boolean(url) })
 }
 
+function houseQuery(url) {
+  return {
+    queryKey: ['house', idFromUrl(url)],
+    queryFn: () => fetchHouse(url),
+    ...FOREVER,
+  }
+}
+
 export function useHouses(urls) {
   return useQueries({
-    queries: urls.map((url) => ({
-      queryKey: ['house', idFromUrl(url)],
-      queryFn: () => fetchHouse(url),
-      ...FOREVER,
-    })),
+    queries: urls.map(houseQuery),
     combine: (results) => results.map((result) => result.data),
   })
+}
+
+// Same key as useHouses, so opening a house already named in an allegiance
+// list costs no request.
+export function useHouse(url) {
+  return useQuery({ ...houseQuery(url ?? ''), enabled: Boolean(url) })
 }

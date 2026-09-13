@@ -1,0 +1,8 @@
+.sworn-members ul {
+  list-style: none;
+  margin: 0 0 var(--gp);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gp)*0.5);
+}
