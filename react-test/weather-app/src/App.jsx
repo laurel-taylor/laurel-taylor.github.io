@@ -104,6 +104,15 @@ function App({ timeOfDay }) {
           </ul>
         </>
       )}
+
+      <a
+        className="app__about"
+        href="https://github.com/laurel-taylor/laurel-taylor.github.io/blob/master/react-test/weather-app/README.md"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        About
+      </a>
     </div>
   );
 }

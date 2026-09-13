@@ -24,6 +24,18 @@
   font-size: 1.05rem;
 }
 
+.app__about {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--on-sky-muted);
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.app__about:hover {
+  color: var(--on-sky);
+}
+
 .app__place-row {
   display: flex;
   align-items: center;

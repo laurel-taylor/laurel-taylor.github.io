@@ -14,7 +14,19 @@ function BookList({ selectedBookUrl, onSelectBook }) {
       as="nav"
       className="books"
       aria-label="Books"
-      header={<h1>A Song of Ice and Fire</h1>}
+      header={
+        <>
+          <h1>A Song of Ice and Fire</h1>
+          <a
+            className="about-link"
+            href="https://github.com/laurel-taylor/laurel-taylor.github.io/blob/master/react-test/ice-and-fire/README.md"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            About
+          </a>
+        </>
+      }
     >
       <ul className="book-list">
         {books.map(

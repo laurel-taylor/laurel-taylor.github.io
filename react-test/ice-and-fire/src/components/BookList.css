@@ -5,7 +5,20 @@
 
 .books h1 {
   font-size: var(--font-size-x-large);
+  margin: 0 0 var(--gp);
+}
+
+.about-link {
+  display: inline-block;
   margin: 0 0 calc(var(--gp)*2);
+  font-size: var(--font-size-small);
+  color: var(--text-subtle);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.about-link:hover {
+  color: var(--text-h);
 }
 
 .book-list {

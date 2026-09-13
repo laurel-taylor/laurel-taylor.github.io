@@ -1,6 +1,13 @@
 # Description
 10-day US weather forecast by ZIP code.
 
+Uses the OpenWeatherMap API to fetch weather data, and zippopotamus API to fetch location data.
+
+## Features
+- Display the weather conditions, temperatures, and precipitation chances for the next 10 days for a given ZIP code
+- Display the temperature for the current time
+- Background based on current time of day
+
 # Run
 ```bash
 npm install
