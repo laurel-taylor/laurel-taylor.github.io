@@ -1,0 +1,49 @@
+:root {
+  --book-list-width: 315px;
+  --character-panel-width: 340px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: var(--book-list-width) minmax(0, 1fr);
+  height: 100svh;
+  overflow: hidden;
+  text-align: left;
+}
+
+.app.with-panel {
+  grid-template-columns: var(--book-list-width) minmax(0, 1fr) var(--character-panel-width);
+}
+
+button {
+  background: none;
+  text-align: left;
+  border: 1px solid var(--border);
+  padding: calc(var(--gp)) calc(var(--gp)*2);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.error {
+  color: #d4183d;
+  font-size: var(--font-size-small);
+}
+
+@media (max-width: 900px) {
+  .app,
+  .app.with-panel {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .scroll-panel {
+    overflow: visible;
+  }
+
+  .books {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}

@@ -1,0 +1,28 @@
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gp);
+}
+
+.skeleton-row {
+  height: 44px;
+  border-radius: var(--border-radius);
+  background: var(--code-bg);
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-row:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+@keyframes skeleton-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-row {
+    animation: none;
+  }
+}

@@ -1,0 +1,13 @@
+.scroll-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: calc(var(--gp)*2);
+  padding-right: calc(var(--gp)*2);
+}

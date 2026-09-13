@@ -1,0 +1,16 @@
+.pager {
+  display: flex;
+  align-items: center;
+  gap: var(--gp);
+  font-size: var(--font-size-small);
+}
+
+.pager button:hover:not(:disabled) {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.pager button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
