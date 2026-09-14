@@ -1,0 +1,54 @@
+.board {
+  display: grid;
+  aspect-ratio: 1;
+  width: min(70vmin, 640px);
+  border: 1px solid var(--border);
+  background: var(--grid-line);
+  gap: 1px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--empty);
+}
+
+.cell-alt {
+  background: var(--empty-alt, var(--empty));
+}
+
+.cell-player {
+  background: var(--player);
+}
+
+.cell-pc {
+  background: var(--pc);
+}
+
+.cell-objective {
+  background: var(--objective);
+}
+
+.cell-icon {
+  width: 72%;
+  height: 72%;
+  display: block;
+}
+
+.board-marked {
+  gap: 0;
+}
+
+.board-marked .cell-player,
+.board-marked .cell-pc,
+.board-marked .cell-objective {
+  background: var(--empty);
+}
+
+.board-marked .cell-player.cell-alt,
+.board-marked .cell-pc.cell-alt,
+.board-marked .cell-objective.cell-alt {
+  background: var(--empty-alt);
+}

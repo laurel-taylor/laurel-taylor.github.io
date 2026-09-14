@@ -1,0 +1,37 @@
+.pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  width: min(100%, 280px);
+}
+
+.pad button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  border: 1px solid var(--border);
+  border-radius: var(--space-2);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.pad button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.pad button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pad small {
+  color: var(--muted);
+  font-size: var(--font-size-xs);
+}
+
+.pad-stay {
+  background: color-mix(in srgb, var(--panel) 70%, var(--accent) 30%);
+}

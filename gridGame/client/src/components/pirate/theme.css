@@ -1,0 +1,37 @@
+html[data-theme='pirate'] {
+  color-scheme: dark;
+  --bg: #063445;
+  --panel: #124153;
+  --border: #c9a15b;
+  --ink: #f4ead0;
+  --muted: #cbb98a;
+  --player: #1a6b8a;
+  --pc: #1a6b8a;
+  --objective: #d4b46a;
+  --empty: #1a6f8c;
+  --empty-alt: #155f7a;
+  --grid-line: #0d4a60;
+  --accent: #d4a017;
+  --accent-hover: #e6b63a;
+  --page-top: #1a7a96;
+  --button-ink: #2a1a08;
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+}
+
+html[data-theme='pirate'] .board {
+  border: 3px solid #c9a15b;
+  box-shadow: 0 16px 40px rgba(4, 30, 40, 0.55);
+}
+
+html[data-theme='pirate'] .mark-x {
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(1rem, 4.5vmin, 2rem);
+  line-height: 1;
+  color: #3b1d12;
+  text-shadow: 0 1px 0 rgba(255, 236, 180, 0.55);
+}
+
+html[data-theme='pirate'] .legend-icon .mark-x {
+  font-size: var(--font-size-md);
+}

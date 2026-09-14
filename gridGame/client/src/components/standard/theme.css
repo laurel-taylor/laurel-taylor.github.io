@@ -1,0 +1,21 @@
+:root,
+html[data-theme='standard'] {
+  color-scheme: dark;
+  --bg: #12161c;
+  --panel: #1b222c;
+  --border: #314054;
+  --ink: #e8eef6;
+  --muted: #9aabbf;
+  --player: #4ea3ff;
+  --pc: #ff5d5d;
+  --objective: #f5c542;
+  --empty: #161c24;
+  --empty-alt: #161c24;
+  --grid-line: #243041;
+  --accent: #4ea3ff;
+  --accent-hover: #79b8ff;
+  --page-top: #1c2532;
+  --button-ink: #081018;
+  --error: #ff8b8b;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}

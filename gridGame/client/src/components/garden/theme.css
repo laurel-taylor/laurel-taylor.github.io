@@ -1,0 +1,19 @@
+html[data-theme='garden'] {
+  color-scheme: light;
+  --bg: #2d5a28;
+  --panel: #3f6e36;
+  --border: #c4d46a;
+  --ink: #f3f6e4;
+  --muted: #d4e0b0;
+  --player: #5a9a42;
+  --pc: #5a9a42;
+  --objective: #5a9a42;
+  --empty: #5a9a42;
+  --empty-alt: #6b4a28;
+  --grid-line: #3d6a30;
+  --accent: #e8c84a;
+  --accent-hover: #f2d66a;
+  --page-top: #4a8a3a;
+  --button-ink: #2a2808;
+  font-family: Georgia, 'Palatino Linotype', serif;
+}

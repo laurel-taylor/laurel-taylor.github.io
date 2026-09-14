@@ -1,0 +1,23 @@
+html[data-theme='catmouse'] {
+  color-scheme: light;
+  --bg: #c9a078;
+  --panel: #f4e4c4;
+  --border: #8a5a32;
+  --ink: #3a2414;
+  --muted: #6b4a32;
+  --player: #e8d4a8;
+  --pc: #e8d4a8;
+  --objective: #e8d4a8;
+  --empty: #f3e6c8;
+  --empty-alt: #e2c992;
+  --grid-line: #c4a06a;
+  --accent: #d46b2a;
+  --accent-hover: #e8843d;
+  --page-top: #e8c89a;
+  --button-ink: #2a1408;
+  --overlay: rgba(42, 22, 10, 0.88);
+  --overlay-ink: #f7efe0;
+  --overlay-muted: #f0d9b0;
+  --error: #8b1a1a;
+  font-family: Georgia, 'Palatino Linotype', serif;
+}
