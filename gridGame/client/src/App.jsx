@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   clearStoredGameId,
   createGame,
@@ -6,9 +6,11 @@ import {
   getStoredGameId,
   moveGame,
   setGameDifficulty,
+  subscribeToGame,
 } from './api.js';
 import Grid from './components/Grid.jsx';
 import Legend from './components/Legend.jsx';
+import Countdown from './components/Countdown.jsx';
 import Pad from './components/Pad.jsx';
 import { getStoredThemeId, messageFor, storeThemeId, THEMES } from './themes.js';
 import './App.css';
@@ -47,7 +49,6 @@ const KEY_TO_DIRECTION = {
   Z: 'sw',
   c: 'se',
   C: 'se',
-  ' ': 'stay',
 };
 
 export default function App() {
@@ -57,37 +58,47 @@ export default function App() {
   const [themeId, setThemeId] = useState(getStoredThemeId);
   const [hard, setHard] = useState(false);
   const theme = THEMES[themeId] ?? THEMES.standard;
+  const latestRef = useRef({ id: null, version: -1 });
+  const movingRef = useRef(false);
 
   const difficulty = hard ? 1 : 0;
+
+  const applyGameUpdate = useCallback((next) => {
+    const prev = latestRef.current;
+    if (prev.id === next.id && (next.version ?? 0) < prev.version) return;
+    latestRef.current = { id: next.id, version: next.version ?? 0 };
+    setGame(next);
+    setHard(next.difficulty >= 1);
+  }, []);
 
   const startNewGame = useCallback(async () => {
     setBusy(true);
     setError('');
     try {
       const next = await createGame(difficulty);
-      setGame(next);
+      applyGameUpdate(next);
     } catch (err) {
       setError(errorMessage(err));
     } finally {
       setBusy(false);
     }
-  }, [difficulty]);
+  }, [applyGameUpdate, difficulty]);
 
   const sendMove = useCallback(
     async (direction) => {
-      if (!game || game.status !== 'in_progress' || busy) return;
-      setBusy(true);
+      if (!game || game.status !== 'in_progress' || busy || movingRef.current) return;
+      movingRef.current = true;
       setError('');
       try {
         const next = await moveGame(game.id, direction);
-        setGame(next);
+        applyGameUpdate(next);
       } catch (err) {
         setError(errorMessage(err));
       } finally {
-        setBusy(false);
+        movingRef.current = false;
       }
     },
-    [busy, game],
+    [applyGameUpdate, busy, game],
   );
 
   const toggleHard = useCallback(
@@ -96,13 +107,13 @@ export default function App() {
       if (!game || game.status !== 'in_progress') return;
       try {
         const next = await setGameDifficulty(game.id, checked ? 1 : 0);
-        setGame(next);
+        applyGameUpdate(next);
       } catch (err) {
         setError(errorMessage(err));
         setHard(!checked);
       }
     },
-    [game],
+    [applyGameUpdate, game],
   );
 
   useEffect(() => {
@@ -114,15 +125,14 @@ export default function App() {
         if (storedId) {
           try {
             const existing = await fetchGame(storedId);
-            if (!cancelled) setGame(existing);
-            if (!cancelled) setHard(existing.difficulty >= 1);
+            if (!cancelled) applyGameUpdate(existing);
             return;
           } catch {
             clearStoredGameId();
           }
         }
         const next = await createGame(difficulty);
-        if (!cancelled) setGame(next);
+        if (!cancelled) applyGameUpdate(next);
       } catch (err) {
         if (!cancelled) setError(errorMessage(err));
       } finally {
@@ -134,6 +144,15 @@ export default function App() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (!game?.id || game.status !== 'in_progress') return undefined;
+    return subscribeToGame(
+      game.id,
+      (next) => applyGameUpdate(next),
+      (message) => setError(message),
+    );
+  }, [applyGameUpdate, game?.id, game?.status]);
 
   useEffect(() => {
     function onKeyDown(event) {
@@ -160,6 +179,12 @@ export default function App() {
 
   const ended = game && game.status !== 'in_progress';
   const copy = theme.copy;
+  const endTitle =
+    game?.status === 'won'
+      ? copy.youWin
+      : game?.reason === 'timeout'
+        ? copy.timedOut
+        : copy.youLose;
 
   return (
     <main className="app">
@@ -212,7 +237,7 @@ export default function App() {
             <Grid game={game} themeId={theme.id} />
             {ended ? (
               <div className="board-overlay" role="status">
-                <strong>{game.status === 'won' ? copy.youWin : copy.youLose}</strong>
+                <strong>{endTitle}</strong>
                 <p>{messageFor(game, theme)}</p>
                 <button type="button" onClick={startNewGame} disabled={busy}>
                   {copy.newGame}
@@ -221,8 +246,12 @@ export default function App() {
             ) : null}
           </div>
           <aside className="sidebar">
+            <Countdown
+              expiresAt={game.expiresAt}
+              active={game.status === 'in_progress'}
+            />
             <Legend theme={theme} />
-            <Pad onMove={sendMove} disabled={busy || ended} stayLabel={copy.stay} />
+            <Pad onMove={sendMove} disabled={busy || ended} />
           </aside>
         </section>
       ) : null}

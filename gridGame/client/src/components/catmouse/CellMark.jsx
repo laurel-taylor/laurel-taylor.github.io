@@ -1,4 +1,4 @@
-function CatIcon() {
+export function CatIcon() {
   return (
     <svg className="cell-icon" viewBox="0 0 32 32" aria-hidden="true">
       <polygon points="8,14 11,3 16,12" fill="#d98a3a" />

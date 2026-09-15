@@ -1,4 +1,5 @@
 export const GRID_SIZE = 10;
+export const GAME_TIMEOUT_MS = 60_000;
 
 export const DIRECTIONS = {
   n: { dx: 0, dy: -1 },
@@ -9,11 +10,10 @@ export const DIRECTIONS = {
   sw: { dx: -1, dy: 1 },
   w: { dx: -1, dy: 0 },
   nw: { dx: -1, dy: -1 },
-  stay: { dx: 0, dy: 0 },
 };
 
 export const PLAYER_DIRECTIONS = Object.keys(DIRECTIONS);
-export const PC_DIRECTIONS = PLAYER_DIRECTIONS.filter((dir) => dir !== 'stay');
+export const PC_DIRECTIONS = PLAYER_DIRECTIONS;
 
 export function wrap(n) {
   return ((n % GRID_SIZE) + GRID_SIZE) % GRID_SIZE;
@@ -79,6 +79,18 @@ export function spawnEntities() {
   };
 }
 
+export function startedAtMs(createdAt) {
+  if (typeof createdAt === 'number') return createdAt;
+  if (!createdAt) return Date.now();
+  return Date.parse(String(createdAt).replace(' ', 'T') + 'Z');
+}
+
+export function applyTimeoutIfNeeded(game, now = Date.now()) {
+  if (game.status !== 'in_progress') return game;
+  if (now - game.startedAt < GAME_TIMEOUT_MS) return game;
+  return { ...game, status: 'lost', reason: 'timeout' };
+}
+
 export function applyPlayerMove(game, direction) {
   if (game.status !== 'in_progress') {
     return { error: 'Game is over', status: 400 };
@@ -101,12 +113,24 @@ export function applyPlayerMove(game, direction) {
   if (same(player, game.objective)) {
     return { game: { ...next, status: 'won', reason: 'player_hit_objective' } };
   }
+  return { game: { ...next, reason: null } };
+}
 
-  const pcDir = pickPcDirection(next);
+export function applyPcMove(game) {
+  if (game.status !== 'in_progress') {
+    return { error: 'Game is over', status: 400 };
+  }
+
+  const pcDir = pickPcDirection(game);
   const pc = step(game.pc, pcDir);
-  next.pc = pc;
+  const next = {
+    ...game,
+    player: game.player,
+    pc,
+    objective: game.objective,
+  };
 
-  if (same(pc, player)) {
+  if (same(pc, game.player)) {
     return { game: { ...next, status: 'lost', reason: 'pc_hit_player' } };
   }
   if (same(pc, game.objective)) {

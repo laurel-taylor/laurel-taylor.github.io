@@ -64,3 +64,54 @@ export async function moveGame(id, direction) {
     body: JSON.stringify({ direction }),
   });
 }
+
+function wsUrl() {
+  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  return `${protocol}//${window.location.host}/ws`;
+}
+
+/**
+ * Subscribe to live game updates (PC ticks). Returns an unsubscribe function.
+ * @param {string} gameId
+ * @param {(game: object) => void} onUpdate
+ * @param {(message: string) => void} [onError]
+ */
+export function subscribeToGame(gameId, onUpdate, onError) {
+  const socket = new WebSocket(wsUrl());
+  let closed = false;
+
+  socket.addEventListener('open', () => {
+    if (closed) {
+      socket.close();
+      return;
+    }
+    socket.send(JSON.stringify({ type: 'subscribe', gameId }));
+  });
+
+  socket.addEventListener('message', (event) => {
+    let message;
+    try {
+      message = JSON.parse(event.data);
+    } catch {
+      return;
+    }
+    if (message.type === 'game_update' && message.game) {
+      onUpdate(message.game);
+      return;
+    }
+    if (message.type === 'error') {
+      onError?.(message.error || 'WebSocket error');
+    }
+  });
+
+  socket.addEventListener('error', () => {
+    onError?.('Live updates disconnected');
+  });
+
+  return () => {
+    closed = true;
+    if (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING) {
+      socket.close();
+    }
+  };
+}

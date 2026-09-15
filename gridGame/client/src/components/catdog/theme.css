@@ -1,0 +1,23 @@
+html[data-theme='catdog'] {
+  color-scheme: light;
+  --bg: #3a6a8a;
+  --panel: #4a7c9e;
+  --border: #f0d090;
+  --ink: #f5f0e6;
+  --muted: #d4e4f0;
+  --player: #6a9ab8;
+  --pc: #6a9ab8;
+  --objective: #6a9ab8;
+  --empty: #5a8eae;
+  --empty-alt: #4e7f9e;
+  --grid-line: #3a6a88;
+  --accent: #e8a040;
+  --accent-hover: #f0b45a;
+  --page-top: #5a8eae;
+  --button-ink: #2a1a08;
+  --overlay: rgba(20, 40, 55, 0.9);
+  --overlay-ink: #f5f0e6;
+  --overlay-muted: #d4e4f0;
+  --error: #ffb0a0;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}

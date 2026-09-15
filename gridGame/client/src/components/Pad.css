@@ -32,6 +32,6 @@
   font-size: var(--font-size-xs);
 }
 
-.pad-stay {
-  background: color-mix(in srgb, var(--panel) 70%, var(--accent) 30%);
+.pad-spacer {
+  min-height: 56px;
 }

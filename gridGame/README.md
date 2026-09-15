@@ -1,11 +1,12 @@
 # Grid Chase
 
-10x10 wrapping chase game. Reach objective. The PC moves after every turn you take (including Stay). You lose if you collide with the PC, or if the PC reaches the objective.
+10x10 wrapping chase game. Reach the objective before the PC does. You move on demand; the PC moves on a timer over WebSockets (every 2 seconds by default). You lose if you collide with the PC, or if the PC reaches the objective.
 
 ## Features
 
 - Wrapping grid
 - 8-way movement
+- Real-time PC movement via WebSockets
 - Difficulty: PC moves randomly or tries to catch you
 - Different themes that change the look and feel of the game
 
@@ -15,7 +16,9 @@
 
 ## Run locally
 
-The Express server owns the rules and stores games in SQLite (`server/data/games.db`). The Vite app proxies `/api` to that server.
+The Express server owns the rules, stores games in SQLite (`server/data/games.db`), and pushes PC moves over WebSocket (`/ws`). The Vite app proxies `/api` and `/ws` to that server.
+
+PC move speed is controlled by `PC_MOVE_INTERVAL_MS` in `server/ws.js` (default `2000`).
 
 ```bash
 # terminal 1
