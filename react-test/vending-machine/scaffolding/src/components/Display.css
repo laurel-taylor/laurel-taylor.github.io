@@ -1,0 +1,31 @@
+.display {
+  background: #0b1512;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.display-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--led);
+}
+
+.display-label {
+  color: var(--led-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+.display-amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.display-message {
+  margin: 8px 0 0;
+  min-height: 1.4em;
+  color: var(--led);
+}

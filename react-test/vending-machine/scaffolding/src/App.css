@@ -1,0 +1,24 @@
+.machine {
+  width: min(560px, 100%);
+  background: var(--cabinet);
+  border: 8px solid var(--cabinet-edge);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow);
+}
+
+.machine-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+@media (max-width: 520px) {
+  .machine-controls {
+    grid-template-columns: 1fr;
+  }
+}

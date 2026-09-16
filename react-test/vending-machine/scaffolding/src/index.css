@@ -1,0 +1,62 @@
+:root {
+  --cabinet: #2a1f24;
+  --cabinet-edge: #1a1216;
+  --glass: #1c242c;
+  --slot: #2c3640;
+  --slot-hover: #36414c;
+  --selected: #f0c14a;
+  --sold-out: #6b5a52;
+  --led: #9fffd4;
+  --led-dim: #3d6b5a;
+  --text: #efe7dc;
+  --muted: #b9aea4;
+  --button: #d9c4a0;
+  --button-text: #2a1f24;
+  --vend: #3d9b6e;
+  --refund: #c45c4a;
+  --shadow: rgba(0, 0, 0, 0.35) 0 12px 28px;
+
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: #121416;
+  line-height: 1.4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
