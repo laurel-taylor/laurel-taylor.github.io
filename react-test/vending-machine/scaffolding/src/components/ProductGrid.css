@@ -7,50 +7,6 @@
   border-radius: 12px;
 }
 
-.product-slot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 12px 8px;
-  background: var(--slot);
-  color: var(--text);
-  border: 2px solid transparent;
-  border-radius: 10px;
-}
-
-.product-slot:hover:not(:disabled) {
-  background: var(--slot-hover);
-}
-
-.product-slot.selected {
-  border-color: var(--selected);
-}
-
-.product-slot.sold-out,
-.product-slot:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.product-icon {
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
-.product-name {
-  font-weight: 600;
-}
-
-.product-price {
-  color: var(--selected);
-}
-
-.product-stock {
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-
 @media (max-width: 520px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);

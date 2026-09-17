@@ -1,22 +1,13 @@
 import { formatCents } from '../utils/money'
+import DENOMINATIONS from './data/denominations'
 import './CoinPanel.css'
 
-function CoinPanel({ denominations, onInsert }) {
+function CoinPanel({ onInsert }) {
   return (
     <div className="coin-panel">
       <h2>Insert coins</h2>
       <div className="coin-buttons">
-        {denominations.map((denomination) => (
-          <button
-            key={denomination.cents}
-            type="button"
-            className="coin-button"
-            onClick={() => onInsert(denomination.cents)}
-          >
-            <span className="coin-label">{denomination.label}</span>
-            <span className="coin-value">{formatCents(denomination.cents)}</span>
-          </button>
-        ))}
+        {/* TODO: add coin buttons */}
       </div>
     </div>
   )

@@ -36,3 +36,9 @@
 .coin-value {
   font-weight: 700;
 }
+
+@media (min-width: 768px) {
+  .coin-panel {
+    margin-top: 10px;
+  }
+}

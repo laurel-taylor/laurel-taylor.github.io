@@ -1,5 +1,4 @@
 /* Fill in the TODOs below; the unused setters and handler args are for you to use. */
-/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import PRODUCTS from './data/products'
 import DENOMINATIONS from './data/denominations'
@@ -24,15 +23,11 @@ function App() {
   }
 
   function vend() {
-    // TODO:
-    // - no selection → status message, nothing else changes
-    // - out of stock → status message
-    // - not enough money → status message
-    // - success → decrement stock, reduce balance by price, show leftover balance as change
+    // TODO: vend the selected product
   }
 
   function returnCoins() {
-    // TODO: refund the full inserted balance, clear selection, show how much was returned
+    // TODO: refund the balance
   }
 
   return (
@@ -41,7 +36,7 @@ function App() {
       <Display balance={balance} message={message} />
       <ProductGrid products={inventory} selectedId={selectedId} onSelect={selectProduct} />
       <div className="machine-controls">
-        <CoinPanel denominations={DENOMINATIONS} onInsert={insertCoin} />
+        <CoinPanel onInsert={insertCoin} />
         <Actions onVend={vend} onReturnCoins={returnCoins} />
       </div>
     </div>

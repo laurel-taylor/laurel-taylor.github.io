@@ -6,9 +6,9 @@ function Display({ balance, message }) {
     <div className="display">
       <div className="display-balance">
         <span className="display-label">Balance</span>
-        <span className="display-amount">{formatCents(balance)}</span>
+        <span className="display-amount">{/* TODO: add balance */}</span>
       </div>
-      <p className="display-message">{message}</p>
+      <p className="display-message">{/* TODO: add message */}</p>
     </div>
   )
 }

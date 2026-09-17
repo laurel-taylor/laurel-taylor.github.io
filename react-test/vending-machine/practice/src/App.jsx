@@ -1,5 +1,3 @@
-/* Fill in the TODOs below; the unused setters and handler args are for you to use. */
-/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import PRODUCTS from './data/products'
 import DENOMINATIONS from './data/denominations'
@@ -7,6 +5,7 @@ import ProductGrid from './components/ProductGrid'
 import CoinPanel from './components/CoinPanel'
 import Display from './components/Display'
 import Actions from './components/Actions'
+import { formatCents, coinString } from './utils/money'
 import './App.css'
 
 function App() {
@@ -16,23 +15,58 @@ function App() {
   const [message, setMessage] = useState('Insert coins and pick a snack.')
 
   function insertCoin(cents) {
-    // TODO: increase the inserted balance
+    setMessage(`Inserted ${formatCents(cents)}.`)
+    setBalance(balance + cents);
   }
 
   function selectProduct(id) {
-    // TODO: select one product at a time
+    const product = inventory.find(p => p.id === id);
+
+    if (!product) {
+      setMessage('How did you get here');
+      return;
+    }
+
+    if (product.stock <= 0) {
+      setMessage('That item is sold out. Pick a different product.');
+      return;
+    }
+
+    if (product.price > balance) {
+      const diff = product.price - balance;
+      setMessage(`Insufficient funds. Insert ${formatCents(diff)} to get ${product.name}.`);
+      return;
+    }
+
+    setMessage(`Click Vend to get your ${product.name}.`)
+    setSelectedId(id);
   }
 
   function vend() {
-    // TODO:
-    // - no selection → status message, nothing else changes
-    // - out of stock → status message
-    // - not enough money → status message
-    // - success → decrement stock, reduce balance by price, show leftover balance as change
+    if (!selectedId) {
+      setMessage('Select an item to vend.');
+      return;
+    }
+    const product = inventory.find(p => p.id === selectedId);
+    setInventory(() => {
+      return inventory.map((item) => {
+        return item.id === selectedId ? {
+          ...item,
+          stock: item.stock - 1,
+        } : item
+      });
+    });
+    setBalance(balance - product.price);
+    setSelectedId(null);
+    setMessage(`Enjoy your ${product.name}. Vend another item or return coins.`);
   }
 
   function returnCoins() {
-    // TODO: refund the full inserted balance, clear selection, show how much was returned
+    console.log('return coins');
+    const coins = coinString(balance);
+    setMessage(`${formatCents(balance)} returned. You got: ${coins}.`);
+    setSelectedId(null);
+    setBalance(0);
   }
 
   return (
@@ -42,7 +76,7 @@ function App() {
       <ProductGrid products={inventory} selectedId={selectedId} onSelect={selectProduct} />
       <div className="machine-controls">
         <CoinPanel denominations={DENOMINATIONS} onInsert={insertCoin} />
-        <Actions onVend={vend} onReturnCoins={returnCoins} />
+        <Actions onVend={vend} onReturnCoins={returnCoins} canVend={!!selectedId} canReturnCoins={balance > 0}/>
       </div>
     </div>
   )

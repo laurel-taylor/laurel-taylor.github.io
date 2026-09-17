@@ -26,3 +26,14 @@
 .action-button.refund {
   background: var(--refund);
 }
+
+.action-button:disabled {
+  background: var(--sold-out);
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .actions {
+    margin-top: 20px;
+  }
+}
