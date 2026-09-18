@@ -1,0 +1,36 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+
+.keyboard-button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.keyboard-button.wrong {
+    background-color: var(--wrong-color-paper);
+    color: var(--wrong-color-ink);
+}
+
+.keyboard-button.green {
+    background-color: var(--success-color-paper);
+    color: var(--success-color-ink);
+}
+
+.keyboard-button.yellow {
+    background-color: var(--warning-color-paper);
+    color: var(--warning-color-ink);
+}

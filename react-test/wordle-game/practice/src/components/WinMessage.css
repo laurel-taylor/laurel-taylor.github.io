@@ -1,0 +1,34 @@
+.win-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.win-message-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.word-grid-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+.tile {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background-color: var(--tile-background-color);
+}
+.tile.green {
+    background-color: var(--success-color-paper);
+}
+.tile.yellow {
+    background-color: var(--warning-color-paper);
+}
+.tile.wrong {
+    background-color: var(--wrong-color-paper);
+}

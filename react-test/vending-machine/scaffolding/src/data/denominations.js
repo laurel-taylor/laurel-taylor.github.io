@@ -1,6 +1,9 @@
 const DENOMINATIONS = [
-  { cents: 25, label: 'Quarter' },
   { cents: 100, label: 'Dollar' },
+  { cents: 50, label: 'Half Dollar' },
+  { cents: 25, label: 'Quarter' },
+  { cents: 10, label: 'Dime' },
+  { cents: 5, label: 'Nickel' },
 ]
 
 export default DENOMINATIONS

@@ -1,0 +1,36 @@
+.word-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.word-grid-row {
+    display: flex;
+    gap: 5px;
+}
+
+.word-grid-cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    background-color: var(--tile-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.word-grid-cell.wrong {
+    background-color: var(--wrong-color-paper);
+    color: var(--wrong-color-ink);
+}
+
+.word-grid-cell.green {
+    background-color: var(--success-color-paper);
+    color: var(--success-color-ink);
+}
+
+.word-grid-cell.yellow {
+    background-color: var(--warning-color-paper);
+    color: var(--warning-color-ink);
+}
