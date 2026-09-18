@@ -1,6 +1,6 @@
 # Wordle Game
 
-A blank React + Vite app for practicing Wordle.
+A blank React + Vite app for practicing building a Wordle game with React.
 
 ## Install
 
